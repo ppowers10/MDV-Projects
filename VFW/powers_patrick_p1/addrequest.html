@@ -16,16 +16,49 @@
 	</head>
 <body>
 	<header>
-		<h1>Add Concierge Request</h1>
+		<h1>Concierge Request</h1>
 	</header>
   	<form action="" methond"="post"">
   		<fieldset>
   			<legend>Guest Information</legend>
-  				<label for="fname">First Name:</label><input type="text" id="fname"/></br>
-  				<label for="lname">Last Name:</label><input type="text" id="lname"/></br>
-  				<label for="roomnum">Room #:</label><input type="text" id="roomnum"/></br>
-  				<label for="phonenum">Phone Number:</label><input type="tel" id="phonenum"/></br>
-  				<label for="email">Email:</label><input type="email" id="email"/></br>
+  				<label for="fname">First Name:</label>
+  					<input type="text" id="fname"/></br>
+  				<label for="lname">Last Name:</label>
+  					<input type="text" id="lname"/></br>
+  				<label for="roomnum">Room #:</label>
+  					<input type="text" id="roomnum"/></br>
+  				<label for="phonenum">Phone Number:</label>
+  					<input type="tel" id="phonenum"/></br>
+  				<label for="email">Email:</label>
+  					<input type="email" id="email"/></br>
+  				<label for="contact">Preferred Method of Contact:</label>
+	  				<select id="contact"/>
+	  					<option value="email">Email</option>
+	  					<option value="phone">Phone</option>
+	  					<option value="text">Text</option>
+	  				</select>
+
+  		</fieldset>
+  		<fieldset>
+  			<legend>Service Requested</legend>
+  				<label for="service"></label>
+	  				<select id="service"/>
+	  					<optgroup label="Select a service:">
+	  						<option value="other">"At your service" request</option>
+		  					<option value="eat">Where to eat</option>
+		  					<option value="see">What to see</option>
+		  					<option value="events">Special event recommendation</option>
+		  					<option value="directions">Need directions</option>
+		  				</optgroup>
+	  				</select></br>
+  				<label for="price">If applicable, what is guests budget?</label></br>
+  					<input type=range min="$1" max="$1000" name="budget" type="range"></br> 
+  				<input type="checkbox" value="Urgent" id="urgent">
+  					<label for="urgent">Urgent</label></br>
+  				<label for="startdate">Date Requested:</label>
+  					<input type="date" id="startdate" name="startdate" required aria-required="true"></br>
+  				<label for="comments">Details about service requested:</label></br>
+  					<textarea id="comments"></textarea></br>
 
   		</fieldset>
   	</form>
