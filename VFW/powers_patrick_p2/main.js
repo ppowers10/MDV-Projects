@@ -64,10 +64,18 @@ window.addEventListener("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-			
+				$('conciergeRequest').style.display = "none";
+				$('clearRequest').style.display = "inline";
+				$('displayRequest').style.display = "none";
+				$('addNew').style.display = "inline";
 				break;
 			case "off":
-			
+				$('conciergeRequest').style.display = "block";
+				$('clearRequest').style.display = "inline";
+				$('displayLink').style.display = "inline";
+				$('addNew').style.display = "none";
+				$('items').style.display = "none";
+				break;
 				break;
 			default:
 				return false;
@@ -80,28 +88,33 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Oject properties contain array with the form label and input value.
 		getCheckboxValue();
 		var item 				= {};
-			item.name			= ["Guest's Name:", $('name').value];
-			item.roomnum		= ["Room #:", $('roomnum').value];
-			item.phonenum		= ["Phone Number:", $('phonenum').value];
-			item.email			= ["Email:", $('email').value];
-			item.groups1		= ["Contact Method:", $('groups1').value];
-			item.groups2		= ["Service Requested:", $('groups2').value];
+			item.name			= ["Guest's Name:  ", $('name').value];
+			item.roomnum		= ["Room #:  ", $('roomnum').value];
+			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
+			item.email			= ["Email:  ", $('email').value];
+			item.groups1		= ["Contact Method:  ", $('groups1').value];
+			item.groups2		= ["Service Requested:  ", $('groups2').value];
 			item.budget			= ["Budget:", $('budget').value];
-			item.urgent			= ["Urgent", urgentValue];
-			item.startdate		= ["Date Requested:", $('startdate').value];	
-			item.comments		= ["Comments:", $('comments').value];
+			item.urgent			= ["Urgent:  ", urgentValue];
+			item.startdate		= ["Date Requested:  ", $('startdate').value];	
+			item.comments		= ["Comments:  ", $('comments').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Request Saved");
 	}
 	
 	function getData(){
+		toggleControls('on');
+		if(localStorage.length === 0){
+			alert("There are no current requests.");
+		}
 		//Write Data from Local Stograge to the browser.
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
+		$('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
 			 makeList.appendChild(makeLi);
@@ -119,6 +132,18 @@ window.addEventListener("DOMContentLoaded", function(){
 			 }
 		}
 	}
+	
+	function clearLocal(){
+		if(localStorage.lenght === 0){
+			alert("There is no data to clear.")
+		}else{
+			localStorage.clear();
+			alert("All requests are deleted!");
+			window.location.reload();
+			return false
+		}
+		
+	}
 	//Variable default
 	var bestContact = ["--Best Contact Method--", "Email", "Phone", "Text"];
 	var service = ["--Choose A Service--", "'At your service' request", "Where to eat", "What to see", "Special event recommendation", "Need directions"];		
@@ -126,11 +151,12 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	makeCats1();
 	makeCats2();
+	
 	//Set Link and Submit Click Events
 	var displayLink = $('displayRequest');
 	displayLink.addEventListener("click", getData);
-	//var clearLink = $('clearRequest');
-	//clearLink.addEventListener("click", clearLocal);
+	var clearLink = $('clearRequest');
+	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
 	save.addEventListener("click", storeData);
 	

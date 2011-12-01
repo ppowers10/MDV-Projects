@@ -25,6 +25,24 @@ p {
 	padding: 10px;
 }
 
+nav {
+		text-align: center;
+}
+
+div {
+	border: 1px solid black;
+	margin: 30px;
+	padding: 10px;
+}
+
+li {
+	color: white;
+	font-size: small;
+	line-height: 1.8em;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
 
 a {
 	color: #564028;

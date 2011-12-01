@@ -18,7 +18,12 @@
 	<header>
 		<h1>Concierge Request</h1>
 	</header>
-  	<form action="#" method="post">
+	<nav>
+			<a href="#" id="clearRequest">Clear Request List</a>
+  			<a href="#" id="displayRequest">Display Request List</a>
+  			<a href="addrequest.html" id="addNew" style="display:none;">Add New Request</a>	
+  	</nav>
+  	<form action="#" method="post" id="conciergeRequest">
   		<fieldset>
   			<legend>Guest Information</legend>
   				<label for="name">Guest's Name:</label>
@@ -63,8 +68,7 @@
   		</fieldset>
   		<footer>
   			<input type="submit" value="Save Request" id="submit">
-  			<a href="#" id="clearRequest">Clear Request List</a>
-  			<a href="#" id="displayRequest">Display Request List</a>	
+  			
   		</footer>
   	</form>
   	<script src="main.js" type="text/javascript"></script>
