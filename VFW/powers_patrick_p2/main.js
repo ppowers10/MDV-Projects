@@ -61,6 +61,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	function toggleControls(n){
+		switch(n){
+			case "on":
+			
+				break;
+			case "off":
+			
+				break;
+			default:
+				return false;
+		}
+	}
+	
 	function storeData(){
 		var id 					= Math.floor(Math.random()*10000001);
 		//Gather up all our form field values and store in an object.
@@ -100,9 +113,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			 makeLi.appendChild(makeSubList);
 			 for(var n in obj){
 			 	var makeSubLi = document.createElement('li');
-			 	makeSublist.appendChild(makeSubLi);
+			 	makeSubList.appendChild(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
-			 	makeSubLi.innHTML = optSubText;
+			 	makeSubLi.innerHTML = optSubText;
 			 }
 		}
 	}
@@ -116,8 +129,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Set Link and Submit Click Events
 	var displayLink = $('displayRequest');
 	displayLink.addEventListener("click", getData);
-	var clearLink = $('clearRequest');
-	clearLink.addEventListener("click", clearLocal);
+	//var clearLink = $('clearRequest');
+	//clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
 	save.addEventListener("click", storeData);
 	
