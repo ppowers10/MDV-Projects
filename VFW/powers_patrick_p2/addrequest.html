@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--Patrick Powers, Project 2 VFW, 1112, 12/1/2011-->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Concierge Request Form" />
+		<meta name="keywords" content="concierge service, concierge, hotel amenities" />
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device-dpi" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content"320" />
+		<title>Add Concierge Request</title>
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+		<!--http://ppowers10.github.com/MDV-Projects/VFW/powers_patrick_p1/index.html-->
+	</head>
+<body>
+	<header>
+		<h1>Concierge Request</h1>
+	</header>
+	<nav>
+			<a href="#" id="clearRequest">Clear Request List</a>
+  			<a href="#" id="displayRequest">Display Request List</a>
+  			<a href="addrequest.html" id="addNew" style="display:none;">Add New Request</a>	
+  	</nav>
+  	<form action="#" method="post" id="conciergeRequest">
+  		<fieldset>
+  			<legend>Guest Information</legend>
+  				<label for="name">Guest's Name:</label>
+  				<input type="text" id="name"/>
+  				<label for="roomnum">Room #:</label>
+  				<input type="text" id="roomnum"/>
+  				<label for="phonenum">Phone Number:</label>
+  				<input type="tel" id="phonenum"/>
+  				<label for="email">Email:</label>
+  				<input type="email" id="email"/>
+  				<label for="contact">Preferred Method of Contact:</label>
+  				<span id="select1"></span>
+	  				<!--<select id="contact"/>
+	  					<option value="email">Email</option>
+	  					<option value="phone">Phone</option>
+	  					<option value="text">Text</option>
+	  				</select> -->
+
+  		</fieldset>
+  		<fieldset>
+  			<legend>Service Requested</legend>
+  				<label for="service">Service Requested:</label>
+  				<span id="select2"></span>
+	  				<!--<select id="service"/>
+	  					<optgroup label="Select a service:">
+	  						<option value="other">'At your service' request</option>
+		  					<option value="eat">Where to eat</option>
+		  					<option value="see">What to see</option>
+		  					<option value="events">Special event recommendation</option>
+		  					<option value="directions">Need directions</option>
+		  				</optgroup>
+	  				</select></br> -->
+  				<label for="price">If applicable, what is guests budget?</label>
+  				<input type=range min="$1" max="$1000" name="budget" type="range" id="budget">
+  				<input type="checkbox" value="Urgent" id="urgent">
+  				<label for="urgent">Urgent?</label>
+  				<label for="startdate">Date Requested:</label>
+  				<input type="date" id="startdate" name="startdate" required aria-required="true">
+  				<label for="comments">Details about service requested:</label>
+  				<textarea id="comments"></textarea>
+
+  		</fieldset>
+  		<footer>
+  			<input type="submit" value="Save Request" id="submit">
+  			
+  		</footer>
+  	</form>
+  	<script src="main.js" type="text/javascript"></script>
+</body>
+</html>
