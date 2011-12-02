@@ -1,3 +1,5 @@
+/*Patrick Powers, Project 2 VFW, 1112, 12/1/2011*/
+
 body {
 	background-color: #B2BEA9;
 	border: 2px solid #564028;
@@ -40,7 +42,6 @@ li {
 	font-size: small;
 	line-height: 1.8em;
 	font-family: Arial, Helvetica, sans-serif;
-	text-decoration: none;
 }
 
 

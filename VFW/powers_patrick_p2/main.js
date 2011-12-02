@@ -1,6 +1,6 @@
 //Patrick Powers
 //VWF Project 2
-//1112
+//1112 12/1/2011
 
 //Wait until the DOM is ready
 window.addEventListener("DOMContentLoaded", function(){
