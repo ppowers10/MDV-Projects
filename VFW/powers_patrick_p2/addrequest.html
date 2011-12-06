@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--Patrick Powers, Project 2 VFW, 1112, 12/1/2011-->
+<!--Patrick Powers, Project 3 VFW, 1112, 12/1/2011-->
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -26,6 +26,7 @@
   	<form action="#" method="post" id="conciergeRequest">
   		<fieldset>
   			<legend>Guest Information</legend>
+  				<ul id="errors"></ul>
   				<label for="name">Guest's Name:</label>
   				<input type="text" id="name"/>
   				<label for="roomnum">Room #:</label>
@@ -58,7 +59,7 @@
 	  				</select></br> -->
   				<label for="price">If applicable, what is guests budget?</label>
   				<input type=range min="$1" max="$1000" name="budget" type="range" id="budget">
-  				<input type="checkbox" value="Urgent" id="urgent">
+  				<input type="checkbox" value="urgent" id="urgent">
   				<label for="urgent">Urgent?</label>
   				<label for="startdate">Date Requested:</label>
   				<input type="date" id="startdate" name="startdate" required aria-required="true">

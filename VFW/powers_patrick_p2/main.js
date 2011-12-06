@@ -1,5 +1,5 @@
 //Patrick Powers
-//VWF Project 2
+//VWF Project 3
 //1112 12/1/2011
 
 //Wait until the DOM is ready
@@ -10,6 +10,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var theElement = document.getElementById(x);
 		return theElement;
 	}
+	
+
 	
 	//Create select field element and populate with options
 	function makeCats1(){
@@ -57,7 +59,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if($('urgent').checked){
 			urgentValue = $('urgent').value;
 		}else{
-			urgentValue = "Not Urgent"
+			urgentValue = "Not Urgent";
 		}
 	}
 	
@@ -72,11 +74,11 @@ window.addEventListener("DOMContentLoaded", function(){
 			case "off":
 				$('conciergeRequest').style.display = "block";
 				$('clearRequest').style.display = "inline";
-				$('displayLink').style.display = "inline";
+				$('displayRequest').style.display = "inline";
 				$('addNew').style.display = "none";
 				$('items').style.display = "none";
 				break;
-				break;
+			//	break;
 			default:
 				return false;
 		}
@@ -117,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		$('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
+			 var linksLi = document.createElement('li');
 			 makeList.appendChild(makeLi);
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
@@ -129,25 +132,159 @@ window.addEventListener("DOMContentLoaded", function(){
 			 	makeSubList.appendChild(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
 			 	makeSubLi.innerHTML = optSubText;
+			 	makeSubList.appendChild(linksLi); 
 			 }
+			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
 	}
 	
+	//Make Items Links functions that creates edit and delete links for each stored item
+	function makeItemLinks(key, linksLi){
+		//add edit signle item link
+		var editLink = document.createElement('a');
+		editLink.href = "#";
+		editLink.key = key;
+		var editText = "Edit Request";
+		editLink.addEventListener("click", editItem);
+		editLink.innerHTML = editText;
+		linksLi.appendChild(editLink);
+		
+		//add Line break
+		var breakTag = document.createElement('br');
+		linksLi.appendChild(breakTag);
+		
+		//add a delete single item link
+		var deleteLink = document.createElement('a');
+		deleteLink.href = "#";
+		deleteLink.key = key;
+		var deleteText = "Delete Request";
+		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.innerHTML = deleteText;
+		linksLi.appendChild(deleteLink);
+	}
+	
+	function editItem(){
+		//Grab the data from our item from Local Storage.
+		var value = localStorage.getItem(this.key);
+		var item = JSON.parse(value);
+		
+		//Show the from to edit the items
+		toggleControls("off");
+		
+		//populate the form feilds with the current localStorage values.
+		$('name').value 	= item.name[1];
+		$('roomnum').value 	= item.roomnum[1];
+		$('phonenum').value = item.phonenum[1];
+		$('email').value 	= item.email[1];
+		$('groups1').value 	= item.groups1[1];
+		$('groups2').value 	= item.groups2[1];
+		$('budget').value 	= item.budget[1];
+		//var checks = document.forms[0].urgent;
+		if(item.urgent[1] == "urgent"){
+			$('urgent').setAttribute("checked", "checked");
+		}
+		$('startdate').value 	= item.startdate[1];
+		$('comments').value 	= item.comments[1];
+		
+		//Remove the initial listener from the input "save" button.
+		save.removeEventListener("click", storeData);
+		//Change Submit button value to Save Edit
+		$('submit').value = "Save Edit";
+		var editSubmit = $('submit');
+		//Save the key value established in this function as a property of the editSubmit event
+		//so we can use that value when we save the data that we edited
+		editSubmit.addEventListener("click", validate);
+		editSubmit.key = this.key;
+	}
+	
+	
 	function clearLocal(){
 		if(localStorage.lenght === 0){
-			alert("There is no data to clear.")
+			alert("There is no data to clear.");
 		}else{
 			localStorage.clear();
 			alert("All requests are deleted!");
 			window.location.reload();
-			return false
+			return false;
+		}
+	}
+		
+	function validate(e){
+		//Define the elements we want to check
+		var getName 		= $('name');
+		var getPhoneNum 	= $('phonenum');
+		var getEmail	 	= $('email');
+		var getGroups2 		= $('groups2');
+		var getComments		= $('comments');
+		
+		//Reset the Error Messages
+		errMsg.innerHTML = "";
+		getName.style.border = "1px solid black";
+		getPhoneNum.style.border = "1px solid black";
+		getEmail.style.border = "1px solid black";
+		getGroups2.style.border = "1px solid black";
+		getComments.style.border = "1px solid black";
+			
+		
+		//Get Error Messages
+		var messageAry = [];
+		
+		//Guest Name Validations
+		if(getName.value === ""){
+			var nameError = "Please enter a name.";
+			getName.style.border = "1px solid red";
+			messageAry.push(nameError);
 		}
 		
+		//Guest Phone Validations
+	   	var rep = /^([0-9]{3})+-([0-9]{3})+-([0-9]{4})$/;
+		if(!(rep.exec(getPhoneNum.value))){
+			var phoneNumError = "Please enter a valid phone number.";
+			getPhoneNum.style.border = "1px solid red";
+			messageAry.push(phoneNumError);
+		}
+
+		//Guest Email Validations
+	   	var ree = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if(!(ree.exec(getEmail.value))){
+			var emailError = "Please enter a valid email address.";
+			getEmail.style.border = "1px solid red";
+			messageAry.push(emailError);
+		}
+		
+			///Service type request (groups2) validations
+		if(getGroups2.value === "--Choose A Service--"){
+			var groups2Error = "Please choose a service.";
+			getGroups2.style.border = "1px solid red";
+			messageAry.push(groups2Error);
+		}
+		
+		//Guest Comments Validations
+		if(getComments.value === ""){
+			var commentsError = "Please explain your service request.";
+			getComments.style.border = "1px solid red";
+			messageAry.push(commentsError);
+		}
+		
+		//If there were errors, display them on the screen
+		if(messageAry.length >= 1){
+			for(var i=0, j=messageAry.length; i < j; i++){
+				var txt = document.createElement('li');
+				txt.innerHTML = messageAry[i];
+				errMsg.appendChild(txt);
+			}
+			e.preventDefault();
+			return false;
+		}else{
+			storeData(this.key);
+		}
 	}
-	//Variable default
-	var bestContact = ["--Best Contact Method--", "Email", "Phone", "Text"];
-	var service = ["--Choose A Service--", "'At your service' request", "Where to eat", "What to see", "Special event recommendation", "Need directions"];		
-	var urgentValue = "Not Urgent";
+	
+		//Variable default
+		var bestContact = ["--Best Contact Method--", "Email", "Phone", "Text"];
+		var service = ["--Choose A Service--", "'At your service' request", "Where to eat", "What to see", "Special event recommendation", "Need directions"];		
+		var urgentValue = "Not Urgent";
+		var errMsg = $('errors');
 	
 	makeCats1();
 	makeCats2();
@@ -158,6 +295,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	var clearLink = $('clearRequest');
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
-	save.addEventListener("click", storeData);
+	save.addEventListener("click", validate);
 	
 });

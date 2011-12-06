@@ -54,6 +54,10 @@ a {
 	line-height: 2em;
 }
 
+div {
+	border: 2px solid #564028;
+}
+
 footer {
 	text-align: center;
 }
