@@ -1,5 +1,11 @@
 /*Patrick Powers, Project 2 VFW, 1112, 12/1/2011*/
 
+
+/*Specificity = If you have two (or more) conflicking CSS rules that point to the same
+ * element, there are some basic rules that a browser follows to determine which one is
+ * most specific and therefore wins out.
+ */
+
 body {
 	background-color: #B2BEA9;
 	border: 2px solid #564028;
@@ -31,11 +37,6 @@ nav {
 		text-align: center;
 }
 
-div {
-	border: 1px solid black;
-	margin: 30px;
-	padding: 10px;
-}
 
 li {
 	color: white;
@@ -104,3 +105,10 @@ input[type=submit]{
 	width: 25%;
 	margin: 5px;
 }
+
+div {
+	border: 1px solid black;
+	margin: 30px;
+	padding: 10px;
+}
+
