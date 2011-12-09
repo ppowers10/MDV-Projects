@@ -24,7 +24,6 @@ header {
 h1 {
 	color: white; 
 	font-family: Arial, Helvetica, sans-serif;
-	
 }
 
 p {
@@ -34,7 +33,7 @@ p {
 }
 
 nav {
-		text-align: center;
+	text-align: center;
 }
 
 
@@ -105,10 +104,3 @@ input[type=submit]{
 	width: 25%;
 	margin: 5px;
 }
-
-div {
-	border: 1px solid black;
-	margin: 30px;
-	padding: 10px;
-}
-
