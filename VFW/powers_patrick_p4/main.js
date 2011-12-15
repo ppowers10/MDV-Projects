@@ -14,6 +14,14 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	
 	//Create select field element and populate with options
+	//I tried to change the makeCats function around to recycle the function, but could
+	//not figure out how to make it work.  I was going to place a variable in the function
+	//ex: "p" and then place the "p" in the place of the select1 and groups1 and then name
+	//the variable that would be passed into the function groups1.  I was also going to change
+	//the id name in the HTML element to groups1 and groups2 so that when I called the the 
+	//function with groups1, it would pass through all the correct spots.  In my head this 
+	//seemed like it could work, but when I tried to make it work, it was not working
+	//correctly.  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
 			selectSpan = $('select1'),
@@ -177,7 +185,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				"roomnum": 		["Room #:", "456"],
 				"phonenum": 	["Phone Number:", "407-340-9876"],
 				"email": 		["Email:", "sarah.smith@email.com"],	
-				"groups1": 		["Contact Method:", "Email"],
+				"groups1": 		["Contact Method:", "Phone"],
 				"groups2": 		["Service Requested:", "Where to Eat"],
 				"budget": 		["Budget:", "20"],
 				"urgent": 		["Urgent:" , "Yes"],
