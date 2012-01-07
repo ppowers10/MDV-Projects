@@ -1,6 +1,6 @@
-//Patrick Powers
-//VWF Project 4
-//1112 12/1/2011
+
+//Patrick Powers, Project 1 MiU, 1201, 1/3/2011
+
 
 //Wait until the DOM is ready
 window.addEventListener("DOMContentLoaded", function(){

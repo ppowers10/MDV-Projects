@@ -1,6 +1,5 @@
-//Patrick Powers
-//VWF Project 4
-//1112 12/1/2011
+
+//Patrick Powers, Project 1 MiU, 1201, 1/3/2011
 
 
 	//JSON Object which will auto populate local storage
