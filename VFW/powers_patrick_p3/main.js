@@ -84,8 +84,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function storeData(){
-		var id 					= Math.floor(Math.random()*10000001);
+	function storeData(key){
+		//If there is no key, this means this is a brand new item and we need a new key
+		if(!key){
+			var id 					= Math.floor(Math.random()*10000001);
+		}else{
+			//set the id to the existing key we're editing so that it will save over the data
+			//the key is the same key that's been passed along from the editSubmit event handler
+			//to the validate function, adn then passed here, into the storeData function
+			var id = key;
+		}
 		//Gather up all our form field values and store in an object.
 		//Oject properties contain array with the form label and input value.
 		getCheckboxValue();
@@ -138,7 +146,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	//Make Items Links functions that creates edit and delete links for each stored item
+	//Make Items Links functions
+	//creates edit and delete links for each stored item
 	function makeItemLinks(key, linksLi){
 		//add edit signle item link
 		var editLink = document.createElement('a');
@@ -158,11 +167,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Request";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 	}
 	
+	//Edit Single Item
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
@@ -197,6 +207,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		editSubmit.key = this.key;
 	}
 	
+	function deleteItem(){
+		var ask = confirm("Are you sure you want to delete this request?");
+		if(ask){
+			localStorage.removeItem(this.key);
+			alert("Request was deleted.");
+			window.location.reload();
+		}else{
+			alert("Request was not deleted.");
+		}
+	}
 	
 	function clearLocal(){
 		if(localStorage.lenght === 0){
@@ -276,6 +296,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			return false;
 		}else{
+			//If all is OK, save our data.  Send the key value (which came form the edit data function
+			//Remember this key value was passed through the editSubmit event listner as a property.	
 			storeData(this.key);
 		}
 	}

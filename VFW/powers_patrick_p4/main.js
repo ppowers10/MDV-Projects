@@ -1,5 +1,5 @@
 //Patrick Powers
-//VWF Project 3
+//VWF Project 4
 //1112 12/1/2011
 
 //Wait until the DOM is ready
@@ -14,6 +14,14 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	
 	//Create select field element and populate with options
+	//I tried to change the makeCats function around to recycle the function, but could
+	//not figure out how to make it work.  I was going to place a variable in the function
+	//ex: "p" and then place the "p" in the place of the select1 and groups1 and then name
+	//the variable that would be passed into the function groups1.  I was also going to change
+	//the id name in the HTML element to groups1 and groups2 so that when I called the the 
+	//function with groups1, it would pass through all the correct spots.  In my head this 
+	//seemed like it could work, but when I tried to make it work, it was not working
+	//correctly.  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
 			selectSpan = $('select1'),
@@ -84,8 +92,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	function storeData(){
-		var id 					= Math.floor(Math.random()*10000001);
+	function storeData(key){
+		//If there is no key, this means this is a brand new item and we need a new key
+		if(!key){
+			var id 					= Math.floor(Math.random()*10000001);
+		}else{
+			//set the id to the existing key we're editing so that it will save over the data
+			//the key is the same key that's been passed along from the editSubmit event handler
+			//to the validate function, adn then passed here, into the storeData function
+			var id = key;
+		}
 		//Gather up all our form field values and store in an object.
 		//Oject properties contain array with the form label and input value.
 		getCheckboxValue();
@@ -108,7 +124,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getData(){
 		toggleControls('on');
 		if(localStorage.length === 0){
-			alert("There are no current requests.");
+			autoFillData();
+			alert("There are no current requests, so default data was added.");
 		}
 		//Write Data from Local Stograge to the browser.
 		var makeDiv = document.createElement('div');
@@ -127,6 +144,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			 var obj = JSON.parse(value);
 			 var makeSubList = document.createElement('ul');
 			 makeLi.appendChild(makeSubList);
+			 getImage(obj.groups1[1], makeSubList);
 			 for(var n in obj){
 			 	var makeSubLi = document.createElement('li');
 			 	makeSubList.appendChild(makeSubLi);
@@ -138,7 +156,52 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	//Make Items Links functions that creates edit and delete links for each stored item
+	//get the image for the right category per request
+	function getImage(catName, makeSubList){
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src", "images/"+ catName +".png");
+		imageLi.appendChild(newImg);
+	}
+	
+	//JSON Object which will auto populate local storage
+	function autoFillData(){
+	/*	var json = {
+			"request1": {
+				"name": 		["Name:", "John Doe"],
+				"roomnum": 		["Room #:", "123"],
+				"phonenum": 	["Phone Number:", "407-340-7829"],
+				"email": 		["Email:", "john.doe@email.com"],	
+				"groups1": 		["Contact Method:", "Email"],
+				"groups2": 		["Service Requested:", "Where to Eat"],
+				"budget": 		["Budget:", "15"],
+				"urgent": 		["Urgent:" , "Yes"],
+				"startdate": 	["Date Requested:", "12-10-2011"],
+				"comments": 	["Comments:", "Can you help me find a place to eat?"]
+			},
+			"request2": {
+				"name": 		["Name:", "Sarah Smith"],
+				"roomnum": 		["Room #:", "456"],
+				"phonenum": 	["Phone Number:", "407-340-9876"],
+				"email": 		["Email:", "sarah.smith@email.com"],	
+				"groups1": 		["Contact Method:", "Phone"],
+				"groups2": 		["Service Requested:", "Where to Eat"],
+				"budget": 		["Budget:", "20"],
+				"urgent": 		["Urgent:" , "Yes"],
+				"startdate": 	["Date Requested:", "12-10-2011"],
+				"comments": 	["Comments:", "I love steak and seafood.  Do you have any recommendations?"]
+			}
+	}; */
+		//Store the JSON OBJECT into Local Storage
+		for(var n in json){
+			var id = Math.floor(Math.random()*10000001);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		}
+	}
+	
+	//Make Items Links functions
+	//creates edit and delete links for each stored item
 	function makeItemLinks(key, linksLi){
 		//add edit signle item link
 		var editLink = document.createElement('a');
@@ -158,11 +221,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Request";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 	}
 	
+	//Edit Single Item
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
@@ -197,6 +261,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		editSubmit.key = this.key;
 	}
 	
+	function deleteItem(){
+		var ask = confirm("Are you sure you want to delete this request?");
+		if(ask){
+			localStorage.removeItem(this.key);
+			alert("Request was deleted.");
+			window.location.reload();
+		}else{
+			alert("Request was not deleted.");
+		}
+	}
 	
 	function clearLocal(){
 		if(localStorage.lenght === 0){
@@ -276,6 +350,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			return false;
 		}else{
+			//If all is OK, save our data.  Send the key value (which came form the edit data function
+			//Remember this key value was passed through the editSubmit event listner as a property.	
 			storeData(this.key);
 		}
 	}

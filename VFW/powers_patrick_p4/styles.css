@@ -1,9 +1,15 @@
-/*Patrick Powers, Project 2 VFW, 1112, 12/1/2011*/
+/*Patrick Powers, Project 3 VFW, 1112, 12/1/2011*/
+
+
+/*Specificity = If you have two (or more) conflicking CSS rules that point to the same
+ * element, there are some basic rules that a browser follows to determine which one is
+ * most specific and therefore wins out.
+ */
 
 body {
 	background-color: #B2BEA9;
 	border: 2px solid #564028;
-	width: 480px; 
+	width: auto; 
 	height: 100%;
 	overflow: scroll;
 }
@@ -18,7 +24,6 @@ header {
 h1 {
 	color: white; 
 	font-family: Arial, Helvetica, sans-serif;
-	
 }
 
 p {
@@ -28,20 +33,16 @@ p {
 }
 
 nav {
-		text-align: center;
+	text-align: center;
 }
 
-div {
-	border: 1px solid black;
-	margin: 30px;
-	padding: 10px;
-}
 
 li {
 	color: white;
 	font-size: small;
 	line-height: 1.8em;
 	font-family: Arial, Helvetica, sans-serif;
+	list-style: none;
 }
 
 
@@ -56,6 +57,7 @@ a {
 
 div {
 	border: 2px solid #564028;
+	margin: 25px;
 }
 
 footer {

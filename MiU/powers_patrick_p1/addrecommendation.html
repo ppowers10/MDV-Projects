@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--Patrick Powers, Project 1 MiU, 1201, 1/3/2011-->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Concierge Request Form" />
+		<meta name="keywords" content="concierge service, concierge, hotel amenities" />
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device-dpi" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content = "320" />
+		<title>Add Concierge Request</title>
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+		<!--http://ppowers10.github.com/MDV-Projects/VFW/powers_patrick_p1/index.html-->
+	</head>
+<body>
+	<header>
+		<a href="index.html" style="text-decoration: none;"><h1>Friendly Recommendation</h1></a>
+	</header>
+	<form align="center">
+		<a href="#">
+			<input type="button" value="Clear All" class="viewlists" id="clearRecommendation" />
+		</a>
+  		<a href="#">
+  			<input type="button" value="Display All" class="viewlists" id="displayRecommendation" />
+  		</a>
+  		<a href="addrecommendation.html">
+  			<input type="button" value="Add Recommendation" class="viewlists" id="addNew" style="display:none;" />
+  		</a>	
+  	</form>
+<!--	<nav>
+		<a href="#" class="viewlists" id="clearRecommendation">Clear All</a>
+  		<a href="#" class="viewlists" id="displayRecommendation">Display All</a>
+  		<a href="addrecommendation.html" class="viewlists" id="addNew" style="display:none;">Add New Recommendation</a>	
+  	</nav>
+-->  	<form action="#" method="post" id="recommendation">
+  		<fieldset>
+  			<legend>Recommendation Info</legend>
+ 			<label for="contact">Type of Recommendation:</label>
+ 			<span id="select1"></span>
+  			<label for="name">Recommendation Name:</label>
+  			<input type="text" id="name"/>
+  			<label for="rating">Rating (1=bad, 5=amazing):</label>
+  			<input type="range" min="1" max="5" name="rating" id="rating" />
+  			<label for="phonenum">Phone Number:</label>
+  			<input type="tel" id="phonenum"/>
+  			<label for="email">Email:</label>
+  			<input type="email" id="email"/>
+  			<label for="comments">Details about service requested:</label>
+  			<textarea id="comments"></textarea>
+			<label for="location">Location:</label>
+  			<input type="location" id="location"/>
+  			<ul id="errors"></ul>
+  		</fieldset>
+  		<footer>
+  			<input type="submit" value="Save Request" id="submit" />
+  			
+  		</footer>
+  	</form>
+  	<script src="main.js" type="text/javascript"></script>
+  	<script src="json.js" type="text/javascript"></script>
+</body>
+</html>
