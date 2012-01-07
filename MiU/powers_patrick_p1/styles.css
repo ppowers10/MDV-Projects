@@ -87,6 +87,12 @@ h1 {
 	font-family: Arial, Helvetica, sans-serif;	
 }
 
+h2 {
+	color: white; 
+	font-family: Arial, Helvetica, sans-serif;	
+	font-size: 20px;
+}
+
 body {
 	background-color: #B2BEA9;
 	border: 0px solid #564028;
