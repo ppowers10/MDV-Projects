@@ -27,9 +27,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			selectSpan = $('select1'),
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "groups1");
-		for(var i=0, j=bestContact.length; i<j; i++){
+		for(var i=0, j=recommendationType.length; i<j; i++){
 			var makeOption = document.createElement('option');
-			var optText = bestContact[i];
+			var optText = recommendationType[i];
 			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML =  optText;
 			makeSelect.appendChild(makeOption);
@@ -37,20 +37,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		selectSpan.appendChild(makeSelect);
 	}
 	
-	function makeCats2(){
-		var formTag = document.getElementsByTagName("form"), //formTag is an array
-			selectSpan = $('select2'),
-			makeSelect = document.createElement('select');
-			makeSelect.setAttribute("id", "groups2");
-		for(var i=0, j=service.length; i<j; i++){
-			var makeOption = document.createElement('option');
-			var optText = service[i];
-			makeOption.setAttribute("value", optText);
-			makeOption.innerHTML =  optText;
-			makeSelect.appendChild(makeOption);
-		}
-		selectSpan.appendChild(makeSelect);
-	}
+
 	//Find Value of selected radio button...this is for learning only since I have no radio buttons
 	/*
 	function getSelectedRadio(){
@@ -61,7 +48,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 		}
 	}
-	*/
+	
 	//Find the value of selected checkbox.
 	function getCheckboxValue(){
 		if($('urgent').checked){
@@ -70,19 +57,19 @@ window.addEventListener("DOMContentLoaded", function(){
 			urgentValue = "Not Urgent";
 		}
 	}
-	
+	*/
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$('conciergeRequest').style.display = "none";
-				$('clearRequest').style.display = "inline";
-				$('displayRequest').style.display = "none";
+				$('recommendation').style.display = "none";
+				$('clearRecommendation').style.display = "inline";
+				$('displayRecommendation').style.display = "none";
 				$('addNew').style.display = "inline";
 				break;
 			case "off":
-				$('conciergeRequest').style.display = "block";
-				$('clearRequest').style.display = "inline";
-				$('displayRequest').style.display = "inline";
+				$('recommendation').style.display = "block";
+				$('clearRecommendation').style.display = "inline";
+				$('displayRecommendation').style.display = "inline";
 				$('addNew').style.display = "none";
 				$('items').style.display = "none";
 				break;
@@ -104,28 +91,25 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		//Gather up all our form field values and store in an object.
 		//Oject properties contain array with the form label and input value.
-		getCheckboxValue();
+		//getCheckboxValue();
 		var item 				= {};
-			item.name			= ["Guest's Name:  ", $('name').value];
-			item.roomnum		= ["Room #:  ", $('roomnum').value];
+			item.groups1		= ["Recommendation Type:  ", $('groups1').value];
+			item.name			= ["Recommendation Name:  ", $('name').value];
+			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
-			item.groups1		= ["Contact Method:  ", $('groups1').value];
-			item.groups2		= ["Service Requested:  ", $('groups2').value];
-			item.budget			= ["Budget:", $('budget').value];
-			item.urgent			= ["Urgent:  ", urgentValue];
-			item.startdate		= ["Date Requested:  ", $('startdate').value];	
 			item.comments		= ["Comments:  ", $('comments').value];
+			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
-		alert("Request Saved");
+		alert("Recommendation Saved");
 	}
 	
 	function getData(){
 		toggleControls('on');
 		if(localStorage.length === 0){
 			autoFillData();
-			alert("There are no current requests, so default data was added.");
+			alert("There are no current recommendations, so default data was added.");
 		}
 		//Write Data from Local Stograge to the browser.
 		var makeDiv = document.createElement('div');
@@ -136,6 +120,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		$('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
+			 makeLi.setAttribute("id", "recos")
 			 var linksLi = document.createElement('li');
 			 makeList.appendChild(makeLi);
 			 var key = localStorage.key(i);
@@ -167,60 +152,58 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	//JSON Object which will auto populate local storage
 	function autoFillData(){
-	/*	var json = {
+/*		var json = {
 			"request1": {
-				"name": 		["Name:", "John Doe"],
-				"roomnum": 		["Room #:", "123"],
+				"groups1": 		["Select Recommendation Type:", "Event"],
+				"name": 		["Name:", "Dave Mathews Band"],
+				"rating": 		["Rating (1=bad, 5=amazing):", "1"],
 				"phonenum": 	["Phone Number:", "407-340-7829"],
 				"email": 		["Email:", "john.doe@email.com"],	
-				"groups1": 		["Contact Method:", "Email"],
-				"groups2": 		["Service Requested:", "Where to Eat"],
-				"budget": 		["Budget:", "15"],
-				"urgent": 		["Urgent:" , "Yes"],
-				"startdate": 	["Date Requested:", "12-10-2011"],
-				"comments": 	["Comments:", "Can you help me find a place to eat?"]
+				"comments": 	["Comments:", "The DMB concert was amazing"]
+				"location": 	["Location:", "Amway in Orlando"]
 			},
 			"request2": {
-				"name": 		["Name:", "Sarah Smith"],
-				"roomnum": 		["Room #:", "456"],
-				"phonenum": 	["Phone Number:", "407-340-9876"],
-				"email": 		["Email:", "sarah.smith@email.com"],	
-				"groups1": 		["Contact Method:", "Phone"],
-				"groups2": 		["Service Requested:", "Where to Eat"],
-				"budget": 		["Budget:", "20"],
-				"urgent": 		["Urgent:" , "Yes"],
-				"startdate": 	["Date Requested:", "12-10-2011"],
-				"comments": 	["Comments:", "I love steak and seafood.  Do you have any recommendations?"]
-			}
-	}; */
+				"groups1": 		["Select Recommendation Type:", "Event"],
+				"name": 		["Name:", "Dave Mathews Band"],
+				"rating": 		["Rating (1=bad, 5=amazing):", "1"],
+				"phonenum": 	["Phone Number:", "407-340-7829"],
+				"email": 		["Email:", "john.doe@email.com"],	
+				"comments": 	["Comments:", "The DMB concert was amazing"]
+				"location": 	["Location:", "Amway in Orlando"]
+				}
+		};
+*/		
+		json;
 		//Store the JSON OBJECT into Local Storage
 		for(var n in json){
 			var id = Math.floor(Math.random()*10000001);
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
-	
+
 	//Make Items Links functions
 	//creates edit and delete links for each stored item
 	function makeItemLinks(key, linksLi){
 		//add edit signle item link
 		var editLink = document.createElement('a');
+		editLink.setAttribute("id", "changeItem");
 		editLink.href = "#";
 		editLink.key = key;
-		var editText = "Edit Request";
+		var editText = "Edit";
 		editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		linksLi.appendChild(editLink);
 		
 		//add Line break
-		var breakTag = document.createElement('br');
-		linksLi.appendChild(breakTag);
+	//	var breakTag = document.createElement('br');
+	//	linksLi.appendChild(breakTag);
 		
 		//add a delete single item link
 		var deleteLink = document.createElement('a');
+		deleteLink.setAttribute("id", "deleteItem");
 		deleteLink.href = "#";
 		deleteLink.key = key;
-		var deleteText = "Delete Request";
+		var deleteText = "Delete";
 		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
@@ -236,19 +219,13 @@ window.addEventListener("DOMContentLoaded", function(){
 		toggleControls("off");
 		
 		//populate the form feilds with the current localStorage values.
+		$('groups1').value 	= item.groups1[1];
 		$('name').value 	= item.name[1];
-		$('roomnum').value 	= item.roomnum[1];
+		$('rating').value 	= item.rating[1];
 		$('phonenum').value = item.phonenum[1];
 		$('email').value 	= item.email[1];
-		$('groups1').value 	= item.groups1[1];
-		$('groups2').value 	= item.groups2[1];
-		$('budget').value 	= item.budget[1];
-		//var checks = document.forms[0].urgent;
-		if(item.urgent[1] == "urgent"){
-			$('urgent').setAttribute("checked", "checked");
-		}
-		$('startdate').value 	= item.startdate[1];
-		$('comments').value 	= item.comments[1];
+		$('comments').value = item.comments[1];
+		$('location').value = item.location[1];
 		
 		//Remove the initial listener from the input "save" button.
 		save.removeEventListener("click", storeData);
@@ -262,22 +239,22 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function deleteItem(){
-		var ask = confirm("Are you sure you want to delete this request?");
+		var ask = confirm("Are you sure you want to delete this recommendation?");
 		if(ask){
 			localStorage.removeItem(this.key);
-			alert("Request was deleted.");
+			alert("Recommendation was deleted.");
 			window.location.reload();
 		}else{
-			alert("Request was not deleted.");
+			alert("Recommendation was not deleted.");
 		}
 	}
 	
 	function clearLocal(){
 		if(localStorage.lenght === 0){
-			alert("There is no data to clear.");
+			alert("There are no recommendations to clear.");
 		}else{
 			localStorage.clear();
-			alert("All requests are deleted!");
+			alert("All recommendations were deleted!");
 			window.location.reload();
 			return false;
 		}
@@ -288,7 +265,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var getName 		= $('name');
 		var getPhoneNum 	= $('phonenum');
 		var getEmail	 	= $('email');
-		var getGroups2 		= $('groups2');
+		var getGroups1 		= $('groups1');
 		var getComments		= $('comments');
 		
 		//Reset the Error Messages
@@ -296,12 +273,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		getName.style.border = "1px solid black";
 		getPhoneNum.style.border = "1px solid black";
 		getEmail.style.border = "1px solid black";
-		getGroups2.style.border = "1px solid black";
+		getGroups1.style.border = "1px solid black";
 		getComments.style.border = "1px solid black";
 			
 		
 		//Get Error Messages
 		var messageAry = [];
+		
+		///Service type request (groups1) validations
+		if(getGroups1.value === "--Select Recommendation Type--"){
+			var groups1Error = "Please choose a recommendation.";
+			getGroups1.style.border = "1px solid red";
+			messageAry.push(groups1Error);
+		}
 		
 		//Guest Name Validations
 		if(getName.value === ""){
@@ -324,13 +308,6 @@ window.addEventListener("DOMContentLoaded", function(){
 			var emailError = "Please enter a valid email address.";
 			getEmail.style.border = "1px solid red";
 			messageAry.push(emailError);
-		}
-		
-			///Service type request (groups2) validations
-		if(getGroups2.value === "--Choose A Service--"){
-			var groups2Error = "Please choose a service.";
-			getGroups2.style.border = "1px solid red";
-			messageAry.push(groups2Error);
 		}
 		
 		//Guest Comments Validations
@@ -357,18 +334,16 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 		//Variable default
-		var bestContact = ["--Best Contact Method--", "Email", "Phone", "Text"];
-		var service = ["--Choose A Service--", "'At your service' request", "Where to eat", "What to see", "Special event recommendation", "Need directions"];		
+		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
 		var urgentValue = "Not Urgent";
 		var errMsg = $('errors');
 	
 	makeCats1();
-	makeCats2();
 	
 	//Set Link and Submit Click Events
-	var displayLink = $('displayRequest');
+	var displayLink = $('displayRecommendation');
 	displayLink.addEventListener("click", getData);
-	var clearLink = $('clearRequest');
+	var clearLink = $('clearRecommendation');
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
 	save.addEventListener("click", validate);

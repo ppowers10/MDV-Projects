@@ -1,0 +1,217 @@
+/*Patrick Powers, Project 3 VFW, 1112, 12/1/2011*/
+
+
+/*Specificity = If you have two (or more) conflicking CSS rules that point to the same
+ * element, there are some basic rules that a browser follows to determine which one is
+ * most specific and therefore wins out.
+ */
+#search{
+	border: 0px;
+	margin: 0px;
+}
+
+.searchform {
+    display: inline-block;
+    padding: 8px 2px 8px 2px;
+}
+.searchform input {
+    font: 100% Arial,Helvetica,sans-serif;
+}
+.searchform .searchfield {
+    border-radius: 10px 10px 10px 10px;
+    padding: 6px 6px 6px 8px;
+    width: 200px;
+}
+
+.searchform .searchbutton {
+    border-radius: 10px 10px 10px 10px;
+    color: black;
+    font-size: 11px;
+    height: 27px;
+    width: 60px;
+}
+
+#addNewRecommendation {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 80px;
+	font-size: 20px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px;
+}
+
+nav {
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+#items {
+	color: black
+}
+
+a {
+	color: #564028;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	text-decoration: none;
+	outline: none;
+	line-height: 2em;
+}
+
+.nav {
+	background: #869A77;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 25px;
+	font-size: 20px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	display: block;
+	text-decoration:none;
+}
+
+header {
+	background: #869A77;
+	padding: .1px;
+	text-align: center;
+	border: 1px solid #564028;
+	border-radius: 10px 10px 10px 10px;
+}
+
+h1 {
+	color: white; 
+	font-family: Arial, Helvetica, sans-serif;	
+}
+
+body {
+	background-color: #B2BEA9;
+	border: 0px solid #564028;
+	width: auto; 
+	height: 100%;
+	overflow: scroll;
+}
+
+ul {
+	padding: 5px;
+}
+
+li {
+	color: white;
+	font-size: small;
+	line-height: 1.8em;
+	font-family: Arial, Helvetica, sans-serif;
+	list-style: none;
+}
+
+
+footer {
+	text-align: center;
+}
+
+fieldset {
+	border-radius: 10px 10px 10px 10px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #564028;
+	line-height: 2em;
+}
+
+label {
+	display: block;
+	color: white;
+	font-size: medium;
+	line-height: 1.8em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+}
+
+select {
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+}
+
+textarea {
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+}
+
+input[type=submit]{
+	border-radius: 10px 10px 10px 10px;
+    color: black;
+    font-size: 11px;
+    height: 27px;
+    width: 100px;
+    margin: 5px;
+}
+
+#addNewRecommendation {
+	border-radius: 10px 10px 10px 10px;	
+	border: 1px solid #564028;
+	vertical-align: middle;
+}
+
+#recos {
+	color: white; 
+	border-radius: 10px 10px 10px 10px;	
+	border: 1px solid #564028;
+	vertical-align: middle;
+	list-style: none;
+	padding: 10px;
+	border: 2px solid #564028;
+	text-decoration:none;
+	margin: 5px;
+}
+
+input.viewlists {
+	background: #869A77;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 10px 5px 5px 10px;
+	padding: 3px;
+	display: inline;
+	width: 150px;
+	text-decoration:none;
+}
+
+li #deleteItem{
+	background: #869A77;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px 10px 5px 10px;
+	padding: 3px 20px 3px 20px;
+	display: inline;
+	text-decoration:none;
+	list-style: none;
+}
+
+li #changeItem{
+	background: #869A77;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px 10px 5px 10px;
+	padding: 3px 20px 3px 20px;
+	display: inline;
+	width: 150px;
+	text-decoration:none;
+	list-style: none;
+}
