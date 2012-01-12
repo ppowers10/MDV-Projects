@@ -20,6 +20,10 @@ a.ui-link-inherit{
 	margin:0px;
 }
 
+header.addItemHeader{
+	background: #7298C1;
+}
+
 #search{
 	border: 0px;
 	margin: 0px;

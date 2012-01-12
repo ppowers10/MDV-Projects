@@ -3,9 +3,7 @@
 
 
 //Wait until the DOM is ready
-$( document ).delegate("#addNewNow", "pagebeforecreate", function() {
-//$( document ).delegate("#addNewNow", "pagecreate", function() {
-//window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("DOMContentLoaded", function(){
 
 	//getElementById Function
 	function $(x){
@@ -92,7 +90,7 @@ $( document ).delegate("#addNewNow", "pagebeforecreate", function() {
 		$('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
-			 makeLi.setAttribute("id", "recos")
+			 makeLi.setAttribute("class", "recos")
 			 var linksLi = document.createElement('li');
 			 makeList.appendChild(makeLi);
 			 var key = localStorage.key(i);

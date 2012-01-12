@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		$('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
-			 makeLi.setAttribute("id", "recos")
+			 makeLi.setAttribute("class", "recos")
 			 var linksLi = document.createElement('li');
 			 makeList.appendChild(makeLi);
 			 var key = localStorage.key(i);
