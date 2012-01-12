@@ -1,0 +1,341 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Friendly Recommendation</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+<!-->Home Page<-->		
+	<div data-role="page" data-theme="b" id="home">
+		<a href="#home">
+			<div data-role="header" data-theme="b" data-position="fixed" align="center" >
+				<img src="images/fr_header.png" />
+			</div>
+		</a>
+		<div data-role="content">
+			<div align="center">
+				<a href="addrecommendation.html">
+			<img src="images/calltoaction.png" /></a>
+		</div>
+		</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-theme="b" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#restaurants" data-icon="arrow-r">
+							<h3>Restaurants</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#bars" data-icon="arrow-r">
+							<h3>Bars</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#attractions" data-icon="arrow-r">
+							<h3>Attractions</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#events" data-icon="arrow-r">
+							<h3>Events</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#shopping" data-icon="arrow-r">
+							<h3>Shopping</h3>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	
+	</div>
+
+<!-->List All Page<-->	
+	<div data-role="page" data-theme="b" id="listAll" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#addNewNow">
+				<img src="images/calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div data-role="collapsible">
+				<h3>Redlight Redlight</h3>
+				<p>Redlight is a great place to kick it and dring some very interesting beers.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Filling Station</h3>
+				<p>Said to have the best burgers in town, but also a great bar.  Pool tables, games and plenty of seating.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Outback Steakhouse</h3>
+				<p>No Rules, just right.  Exaclty the way that I like it.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>24 Hours Brazil</h3>
+				<p>Doesn't look like the best place from the outside, but the food is great and relatively cheap.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>5 Guys</h3>
+				<p>Great burgers and that's about it :).</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Chili's</h3>
+				<p>An all around good place to eat.  The service is always great.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Disney World</h3>
+				<p>Not much more to say other than its great!</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Sea World</h3>
+				<p>Never been there but I've heard it's a ton of fun.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Universal</h3>
+				<p>Harry Potter is a fun area to check out.  Make sure to get the butter beer.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Blue Springs</h3>
+				<p>Central Florida has a lot of great places to see the natual springs, but Blue Springs is a must see.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Pour House</h3>
+				<p>Don't let the name trick you.  It is not the cheapest place to get a drink but they do have a great selection.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Orlando Ale House</h3>
+				<p>Tons of beer on tap and the food is also great.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Orlando Outlets</h3>
+				<p>Always packed and always full of good deals.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Chevy dealer on Semoran</h3>
+				<p>Got a great deal on my last car.  Make sure to ask for Bob.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Lowes Home Improvement</h3>
+				<p>The Lowes on Semoran is great.  I've always found what I needed and the employees are very helpful.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>William Senoma</h3>
+				<p>Nice place to walk around, but a little $$$ for me.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Dave Matthews Band</h3>
+				<p>Playing at the Amway Arena.  One of the best concerts I've ever seen.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Walk-A-Thon</h3>
+				<p>It's a great cause.  Contact John to donate.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Orlando Magic</h3>
+				<p>With the new Arena and basketball starting again, you have to see a game.</p>
+			</div>
+			<div data-role="collapsible">
+				<h3>Tampa Bay Bucks</h3>
+				<p>If you can make it to a game, it is well worth it.</p>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+<!-->Restaurants Page<-->	
+	<div data-role="page" data-theme="b" id="restaurants">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#addNewNow">
+				<img src="images/ctarestaurants.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+<!-->Bars Page<-->
+	<div data-role="page" data-theme="b" id="bars">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#addNewNow">
+				<img src="images/ctabars.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+
+<!-->Attractions Page<-->
+	<div data-role="page" data-theme="b" id="attractions">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#addNewNow">
+				<img src="images/ctaattractions.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>	
+
+<!-->Events Page<-->
+	<div data-role="page" data-theme="b" id="events">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#addNewNow">
+				<img src="images/ctaevents.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>		
+
+<!-->Shopping Page<-->
+	<div data-role="page" data-theme="b" id="shopping">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#addNewNow">
+				<img src="images/ctashopping.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>	
+	
+	
+	
+
+	
+	
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/main.js" />
+	<script type="text/javascript" src="js/json.js" />
+</body>
+</html>

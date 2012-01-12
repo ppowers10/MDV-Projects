@@ -1,0 +1,111 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Friendly Recommendation</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+	<div data-role="page">
+		
+		<div data-role="header">
+			<h1>Friendly Recommendation</h1>
+			<p align="center">Create, Save, and Share your Recommendation with Friends.</p>
+		</div>
+		
+		<div data-role="content">
+			<div>	
+				<ul class="ui-listview" data-role="listview">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+			<div>	
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#restaurants" data-icon="arrow-r">
+							<h3>Restaurants</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#bars" data-icon="arrow-r">
+							<h3>Bars</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#attractions" data-icon="arrow-r">
+							<h3>Attractions</h3>
+						</a>
+					</li>
+					<li>
+						<a href="events" data-icon="arrow-r">
+							<h3>Events</h3>
+						</a>
+					</li>
+					<li>
+						<a href="shopping" data-icon="arrow-r">
+							<h3>Shopping</h3>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<div data-role="footer" data-position="fixed">
+			<h4>Footer</h4>
+		</div>
+	
+	</div>
+	
+<!-->
+		<a href="addrecommendation.html">
+			<div align="center" id="addNewRecommendation"> Create, Save, and Share your 
+			recommendations with friends.  </br> Add one now!
+			</div> 
+		</a>
+		
+		<nav id="nav" align="center">
+			<h2>Recommendation Groups:</h2>
+			<a href="under.html"><div class="nav" id="listAll">List all Recommendations</div></a>
+			<a href="under.html"><div class="nav" id="restuarants">Restaurants</div></a>
+			<a href="under.html"><div class="nav" id="bars">Bars</div></a>
+			<a href="under.html"><div class="nav" id="attractionss">Attractions</div></a>
+			<a href="under.html"><div class="nav" id="events">Events</div></a>
+			<a href="under.html"><div class="nav" id="shopping">Shopping</div> </a>
+		</nav>
+	
+</-->	
+	
+	
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/main.js" />
+</body>
+</html>

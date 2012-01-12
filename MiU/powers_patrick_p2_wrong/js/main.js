@@ -3,7 +3,9 @@
 
 
 //Wait until the DOM is ready
-window.addEventListener("DOMContentLoaded", function(){
+$( document ).delegate("#addNewNow", "pagebeforecreate", function() {
+//$( document ).delegate("#addNewNow", "pagecreate", function() {
+//window.addEventListener("DOMContentLoaded", function(){
 
 	//getElementById Function
 	function $(x){
