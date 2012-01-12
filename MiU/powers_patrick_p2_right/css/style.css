@@ -20,6 +20,15 @@ a.ui-link-inherit{
 	margin:0px;
 }
 
+#home .ui-grid-a div{
+	text-align:center;
+}
+
+.homeIcons {
+	padding: 0px 0px 5px 0px;
+	margin: 0px;
+}
+
 header.addItemHeader{
 	background: #7298C1;
 }
@@ -94,26 +103,18 @@ a {
 }
 
 header {
-	background: #869A77;
-	padding: .1px;
+	width: 100%;
+	background: #6089B2;
 	text-align: center;
-	border: 1px solid #564028;
-	border-radius: 10px 10px 10px 10px;
+	padding: 4px 0px 0px 0px;
 }
 
-h1 {
-	color: white; 
-	font-family: Arial, Helvetica, sans-serif;	
-}
-
-h2 {
-	color: white; 
-	font-family: Arial, Helvetica, sans-serif;	
-	font-size: 20px;
+nav#rating{
+	background: #6089B2;
 }
 
 body {
-	background-color: #B2BEA9;
+	background-color: #e3e3e3;
 	border: 0px solid #564028;
 	width: auto; 
 	height: 100%;
@@ -141,26 +142,32 @@ fieldset {
 	border-radius: 10px 10px 10px 10px;
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #564028;
+	color: #000000;
 	line-height: 2em;
 }
 
 label {
 	display: block;
-	color: white;
+	color: #000000;
 	font-size: medium;
 	line-height: 1.8em;
 	font-family: Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
 }
 
 input {
 	width: 100%;
 	border-radius: 10px 10px 10px 10px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 2em
 }
 
 select {
 	width: 100%;
 	border-radius: 10px 10px 10px 10px;
+	background: #6089B2;
 }
 
 textarea {
@@ -170,6 +177,7 @@ textarea {
 
 input[type=submit]{
 	border-radius: 10px 10px 10px 10px;
+    background:#6089B2;
     color: black;
     font-size: 11px;
     height: 27px;
@@ -196,10 +204,10 @@ input[type=submit]{
 }
 
 input.viewlists {
-	background: #869A77;
+	background: #6089B2;
 	border: 1px solid #564028;
 	vertical-align: middle;
-    color: white;
+    color: black;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	border-radius: 10px 10px 10px 10px;
@@ -211,7 +219,7 @@ input.viewlists {
 }
 
 li #deleteItem{
-	background: #869A77;
+	background: #6089B2;
 	border: 1px solid #564028;
 	vertical-align: middle;
     color: white;
@@ -226,7 +234,7 @@ li #deleteItem{
 }
 
 li #changeItem{
-	background: #869A77;
+	background: #6089B2;
 	border: 1px solid #564028;
 	vertical-align: middle;
     color: white;

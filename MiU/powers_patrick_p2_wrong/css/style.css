@@ -29,6 +29,10 @@ a.ui-link-inherit{
 	margin: 0px;
 }
 
+.ui-content ui-body-b{
+	border: 1px black;
+}
+
 header.addItemHeader{
 	background: #7298C1;
 }
