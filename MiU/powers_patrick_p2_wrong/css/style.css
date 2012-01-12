@@ -20,8 +20,13 @@ a.ui-link-inherit{
 	margin:0px;
 }
 
-#home .ui-grid-b div{
+#home .ui-grid-a div{
 	text-align:center;
+}
+
+.homeIcons {
+	padding: 0px 0px 5px 0px;
+	margin: 0px;
 }
 
 header.addItemHeader{
