@@ -11,23 +11,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		return theElement;
 	}
 	
- 
-	function makeCats1(){
-		var formTag = document.getElementsByTagName("form"), //formTag is an array
-			selectSpan = $('select1'),
-			makeSelect = document.createElement('select');
-			makeSelect.setAttribute("id", "groups1");
-		for(var i=0, j=recommendationType.length; i<j; i++){
-			var makeOption = document.createElement('option');
-			var optText = recommendationType[i];
-			makeOption.setAttribute("value", optText);
-			makeOption.innerHTML =  optText;
-			makeSelect.appendChild(makeOption);
-		}
-		selectSpan.appendChild(makeSelect);
-	}
 	
-
 	function toggleControls(n){
 		switch(n){
 			case "on":
@@ -66,9 +50,10 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.groups1		= ["Recommendation Type:  ", $('groups1').value];
 			item.name			= ["Recommendation Name:  ", $('name').value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
+			item.comments		= ["Comments:  ", $('comments').value];
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
-			item.comments		= ["Comments:  ", $('comments').value];
+			item.url			= ["Website:  ", $('url').value];
 			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
@@ -132,15 +117,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 			},
-			"request2": {
-				"groups1": 		["Select Recommendation Type:", "Event"],
-				"name": 		["Name:", "Dave Mathews Band"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "1"],
-				"phonenum": 	["Phone Number:", "407-340-7829"],
-				"email": 		["Email:", "john.doe@email.com"],	
-				"comments": 	["Comments:", "The DMB concert was amazing"]
-				"location": 	["Location:", "Amway in Orlando"]
-				}
 		};
 */		
 		json;
@@ -302,13 +278,6 @@ window.addEventListener("DOMContentLoaded", function(){
 			storeData(this.key);
 		}
 	}
-	
-		//Variable default
-		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
-		var urgentValue = "Not Urgent";
-		var errMsg = $('errors');
-	
-	makeCats1();
 	
 	//Set Link and Submit Click Events
 	var displayLink = $('displayRecommendation');

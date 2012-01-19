@@ -1,0 +1,260 @@
+/*atrick Powers, Project 2 MiU, 1201, 1/12/2011*/
+
+
+/*Specificity = If you have two (or more) conflicking CSS rules that point to the same
+ * element, there are some basic rules that a browser follows to determine which one is
+ * most specific and therefore wins out.
+ */
+
+label.error{
+	display: block;
+	margin: 10px 0px;
+	color: red;
+}
+
+div.ui-block-b{
+	padding: 20px 0px;
+}
+
+img.ui-li-thumb{
+	padding: 2px 0px 0px 2px;
+	margin:8px 0px 0px 2px;
+}
+
+p.ui-li-desc{
+	padding: 0px;
+	margin:0px;
+}
+
+a.ui-link-inherit{
+	padding: 0px;
+	margin:0px;
+}
+
+#home .ui-grid-a div{
+	text-align:center;
+}
+
+.homeIcons {
+	padding: 0px 0px 5px 0px;
+	margin: 0px;
+}
+
+header.addItemHeader{
+	background: #7298C1;
+}
+
+#search{
+	border: 0px;
+	margin: 0px;
+}
+
+.searchform {
+    display: inline-block;
+    padding: 8px 2px 8px 2px;
+}
+.searchform input {
+    font: 100% Arial,Helvetica,sans-serif;
+}
+.searchform .searchfield {
+    border-radius: 10px 10px 10px 10px;
+    padding: 6px 6px 6px 8px;
+    width: 200px;
+}
+
+.searchform .searchbutton {
+    border-radius: 10px 10px 10px 10px;
+    color: black;
+    font-size: 11px;
+    height: 27px;
+    width: 60px;
+}
+
+#addNewRecommendation {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 80px;
+	font-size: 20px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px;
+}
+
+nav {
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+#items {
+	color: black
+}
+
+a {
+	color: #564028;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	text-decoration: none;
+	outline: none;
+	line-height: 2em;
+}
+
+.nav {
+	background: #869A77;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 25px;
+	font-size: 20px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	display: block;
+	text-decoration:none;
+}
+
+header {
+	width: 100%;
+	background: #6089B2;
+	text-align: center;
+	padding: 4px 0px 0px 0px;
+}
+
+nav#rating{
+	background: #6089B2;
+}
+
+body {
+	background-color: #e3e3e3;
+	border: 0px solid #564028;
+	width: auto; 
+	height: 100%;
+	overflow: scroll;
+}
+
+ul {
+	padding: 5px;
+}
+
+li {
+	color: black;
+	font-size: small;
+	line-height: 1.8em;
+	font-family: Arial, Helvetica, sans-serif;
+	list-style: none;
+}
+
+
+footer {
+	text-align: center;
+}
+
+fieldset {
+	border-radius: 10px 10px 10px 10px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	line-height: 2em;
+}
+
+label {
+	display: block;
+	color: #000000;
+	font-size: medium;
+	line-height: 1.8em;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+input {
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 2em
+}
+
+select {
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+	background: #6089B2;
+}
+
+textarea {
+	width: 100%;
+	border-radius: 10px 10px 10px 10px;
+}
+
+input[type=submit]{
+	border-radius: 10px 10px 10px 10px;
+    background:#6089B2;
+    color: black;
+    font-size: 11px;
+    height: 27px;
+    width: 100px;
+    margin: 5px;
+}
+
+#addNewRecommendation {
+	border-radius: 10px 10px 10px 10px;	
+	border: 1px solid #564028;
+	vertical-align: middle;
+}
+
+li.recos {
+	color: black; 
+	border-radius: 10px 10px 10px 10px;
+	vertical-align: middle;
+	list-style: none;
+	padding: 10px;
+	border: 2px solid #000000;
+	text-decoration:none;
+	margin: 5px;
+}
+
+input.viewlists {
+	background: #6089B2;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 10px 5px 5px 10px;
+	padding: 3px;
+	display: inline;
+	width: 150px;
+	text-decoration:none;
+}
+
+li #deleteItem{
+	background: #6089B2;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px 10px 5px 10px;
+	padding: 3px 20px 3px 20px;
+	display: inline;
+	text-decoration:none;
+	list-style: none;
+}
+
+li #changeItem{
+	background: #6089B2;
+	border: 1px solid #564028;
+	vertical-align: middle;
+    color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border-radius: 10px 10px 10px 10px;
+	margin: 5px 10px 5px 10px;
+	padding: 3px 20px 3px 20px;
+	display: inline;
+	width: 150px;
+	text-decoration:none;
+	list-style: none;
+}
