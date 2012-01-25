@@ -1,0 +1,530 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Friendly Recommendation</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+<!-->Home Page<-->		
+	<div data-role="page" data-theme="b" id="home">
+		<a href="#home">
+			<div data-role="header" data-theme="b" data-position="fixed" align="center" >
+				<img src="images/fr_header.png" />
+			</div>
+		</a>
+		<div data-role="content">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+					<img src="images/calltoaction.png" />
+				</a>
+		</div>
+		</br>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<a href="#listAll">
+					<img src="images/listAll.png">
+					<p class="homeIcons">List All</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#attractions">
+					<img src="images/Attraction.png">
+					<p class="homeIcons">Attractions</p>
+				</a>
+			</div>
+			<div class="ui-block-a">
+				<a href="#bars">
+					<img src="images/Bar.png">
+					<p class="homeIcons">Bars</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#events">
+					<img src="images/Events.png">
+					<p class="homeIcons">Events</p>
+				</a>
+			</div>
+			<div class="ui-block-a">
+				<a href="#restaurants">
+					<img src="images/Restaurant.png">
+					<p class="homeIcons">Restaurants</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#shopping">
+					<img src="images/Shopping.png">
+					<p class="homeIcons">Shopping</p>
+				</a>
+			</div>
+
+		</div><!-- /grid-a -->
+			
+		</div>
+		
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	
+	</div>
+
+<!-->List All Page<-->	
+	<div data-role="page" data-theme="b" id="listAll" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div data-role="collapsible">
+					<h2>Blue Springs</h2>
+					<img src="images/Attraction.png">
+					<p>Rating: 5</p>
+					<p>Comments: The Blue Springs are a great place to go and relax.  The surrounding park is beautiful, but be careful if you don't like cold water.  The water is cold year round.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Dave Mathews Band</h2>
+					<img src="images/Events.png">
+					<p>Rating: 5</p>
+					<p>Comments: Dave is always a great band to go watch.  The crowd always gets involved and everyone has a great time.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Florida Mall</h2>
+					<img src="images/Shopping.png">
+					<p>Rating: 5</p>
+					<p>Comments: This mall is huge.  It has everything you could need or want.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Lowes</h2>
+					<img src="images/Shopping.png">
+					<p>Rating: 5</p>
+					<p>Comments: I don't know how I would live without Lowes.  If you like DIY projects, Lowes is the place to go!</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Orlando Ale House</h2>
+					<img src="images/Bar.png">
+					<p>Rating: 5</p>
+					<p>Comments: Great food, great drinks and great atmosphere.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>					
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+<!-->Restaurants Page<-->	
+	<div data-role="page" data-theme="b" id="restaurants">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctarestaurants.png" />
+				</a>
+			</div>
+			</br>
+			<div data-role="collapsible">
+					<h2>Blue Springs</h2>
+					<p>Rating: 5</p>
+					<p>Comments: The Blue Springs are a great place to go and relax.  The surrounding park is beautiful, but be careful if you don't like cold water.  The water is cold year round.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Dave Mathews Band</h2>
+					<p>Rating: 5</p>
+					<p>Comments: Dave is always a great band to go watch.  The crowd always gets involved and everyone has a great time.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Florida Mall</h2>
+					<p>Rating: 5</p>
+					<p>Comments: This mall is huge.  It has everything you could need or want.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Lowes</h2>
+					<p>Rating: 5</p>
+					<p>Comments: I don't know how I would live without Lowes.  If you like DIY projects, Lowes is the place to go!</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Orlando Ale House</h2>
+					<img src="images/Bar.png">
+					<p>Rating: 5</p>
+					<p>Comments: Great food, great drinks and great atmosphere.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>	
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+<!-->Bars Page<-->
+	<div data-role="page" data-theme="b" id="bars">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctabars.png" />
+				</a>
+			</div>
+			</br>
+			<div data-role="collapsible">
+					<h2>Blue Springs</h2>
+					<p>Rating: 5</p>
+					<p>Comments: The Blue Springs are a great place to go and relax.  The surrounding park is beautiful, but be careful if you don't like cold water.  The water is cold year round.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Dave Mathews Band</h2>
+					<p>Rating: 5</p>
+					<p>Comments: Dave is always a great band to go watch.  The crowd always gets involved and everyone has a great time.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Florida Mall</h2>
+					<p>Rating: 5</p>
+					<p>Comments: This mall is huge.  It has everything you could need or want.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Lowes</h2>
+					<p>Rating: 5</p>
+					<p>Comments: I don't know how I would live without Lowes.  If you like DIY projects, Lowes is the place to go!</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Orlando Ale House</h2>
+					<img src="images/Bar.png">
+					<p>Rating: 5</p>
+					<p>Comments: Great food, great drinks and great atmosphere.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>		
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+
+<!-->Attractions Page<-->
+	<div data-role="page" data-theme="b" id="attractions">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctaattractions.png" />
+				</a>
+			</div>
+			</br>
+				<div data-role="collapsible">
+					<h2>Blue Springs</h2>
+					<p>Rating: 5</p>
+					<p>Comments: The Blue Springs are a great place to go and relax.  The surrounding park is beautiful, but be careful if you don't like cold water.  The water is cold year round.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Dave Mathews Band</h2>
+					<p>Rating: 5</p>
+					<p>Comments: Dave is always a great band to go watch.  The crowd always gets involved and everyone has a great time.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Florida Mall</h2>
+					<p>Rating: 5</p>
+					<p>Comments: This mall is huge.  It has everything you could need or want.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Lowes</h2>
+					<p>Rating: 5</p>
+					<p>Comments: I don't know how I would live without Lowes.  If you like DIY projects, Lowes is the place to go!</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Orlando Ale House</h2>
+					<img src="images/Bar.png">
+					<p>Rating: 5</p>
+					<p>Comments: Great food, great drinks and great atmosphere.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>	
+
+<!-->Events Page<-->
+	<div data-role="page" data-theme="b" id="events">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctaevents.png" />
+				</a>
+			</div>
+			</br>
+				<div data-role="collapsible">
+					<h2>Blue Springs</h2>
+					<p>Rating: 5</p>
+					<p>Comments: The Blue Springs are a great place to go and relax.  The surrounding park is beautiful, but be careful if you don't like cold water.  The water is cold year round.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Dave Mathews Band</h2>
+					<p>Rating: 5</p>
+					<p>Comments: Dave is always a great band to go watch.  The crowd always gets involved and everyone has a great time.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Florida Mall</h2>
+					<p>Rating: 5</p>
+					<p>Comments: This mall is huge.  It has everything you could need or want.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Lowes</h2>
+					<p>Rating: 5</p>
+					<p>Comments: I don't know how I would live without Lowes.  If you like DIY projects, Lowes is the place to go!</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Orlando Ale House</h2>
+					<img src="images/Bar.png">
+					<p>Rating: 5</p>
+					<p>Comments: Great food, great drinks and great atmosphere.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>		
+
+<!-->Shopping Page<-->
+	<div data-role="page" data-theme="b" id="shopping">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctashopping.png" />
+				</a>
+			</div>
+			</br>
+				<div data-role="collapsible">
+					<h2>Blue Springs</h2>
+					<p>Rating: 5</p>
+					<p>Comments: The Blue Springs are a great place to go and relax.  The surrounding park is beautiful, but be careful if you don't like cold water.  The water is cold year round.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Dave Mathews Band</h2>
+					<p>Rating: 5</p>
+					<p>Comments: Dave is always a great band to go watch.  The crowd always gets involved and everyone has a great time.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Florida Mall</h2>
+					<p>Rating: 5</p>
+					<p>Comments: This mall is huge.  It has everything you could need or want.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Lowes</h2>
+					<p>Rating: 5</p>
+					<p>Comments: I don't know how I would live without Lowes.  If you like DIY projects, Lowes is the place to go!</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>
+			<div data-role="collapsible">
+					<h2>Orlando Ale House</h2>
+					<img src="images/Bar.png">
+					<p>Rating: 5</p>
+					<p>Comments: Great food, great drinks and great atmosphere.</p>
+					<p>Phone: 222-222-2222</p>
+					<p>Email: email@example.com</p>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+
+
+	
+	<div data-role="page" data-theme="b" id="form">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			
+<!--	<a href="#" class="viewlists" display="none" id="clearRecommendation">Clear All |</a>
+  		<a href="#" class="viewlists" id="displayRecommendation">Display All |</a>
+  		<a href="#form" class="viewlists" id="addNew">Add Recommendation</a>
+	<nav>
+		<a href="#" class="viewlists" id="clearRecommendation">Clear All</a>
+  		<a href="#" class="viewlists" id="displayRecommendation">Display All</a>
+  		<a href="addrecommendation.html" class="viewlists" id="addNew" style="display:none;">Add New Recommendation</a>	
+  	</nav>
+-->  	<h3 align="center">Add a Recommendation</h3>
+		<p align="center">Fill in the form below to save a recommendation to your profile.</p>
+
+		<form action="#" method="post" id="recommendation">
+
+ 			<div data-role="fieldcontain">
+ 				<label for="recommendation-category">Category</label> 
+ 				<select name="recommendation-category" id="group1" data-native-menu="false" class="required">
+ 					<option data-placeholder="true">--Select Recommendation Type--</option>
+ 					<option value="Restaurant">Restaurant</option>
+ 					<option value="Bar">Bar</option>
+ 					<option value="Attraction">Attraction</option>
+ 					<option value="Events">Events</option>
+ 					<option value="Shopping">Shopping</option>
+ 				</select>
+ 			</div> 
+ 			
+ 			<!-- <label for="contact">Type of Recommendation:</label>
+ 			<span id="select1"></span> -->
+ 			
+ 			<div data-role="fieldcontain">
+	  			<label for="name">Recommendation Title:</label>
+	  			<input type="text" name="name" id="name" class="required"/>
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="rating">Rating (1=bad, 5=amazing):</label>
+	  			<input type="range" value="1" min="1" max="5" name="rating" id="rating" />
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="comments">Details about service requested:</label>
+	  			<textarea name="comments" id="comments" class="required"></textarea>
+			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="phonenum">Phone Number: xxx-xxx-xxxx</label>
+	  			<input type="tel" name="phonenum" id="phonenum" />
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="email">Email: example@email.com</label>
+	  			<input type="email" name="email" id="email" />
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="url">Website: www.example.com</label>
+	  			<input type="url" name="url" id="url"/>
+  			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="location">Address: ex 123 Main Street, Orlando, FL</label>
+	  			<input type="text" id="location"/>
+  			</div>
+  			
+  			<!--><ul id="errors"></ul></-->
+  			<div class="ui-grid-a">
+	  			<div class="ui-block-a">
+	  				<input type="submit" value="Save" /><!--id="submit"--> 		
+	  			</div>
+				<div class="ui-block-b">
+					<input type="reset" value="Cancel" />
+				</div>
+  			</div>
+  			
+		</form>	
+			
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	</div>
+	
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/libs/additional-methods.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/json.js"></script>
+</body>
+</html>

@@ -9,11 +9,7 @@
 label.error{
 	display: block;
 	margin: 10px 0px;
-	color: red;
-}
-
-div.ui-block-b{
-	margin: 15px 0px;
+	color: blue;
 }
 
 img.ui-li-thumb{

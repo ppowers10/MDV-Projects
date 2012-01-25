@@ -6,6 +6,8 @@
  * most specific and therefore wins out.
  */
 
+
+
 label.error{
 	display: block;
 	margin: 10px 0px;
@@ -257,4 +259,56 @@ li #changeItem{
 	width: 150px;
 	text-decoration:none;
 	list-style: none;
+}
+
+div.ui-content{
+background: #edf4ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #edf4ff 1%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#edf4ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+form.ui-listview-filter{
+	background: #edf4ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #edf4ff 1%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#edf4ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+li.ui-li.ui-li-divider{
+	background: #edf4ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #edf4ff 1%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#edf4ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+input.ui-input-text{
+	background: white;
+}
+
+textarea#comments.ui-input-text{
+	background: white;
+}
+
+div.ui-input-search{
+	background: white;
+}
+
+div{
+	font-family: Tahoma, Geneva, sans-serif;
 }
