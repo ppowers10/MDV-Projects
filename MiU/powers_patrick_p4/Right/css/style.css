@@ -6,7 +6,15 @@
  * most specific and therefore wins out.
  */
 
+.ui-li-heading{
+	padding: 0px;
+	margin: 0px;
+}
 
+.ui-li-desc{
+	padding: 0px;
+	margin: 0px;
+}
 
 label.error{
 	display: block;
@@ -14,13 +22,25 @@ label.error{
 	color: red;
 }
 
-div.ui-block-b{
+#form div.ui-block-b{
 	margin: 15px 0px;
 }
 
+div.ui-btn-inner.ui-li{
+	height: 68px;
+}
+
+#cats div.ui-btn-inner.ui-li{
+	height: 45px;
+}
+
+div.ui-btn-text{
+	height:68px;
+}
+
 img.ui-li-thumb{
-	padding: 2px 0px 0px 2px;
-	margin:8px 0px 0px 2px;
+	padding: 23px;
+	
 }
 
 p.ui-li-desc{
@@ -35,6 +55,7 @@ a.ui-link-inherit{
 
 #home .ui-grid-a div{
 	text-align:center;
+	height: 100px;
 }
 
 .homeIcons {
