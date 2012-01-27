@@ -2,6 +2,7 @@
 //Patrick Powers, Project 3 MiU, 1201, 1/3/2011
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 $(document).ready(function(){
 	
 	var recform = $('#recommendation');
@@ -64,6 +65,9 @@ window.addEventListener("DOMContentLoaded", function(){
 =======
 function storeData(key){
 >>>>>>> master
+=======
+function storeData(key){
+>>>>>>> master
 		//If there is no key, this means this is a brand new item and we need a new key
 		if(!key){
 			var id 					= Math.floor(Math.random()*10000001);
@@ -81,20 +85,27 @@ function storeData(key){
 			item.name			= ["Recommendation Name:  ", $('name').value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
 <<<<<<< HEAD
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
 =======
+=======
+>>>>>>> master
 			item.comments		= ["Comments:  ", $('comments').value];
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.url			= ["Website:  ", $('url').value];
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Recommendation Saved");
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	function getData(){
@@ -280,6 +291,8 @@ function storeData(key){
 
 });
 =======
+=======
+>>>>>>> master
 
 var save = storeData;
 
@@ -295,5 +308,9 @@ $(document).ready(function(){
 		}
 	});
 	
+<<<<<<< HEAD
+})
+>>>>>>> master
+=======
 })
 >>>>>>> master

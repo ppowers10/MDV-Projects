@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
@@ -29,6 +30,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
+=======
+	
+>>>>>>> master
 =======
 	
 >>>>>>> master
@@ -71,14 +75,20 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.name			= ["Recommendation Name:  ", $('name').value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
 <<<<<<< HEAD
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
 =======
+=======
+>>>>>>> master
 			item.comments		= ["Comments:  ", $('comments').value];
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.url			= ["Website:  ", $('url').value];
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
@@ -144,6 +154,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				"location": 	["Location:", "Amway in Orlando"]
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"request2": {
 				"groups1": 		["Select Recommendation Type:", "Event"],
 				"name": 		["Name:", "Dave Mathews Band"],
@@ -153,6 +164,8 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 				}
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 		};
@@ -318,6 +331,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//Variable default
 		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
 		var urgentValue = "Not Urgent";
@@ -325,6 +339,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	makeCats1();
 	
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 	//Set Link and Submit Click Events
