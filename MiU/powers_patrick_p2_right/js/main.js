@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		return theElement;
 	}
 	
+<<<<<<< HEAD
  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
@@ -28,6 +29,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
+=======
+	
+>>>>>>> master
 	function toggleControls(n){
 		switch(n){
 			case "on":
@@ -66,9 +70,16 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.groups1		= ["Recommendation Type:  ", $('groups1').value];
 			item.name			= ["Recommendation Name:  ", $('name').value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
+=======
+			item.comments		= ["Comments:  ", $('comments').value];
+			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
+			item.email			= ["Email:  ", $('email').value];
+			item.url			= ["Website:  ", $('url').value];
+>>>>>>> master
 			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
@@ -132,6 +143,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 			},
+<<<<<<< HEAD
 			"request2": {
 				"groups1": 		["Select Recommendation Type:", "Event"],
 				"name": 		["Name:", "Dave Mathews Band"],
@@ -141,6 +153,8 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 				}
+=======
+>>>>>>> master
 		};
 */		
 		json;
@@ -303,6 +317,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+<<<<<<< HEAD
 		//Variable default
 		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
 		var urgentValue = "Not Urgent";
@@ -310,6 +325,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	makeCats1();
 	
+=======
+>>>>>>> master
 	//Set Link and Submit Click Events
 	var displayLink = $('displayRecommendation');
 	displayLink.addEventListener("click", getData);

@@ -5,6 +5,16 @@
  * element, there are some basic rules that a browser follows to determine which one is
  * most specific and therefore wins out.
  */
+<<<<<<< HEAD
+=======
+
+label.error{
+	display: block;
+	margin: 10px 0px;
+	color: blue;
+}
+
+>>>>>>> master
 img.ui-li-thumb{
 	padding: 2px 0px 0px 2px;
 	margin:8px 0px 0px 2px;

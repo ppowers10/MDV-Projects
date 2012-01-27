@@ -1,6 +1,7 @@
 
 //Patrick Powers, Project 3 MiU, 1201, 1/3/2011
 
+<<<<<<< HEAD
 $(document).ready(function(){
 	
 	var recform = $('#recommendation');
@@ -60,6 +61,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function storeData(key){
+=======
+function storeData(key){
+>>>>>>> master
 		//If there is no key, this means this is a brand new item and we need a new key
 		if(!key){
 			var id 					= Math.floor(Math.random()*10000001);
@@ -76,14 +80,22 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.groups1		= ["Recommendation Type:  ", $('groups1').value];
 			item.name			= ["Recommendation Name:  ", $('name').value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
+=======
+			item.comments		= ["Comments:  ", $('comments').value];
+			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
+			item.email			= ["Email:  ", $('email').value];
+			item.url			= ["Website:  ", $('url').value];
+>>>>>>> master
 			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Recommendation Saved");
 	}
+<<<<<<< HEAD
 	
 	function getData(){
 		toggleControls('on');
@@ -267,3 +279,21 @@ window.addEventListener("DOMContentLoaded", function(){
 	save.addEventListener("click", validate);
 
 });
+=======
+
+var save = storeData;
+
+$(document).ready(function(){
+	
+	var recform = $('#recommendation');
+	
+	recform.validate({
+		invalidHandler: function(form, validator){},
+		submitHandler: function(){
+			var data = recform.serializeArray()
+			storeData(data);
+		}
+	});
+	
+})
+>>>>>>> master

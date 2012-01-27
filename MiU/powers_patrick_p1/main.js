@@ -11,17 +11,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		return theElement;
 	}
 	
-
-	
-	//Create select field element and populate with options
-	//I tried to change the makeCats function around to recycle the function, but could
-	//not figure out how to make it work.  I was going to place a variable in the function
-	//ex: "p" and then place the "p" in the place of the select1 and groups1 and then name
-	//the variable that would be passed into the function groups1.  I was also going to change
-	//the id name in the HTML element to groups1 and groups2 so that when I called the the 
-	//function with groups1, it would pass through all the correct spots.  In my head this 
-	//seemed like it could work, but when I tried to make it work, it was not working
-	//correctly.  
+ 
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
 			selectSpan = $('select1'),
@@ -38,26 +28,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
-	//Find Value of selected radio button...this is for learning only since I have no radio buttons
-	/*
-	function getSelectedRadio(){
-		var radios = document.forms[0].sex;
-		for(var i=0; i<radios.lenth; i++){
-			if(radios[i].checked){
-			sexValue = radios[i].value;
-			}
-		}
-	}
-	
-	//Find the value of selected checkbox.
-	function getCheckboxValue(){
-		if($('urgent').checked){
-			urgentValue = $('urgent').value;
-		}else{
-			urgentValue = "Not Urgent";
-		}
-	}
-	*/
 	function toggleControls(n){
 		switch(n){
 			case "on":
@@ -293,23 +263,23 @@ window.addEventListener("DOMContentLoaded", function(){
 			getName.style.border = "1px solid red";
 			messageAry.push(nameError);
 		}
-		
+/*		
 		//Guest Phone Validations
-	   	var rep = /^([0-9]{3})+-([0-9]{3})+-([0-9]{4})$/;
+	   	var rep = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 		if(!(rep.exec(getPhoneNum.value))){
 			var phoneNumError = "Please enter a valid phone number.";
 			getPhoneNum.style.border = "1px solid red";
 			messageAry.push(phoneNumError);
 		}
-
+*/
 		//Guest Email Validations
-	   	var ree = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+/*	   	var ree = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if(!(ree.exec(getEmail.value))){
 			var emailError = "Please enter a valid email address.";
 			getEmail.style.border = "1px solid red";
 			messageAry.push(emailError);
 		}
-		
+*/		
 		//Guest Comments Validations
 		if(getComments.value === ""){
 			var commentsError = "Please explain your service request.";
@@ -347,5 +317,5 @@ window.addEventListener("DOMContentLoaded", function(){
 	clearLink.addEventListener("click", clearLocal);
 	var save = $('submit');
 	save.addEventListener("click", validate);
-	
+
 });
