@@ -3,28 +3,24 @@
 
 
 //Wait until the DOM is ready
-window.addEventListener("DOMContentLoaded", function(){
-
-	//getElementById Function
-	function $(x){
-		var theElement = document.getElementById(x);
-		return theElement;
-	}
-	
- 
+$(function(){
+	 
 	function makeCats1(){
-		var formTag = document.getElementsByTagName("form"), //formTag is an array
-			selectSpan = $('select1'),
-			makeSelect = document.createElement('select');
-			makeSelect.setAttribute("id", "groups1");
+		var formTag = $("form"), //formTag is an array
+			selectSpan = $('#select1'),
+			makeSelect = $('<select></select>');
+			makeSelect.attr({	
+			"id": "groups1",
+			"data-native-menu": "false"
+			});
 		for(var i=0, j=recommendationType.length; i<j; i++){
-			var makeOption = document.createElement('option');
+			var makeOption = $('<option></options>');
 			var optText = recommendationType[i];
-			makeOption.setAttribute("value", optText);
-			makeOption.innerHTML =  optText;
-			makeSelect.appendChild(makeOption);
+			makeOption.attr("value", optText);
+			makeOption.html(optText);
+			makeSelect.append(makeOption);
 		}
-		selectSpan.appendChild(makeSelect);
+		selectSpan.append(makeSelect);
 	}
 	
 
