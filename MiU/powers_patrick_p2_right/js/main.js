@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
@@ -30,6 +31,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
+=======
+	
+>>>>>>> master
 =======
 	
 >>>>>>> master
@@ -76,10 +80,13 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
 =======
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 			item.comments		= ["Comments:  ", $('comments').value];
@@ -87,6 +94,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.email			= ["Email:  ", $('email').value];
 			item.url			= ["Website:  ", $('url').value];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -155,6 +165,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			},
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"request2": {
 				"groups1": 		["Select Recommendation Type:", "Event"],
 				"name": 		["Name:", "Dave Mathews Band"],
@@ -164,6 +175,8 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 				}
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -332,6 +345,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//Variable default
 		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
 		var urgentValue = "Not Urgent";
@@ -339,6 +353,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	makeCats1();
 	
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
