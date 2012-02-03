@@ -91,7 +91,7 @@ function getData(){
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
 		$("#recommendationform").after(makeDiv);
-		$("#items").css("display", "block");
+		$("#item").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = $('<li></li>');
 			 makeLi.attr("class", "recos")
@@ -169,13 +169,13 @@ function getData(){
 		//toggleControls("off");
 		
 		//populate the form feilds with the current localStorage values.
-		$('#groups1').val 	= item.groups1[1];
-		$('#name').val		= item.name[1];
-		$('#rating').val 	= item.rating[1];
-		$('#phonenum').val 	= item.phonenum[1];
-		$('#email').val		= item.email[1];
-		$('#comments').val 	= item.comments[1];
-		$('#location').val	= item.location[1];
+		$('#groups1').value 	= item.groups1[1];
+		$('#name').value		= item.name[1];
+		$('#rating').value 		= item.rating[1];
+		$('#phonenum').value 	= item.phonenum[1];
+		$('#email').value		= item.email[1];
+		$('#comments').value 	= item.comments[1];
+		$('#location').value	= item.location[1];
 		
 		//Remove the initial listener from the input "save" button.
 		save.removeEventListener("click", storeData);
