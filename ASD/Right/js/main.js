@@ -27,14 +27,14 @@ function storeData(data){
 		//Oject properties contain array with the form label and input value.
 		//getCheckboxValue();
 		var item 				= {};
-			item.groups1		= ["Category:  ", data[0].value];
-			item.name			= ["Recommendation Title:  ", data[1].value];
-			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
-			item.comments		= ["Comments:  ", data[3].value];
-			item.phonenum		= ["Phone Number:  ", data[4].value];
-			item.email			= ["Email:  ", data[5].value];
-			item.url			= ["Website:  ", data[6].value];
-			item.location		= ["Location:  ", data[7].value];
+			item.groups1		= ["Category:  ", data[0].val];
+			item.name			= ["Recommendation Title:  ", data[1].val];
+			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].val];
+			item.comments		= ["Comments:  ", data[3].val];
+			item.phonenum		= ["Phone Number:  ", data[4].val];
+			item.email			= ["Email:  ", data[5].val];
+			item.url			= ["Website:  ", data[6].val];
+			item.location		= ["Location:  ", data[7].val];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		console.log(id, JSON.stringify(item))
@@ -49,7 +49,43 @@ function getData(){
 			alert("There are no current recommendations, so default data was added.");
 		}
 		//Write Data from Local Stograge to the browser.
-
+		
+		//need to create the JQM page tht the data will be held on
+/*		var makePage = $('<div></div>');
+		makePage.attr({
+			"data-theme": "b",
+			"id": "viewdata"
+		});
+		$('body').append(makePage);
+		var createLink = $('<a></a>');
+		createLink.attr({
+			"href": "#home",
+			"data-direction": "reverse"
+		});
+		makePage.append(createLink);
+		var createLinkDiv = $('<div></div>');
+		createLinkDiv.attr({
+			"data-role": "header",
+			"data-theme": "b",
+			"align": "center"
+		});
+		createLink.append(createLinkDiv);
+		var createLinkImage = $('<img></img>');
+		createLinkImage.attr({
+			"src": "images/fr_header.png"
+		});
+		createLinkDiv.append(createLinkImage);
+		//ends the header section of the page
+			
+		//create content area of JQM
+		var makeContent = $('<div></div>');
+		makeContent.attr({
+			"data-role": "content",
+			"data-theme": "b"
+		});
+		makePage.append(makeContent);		
+*/		
+		//previous code
 		var makeDiv = $('<div></div>');
 		makeDiv.attr("id", "items");
 		var makeList = $('<ul></ul>');
@@ -72,7 +108,7 @@ function getData(){
 			 	var makeSubLi = $('<li></li>');
 			 	makeSubList.append(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
-			 	makeSubLi.html(optSubText);
+			 	makeSubLi.innerHTML = optSubText;
 			 	makeSubList.append(linksLi); 
 			 }
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
@@ -100,11 +136,7 @@ function getData(){
 	function makeItemLinks(key, linksLi){
 		//add edit signle item link
 		var editLink = $('<a></a>');
-		editLink.attr({
-			"id": "changeItem",
-			"data-role": "button",
-			"href": "#"
-		})
+		editLink.attr("id", "changeItem");
 		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit";
@@ -117,14 +149,9 @@ function getData(){
 	//	linksLi.appendChild(breakTag);
 		
 		//add a delete single item link
-		
 		var deleteLink = $('<a></a>');
-		deleteLink.attr({
-			"id": "deleteItem",
-			"data-role": "button",
-			"href": "#"
-		})
-		//deleteLink.href = "#";
+		deleteLink.attr("id", "deleteItem");
+		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete";
 		deleteLink.bind("click", deleteItem);
