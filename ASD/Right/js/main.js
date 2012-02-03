@@ -49,42 +49,78 @@ function getData(){
 			alert("There are no current recommendations, so default data was added.");
 		}
 		//Write Data from Local Stograge to the browser.
-		var makeDiv = document.createElement('div');
-		makeDiv.setAttribute("id", "items");
-		var makeList = document.createElement('ul');
-		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
-		$('#items').style.display = "block";
+		
+		//need to create the JQM page tht the data will be held on
+/*		var makePage = $('<div></div>');
+		makePage.attr({
+			"data-theme": "b",
+			"id": "viewdata"
+		});
+		$('body').append(makePage);
+		var createLink = $('<a></a>');
+		createLink.attr({
+			"href": "#home",
+			"data-direction": "reverse"
+		});
+		makePage.append(createLink);
+		var createLinkDiv = $('<div></div>');
+		createLinkDiv.attr({
+			"data-role": "header",
+			"data-theme": "b",
+			"align": "center"
+		});
+		createLink.append(createLinkDiv);
+		var createLinkImage = $('<img></img>');
+		createLinkImage.attr({
+			"src": "images/fr_header.png"
+		});
+		createLinkDiv.append(createLinkImage);
+		//ends the header section of the page
+			
+		//create content area of JQM
+		var makeContent = $('<div></div>');
+		makeContent.attr({
+			"data-role": "content",
+			"data-theme": "b"
+		});
+		makePage.append(makeContent);		
+*/		
+		//previous code
+		var makeDiv = $('<div></div>');
+		makeDiv.attr("id", "items");
+		var makeList = $('<ul></ul>');
+		makeDiv.append(makeList);
+		$("#recommendationform").after(makeDiv);
+		$("#items").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
-			 var makeLi = document.createElement('li');
-			 makeLi.setAttribute("class", "recos")
-			 var linksLi = document.createElement('li');
-			 makeList.appendChild(makeLi);
+			 var makeLi = $('<li></li>');
+			 makeLi.attr("class", "recos")
+			 var linksLi = $('<li></li>');
+			 makeList.append(makeLi);
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse().
 			 var obj = JSON.parse(value);
-			 var makeSubList = document.createElement('ul');
-			 makeLi.appendChild(makeSubList);
+			 var makeSubList = $('<ul></ul>');
+			 makeLi.append(makeSubList);
 			 getImage(obj.groups1[1], makeSubList);
 			 for(var n in obj){
-			 	var makeSubLi = document.createElement('li');
-			 	makeSubList.appendChild(makeSubLi);
+			 	var makeSubLi = $('<li></li>');
+			 	makeSubList.append(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
 			 	makeSubLi.innerHTML = optSubText;
-			 	makeSubList.appendChild(linksLi); 
+			 	makeSubList.append(linksLi); 
 			 }
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
 	}
 	
-	//get the image for the right category per request
 	function getImage(catName, makeSubList){
-		var imageLi = document.createElement('li');
-		makeSubList.appendChild(imageLi);
-		var newImg = document.createElement('img');
-		var setSrc = newImg.setAttribute("src", "images/"+ catName +".png");
-		imageLi.appendChild(newImg);
+		var imageLi = $('<li></li>');
+		makeSubList.append(imageLi);
+		var newImg = $('<img></img>');
+		var setSrc = newImg.attr("src", "images/"+ catName +".png");
+		imageLi.append(newImg);
 	}
 	
 	//JSON Object which will auto populate local storage
@@ -96,6 +132,84 @@ function getData(){
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
+	
+	function makeItemLinks(key, linksLi){
+		//add edit signle item link
+		var editLink = $('<a></a>');
+		editLink.attr("id", "changeItem");
+		editLink.href = "#";
+		editLink.key = key;
+		var editText = "Edit";
+		editLink.bind("click", editItem);
+		editLink.html(editText);
+		linksLi.append(editLink);
+		
+		//add Line break
+	//	var breakTag = document.createElement('br');
+	//	linksLi.appendChild(breakTag);
+		
+		//add a delete single item link
+		var deleteLink = $('<a></a>');
+		deleteLink.attr("id", "deleteItem");
+		deleteLink.href = "#";
+		deleteLink.key = key;
+		var deleteText = "Delete";
+		deleteLink.bind("click", deleteItem);
+		deleteLink.html(deleteText);
+		linksLi.append(deleteLink);
+	}
+	
+	//Edit Single Item
+	function editItem(){
+		//Grab the data from our item from Local Storage.
+		var value = localStorage.getItem(this.key);
+		var item = JSON.parse(value);
+		
+		//Show the from to edit the items
+		//toggleControls("off");
+		
+		//populate the form feilds with the current localStorage values.
+		$('#groups1').val 	= item.groups1[1];
+		$('#name').val		= item.name[1];
+		$('#rating').val 	= item.rating[1];
+		$('#phonenum').val 	= item.phonenum[1];
+		$('#email').val		= item.email[1];
+		$('#comments').val 	= item.comments[1];
+		$('#location').val	= item.location[1];
+		
+		//Remove the initial listener from the input "save" button.
+		save.removeEventListener("click", storeData);
+		//Change Submit button value to Save Edit
+		$('#submit').val = "Save Edit";
+		var editSubmit = $('#submit');
+		//Save the key value established in this function as a property of the editSubmit event
+		//so we can use that value when we save the data that we edited
+		editSubmit.bind("click", recform.validate);
+		editSubmit.key = this.key;
+	}
+	
+	function deleteItem(){
+		var ask = confirm("Are you sure you want to delete this recommendation?");
+		if(ask){
+			localStorage.removeItem(this.key);
+			alert("Recommendation was deleted.");
+			window.location.reload();
+		}else{
+			alert("Recommendation was not deleted.");
+		}
+	}
+	
+	function clearLocal(){
+		if(localStorage.lenght === 0){
+			alert("There are no recommendations to clear.");
+		}else{
+			localStorage.clear();
+			alert("All recommendations were deleted!");
+			window.location.reload();
+			return false;
+		}
+	}
+
 	
 	$('#displayRecommendation').bind("click", getData);
 		
