@@ -218,13 +218,13 @@ input[type=submit]{
     width: 100px;
     margin: 5px;
 }
-/*
+
 #addNewRecommendation {
 	border-radius: 10px 10px 10px 10px;	
 	border: 1px solid #564028;
 	vertical-align: middle;
 }
-*/
+
 li.recos {
 	color: black; 
 	border-radius: 10px 10px 10px 10px;
