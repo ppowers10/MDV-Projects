@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Patrick Powers, Project 1 ASD, 1201, 1/3/2011
+=======
+//Patrick Powers, Project 1 MiU, 1202, 2/2/2011
+>>>>>>> master
 =======
 //Patrick Powers, Project 1 MiU, 1202, 2/2/2011
 >>>>>>> master
@@ -12,6 +16,11 @@
 $(document).ready(function(){
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	toggleControls('off');
+	
+>>>>>>> master
 =======
 	toggleControls('off');
 	
@@ -24,10 +33,13 @@ $(document).ready(function(){
 			var data = recform.serializeArray();
 			storeData(data)
 <<<<<<< HEAD
+<<<<<<< HEAD
 		}
 });
 
 =======
+=======
+>>>>>>> master
 			console.log(data);
 		}
 });
@@ -57,6 +69,9 @@ function formBack(){
 	toggleControls('off');
 }	
 
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 function storeData(data){
 		//If there is no key, this means this is a brand new item and we need a new key
@@ -74,6 +89,9 @@ function storeData(data){
 		var item 				= {};
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 			item.groups1		= ["Category:  ", data[0].value];
@@ -84,6 +102,7 @@ function storeData(data){
 			item.email			= ["Email:  ", data[5].value];
 			item.url			= ["Website:  ", data[6].value];
 			item.location		= ["Location:  ", data[7].value];
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 			item.groups1		= ["Category:  ", data[0].val];
@@ -97,6 +116,8 @@ function storeData(data){
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		console.log(id, JSON.stringify(item))
@@ -106,7 +127,11 @@ function storeData(data){
 
 function getData(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//toggleControls('on');
+=======
+		toggleControls('on');
+>>>>>>> master
 =======
 		toggleControls('on');
 >>>>>>> master
@@ -117,8 +142,11 @@ function getData(){
 		//Write Data from Local Stograge to the browser.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 		
@@ -159,6 +187,9 @@ function getData(){
 */		
 		//previous code
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -168,15 +199,21 @@ function getData(){
 		makeDiv.append(makeList);
 		$("#recommendationform").after(makeDiv);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$("#item").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = $('<li></li>');
 			 makeLi.attr("class", "recos")
 =======
+=======
+>>>>>>> master
 		$("#items").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = $('<li></li>');
 			 makeLi.attr("class", "recos");
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 			 var linksLi = $('<li></li>');
 			 makeList.append(makeLi);
@@ -185,6 +222,10 @@ function getData(){
 			//Convert the string from local storage value back to an object by using JSON.parse().
 			 var obj = JSON.parse(value);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+			 console.log(JSON.parse(value));
+>>>>>>> master
 =======
 			 console.log(JSON.parse(value));
 >>>>>>> master
@@ -192,6 +233,7 @@ function getData(){
 			 makeLi.append(makeSubList);
 			 getImage(obj.groups1[1], makeSubList);
 			 for(var n in obj){
+<<<<<<< HEAD
 <<<<<<< HEAD
 			 	var makeSubLi = $('<li></li>');
 			 	makeSubList.append(makeSubLi);
@@ -204,6 +246,8 @@ function getData(){
 			 	makeSubList.append(linksLi); 
 			 }
 =======
+=======
+>>>>>>> master
 			 	var makeSubLi = document.createElement('li');
 			 	makeSubList.append(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
@@ -217,6 +261,9 @@ function getData(){
 		//	 	makeSubLi.innerHTML = optSubText;
 		//	 	makeSubList.append(linksLi); 
 		//	 }
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
@@ -225,15 +272,21 @@ function getData(){
 	function getImage(catName, makeSubList){
 		var imageLi = $('<li></li>');
 <<<<<<< HEAD
+<<<<<<< HEAD
 		makeSubList.append(imageLi);
 		var newImg = $('<img></img>');
 		var setSrc = newImg.attr("src", "images/"+ catName +".png");
 =======
+=======
+>>>>>>> master
 		imageLi.css("display", "inline");
 		makeSubList.append(imageLi);
 		var newImg = $('<img></img>');
 		var setSrc = newImg.attr("src", "images/"+ catName +".png");
 		setSrc.css("display", "inline");
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		imageLi.append(newImg);
 	}
@@ -253,6 +306,7 @@ function getData(){
 		var editLink = $('<a></a>');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		editLink.attr({
 			"id": "changeItem",
 			"data-role": "button",
@@ -268,6 +322,8 @@ function getData(){
 		editLink.html(editText);
 		linksLi.append(editLink);
 =======
+=======
+>>>>>>> master
 		editLink.attr("id", "changeItem");
 		editLink.href = "#";
 		editLink.key = key;
@@ -275,6 +331,9 @@ function getData(){
 		editLink.html(editText);
 		linksLi.append(editLink);
 		editLink.bind("click", editItem);
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		
 		//add Line break
@@ -282,6 +341,7 @@ function getData(){
 	//	linksLi.appendChild(breakTag);
 		
 		//add a delete single item link
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		
@@ -305,6 +365,11 @@ function getData(){
 		});
 		deleteLink.href = "#";
 >>>>>>> master
+=======
+		var deleteLink = $('<a></a>');
+		deleteLink.attr("id", "deleteItem");
+		deleteLink.href = "#";
+>>>>>>> master
 		deleteLink.key = key;
 		var deleteText = "Delete";
 		deleteLink.bind("click", deleteItem);
@@ -317,16 +382,22 @@ function getData(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		var item = JSON.parse(value);
 		
 		//Show the from to edit the items
 		//toggleControls("off");
 =======
+=======
+>>>>>>> master
 		console.log(localStorage.getItem(this.key));
 		var item = JSON.parse(value);
 		console.log(JSON.parse(value));
 		//Show the from to edit the items
 		toggleControls("off");
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		
 		//populate the form feilds with the current localStorage values.
@@ -343,6 +414,7 @@ function getData(){
 		//Change Submit button value to Save Edit
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//$('#submit').val = "Save Edit";
 		//var editSubmit = $('#submit');
 		//Save the key value established in this function as a property of the editSubmit event
@@ -351,12 +423,17 @@ function getData(){
 =======
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 		$('#submit').val = "Save Edit";
 		var editSubmit = $('#submit');
 		//Save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data that we edited
 		editSubmit.bind("click", recform.validate);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -367,9 +444,13 @@ function getData(){
 		var ask = confirm("Are you sure you want to delete this recommendation?");
 		if(ask){
 <<<<<<< HEAD
+<<<<<<< HEAD
 			localStorage.removeItem(this.key);
 =======
 			localStorage.removeItem('name');
+>>>>>>> master
+=======
+			localStorage.removeItem(this.key);
 >>>>>>> master
 			alert("Recommendation was deleted.");
 			window.location.reload();
@@ -392,6 +473,11 @@ function getData(){
 	
 	$('#displayRecommendation').bind("click", getData);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	$('#clearRecommendation').bind("click", clearLocal);
+	$('#addRec').bind("click", formBack);
+>>>>>>> master
 =======
 	$('#clearRecommendation').bind("click", clearLocal);
 	$('#addRec').bind("click", formBack);
