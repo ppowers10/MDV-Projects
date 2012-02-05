@@ -23,9 +23,61 @@
 
 </head>
 <body>
-
-<!-->Home Page data-ajax="false"<-->		
+	
+<!-->Home Page<-->		
 	<div data-role="page" data-theme="b" id="home">
+		<a href="#home">
+			<div data-role="header" data-theme="b" data-position="fixed" align="center" >
+				<img src="images/fr_header.png" />
+			</div>
+		</a>
+		<div data-role="content">
+		<div align="center">
+				<a href="#form">
+					<img src="images/calltoaction.png" />
+				</a>
+		</div>
+		<hr>
+		<br>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<a href="#cats">
+					<img src="images/user.png">
+					<p class="homeIcons">Personal</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#stillbuilding">
+					<img src="images/group.png">
+					<p class="homeIcons">Friends</p>
+				</a>
+			</div>
+			<div class="ui-block-a">
+				<a href="#stillbuilding">
+					<img src="images/newspaper.png">
+					<p class="homeIcons">News Feed</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#stillbuilding">
+					<img src="images/star.png">
+					<p class="homeIcons">Favorites</p>
+				</a>
+			</div>
+
+		</div><!-- /grid-a -->
+			
+		</div>
+		
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	
+	</div>
+	
+
+<!-->Home Page <-->		
+	<div data-role="page" data-theme="b" id="cats">
 		<a href="#home">
 			<div data-role="header" data-theme="b" data-position="fixed" align="center" >
 				<img src="images/fr_header.png" />
@@ -79,7 +131,13 @@
 		</div>
 		
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	
 	</div>
@@ -245,7 +303,13 @@
 			</div>
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed" >
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>
 
@@ -298,7 +362,13 @@
 			</div>	
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>
 
@@ -350,10 +420,15 @@
 			</div>				
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed" >
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>
-
 
 <!-->Attractions Page<-->
 	<div data-role="page" data-theme="b" id="attractions">
@@ -403,7 +478,13 @@
 			</div>				
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>	
 
@@ -455,7 +536,13 @@
 			</div>				
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>		
 
@@ -507,9 +594,35 @@
 			</div>				
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>
+
+<!-->Example Drill Down Page<-->
+	<div data-role="page" data-theme="b" id="stillbuilding">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<h2>Still Under Construction</h2>
+		<div data-role="footer" data-theme="b" data-position="fixed">	
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+		<!-- end of stil buidling page-->
 
 <!-->Example Drill Down Page<-->
 	<div data-role="page" data-theme="b" id="example">
@@ -518,70 +631,21 @@
 				<img src="images/fr_header.png" />		
 			</div>
 		</a>
+		<div data-role="navbar">
+				<ul>
+					<li><a href="#" >Share</a></li>
+					<li><a href="#" >Edit</a></li>
+				</ul>
+		</div><!-- /navbar -->
 		<div data-role="content" data-theme="b">
+			
 			<div class="ui-grid-a">
 				<div class="ui-block-a">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 					<h3>Coming Soon</h3>
 						<p>Rating: 5</p>
 						<p>222-222-2222</p>
 						<a href="http://www.floridastateparks.org/bluespring/">
-							<p>example.com</p>
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-					<h3>Blue Springs</h3>
-						<p>Rating: 5</p>
-						<p>222-222-2222</p>
-						<a href="http://www.floridastateparks.org/bluespring/">
-							<p>bluesprings.com</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
+							<p>comingsoon.com</p>
 						</a>
 				</div>
 				<div class="ui-block-b">
@@ -590,53 +654,25 @@
 					</a>
 				</div>
 			</div>
+			
 			<h4>Review</h4>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-			<p>This is the area where the review for the recommendation will be shown.  It can be very short or a longer review.</p>	
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-=======
-			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>	
->>>>>>> master
-						
+			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>					
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>
 
 
-	
+	<!-- Form Page 
+		style="display:none;"
+		-->
 	<div data-role="page" data-theme="b" id="form">
 		<a href="#home" data-direction="reverse">
 			<div data-role="header" data-theme="b" align="center" >
@@ -645,27 +681,34 @@
 		</a>
 		<div data-role="content" data-theme="b">
 			
-<!--	<a href="#" class="viewlists" display="none" id="clearRecommendation">Clear All |</a>
-  		<a href="#" class="viewlists" id="displayRecommendation">Display All |</a>
-  		<a href="#form" class="viewlists" id="addNew">Add Recommendation</a>
-	<nav>
-		<a href="#" class="viewlists" id="clearRecommendation">Clear All</a>
-  		<a href="#" class="viewlists" id="displayRecommendation">Display All</a>
-  		<a href="addrecommendation.html" class="viewlists" id="addNew" style="display:none;">Add New Recommendation</a>	
-  	</nav>
--->  	
-		<div align="center">
-				<a href="#form" data-ajax="false">
-					<img src="images/addrec.png" />
+		
+		<div align="center" id="toggle-btn">
+			<div id="clearRec">
+				<a href="#" data-role="button" value="Clear All" class="viewlists" id="clearRecommendation" />
+					Clear All
 				</a>
-		</div>
-		<p align="center"><em>Fill in the form below to save a recommendation to your profile.</em></p>
+			</div>
+			<div id="displayRec">
+		  		<a href="#" data-role="button" value="Display All" class="viewlists" id="displayRecommendation" />
+		  			Display All
+		  		</a>
+	  		</div>
+	  		<div id="addRec">
+		  		<a href="#" data-role="button" value="Add Recommendation" class="viewlists" id="addNew" />
+		  			Add Recommendation
+		  		</a>	
+	  		</div>
+	  	</div>	
+		
+		
 
-		<form action="#" method="post" id="recommendation">
+		<form action="#" method="post" id="recommendationform">
+			
+			<p align="center"><em>Fill in the form below to save a recommendation to your profile.</em></p>
 
  			<div data-role="fieldcontain">
- 				<label for="recommendation-category">Category</label> 
- 				<select name="recommendation-category" id="group1" data-native-menu="false" class="required">
+ 				<label for="category">Category</label> 
+ 				<select name="category" id="group1" data-native-menu="false" class="required">
  					<option data-placeholder="true">--Select Recommendation Type--</option>
  					<option value="Restaurant">Restaurant</option>
  					<option value="Bar">Bar</option>
@@ -710,16 +753,16 @@
 			
 			<div data-role="fieldcontain">
 				<label for="location">Address:</label>
-	  			<input type="text" id="location" placeholder="1234 Main Street, Orlando, FL"/>
+	  			<input type="text" name="location" id="location" placeholder="1234 Main Street, Orlando, FL"/>
   			</div>
   			
   			<!--><ul id="errors"></ul></-->
   			<div class="ui-grid-a">
 	  			<div class="ui-block-a">
-	  				<input type="submit" value="Save" /><!--id="submit"--> 		
+	  				<input type="submit" value="Save" id="submit"/><!--id="submit"--> 		
 	  			</div>
-				<div class="ui-block-b" align="center">
-					<a href="#home" id="returnbutton">Cancel</a>
+				<div class="ui-block-b" align="center" id="cancel">
+					<a href="#home" id="cancel">Cancel</a>
 				</div>
   			</div>
   			
@@ -727,7 +770,13 @@
 			
 		</div>
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" id="addNew"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 	</div>
 	

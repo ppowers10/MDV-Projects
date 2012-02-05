@@ -1,36 +1,20 @@
-/*atrick Powers, Project 2 MiU, 1201, 1/12/2011*/
+/*atrick Powers, Project 1 ASD, 1202, 2/2/2012*/
 
 
 /*Specificity = If you have two (or more) conflicking CSS rules that point to the same
  * element, there are some basic rules that a browser follows to determine which one is
  * most specific and therefore wins out.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
+
+.ui-li-heading{
+	padding: 0px;
+	margin: 0px;
+}
+
+.ui-li-desc{
+	padding: 0px;
+	margin: 0px;
+}
 
 label.error{
 	display: block;
@@ -38,38 +22,25 @@ label.error{
 	color: red;
 }
 
-div.ui-block-b{
+#form div.ui-block-b{
 	margin: 15px 0px;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
+div.ui-btn-inner.ui-li{
+	height: 68px;
+}
+
+#cats div.ui-btn-inner.ui-li{
+	height: 45px;
+}
+
+div.ui-btn-text{
+	height:68px;
+}
+
 img.ui-li-thumb{
-	padding: 2px 0px 0px 2px;
-	margin:8px 0px 0px 2px;
+	padding: 23px;
+	
 }
 
 p.ui-li-desc{
@@ -84,6 +55,7 @@ a.ui-link-inherit{
 
 #home .ui-grid-a div{
 	text-align:center;
+	height: 100px;
 }
 
 .homeIcons {
@@ -246,13 +218,53 @@ input[type=submit]{
     width: 100px;
     margin: 5px;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> master
+=======
+
+>>>>>>> master
+=======
+
+>>>>>>> master
+=======
+
+>>>>>>> master
+=======
+
+>>>>>>> master
 #addNewRecommendation {
 	border-radius: 10px 10px 10px 10px;	
 	border: 1px solid #564028;
 	vertical-align: middle;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> master
+=======
+
+>>>>>>> master
+=======
+
+>>>>>>> master
+=======
+
+>>>>>>> master
+=======
+
+>>>>>>> master
 li.recos {
 	color: black; 
 	border-radius: 10px 10px 10px 10px;
@@ -308,4 +320,52 @@ li #changeItem{
 	width: 150px;
 	text-decoration:none;
 	list-style: none;
+}
+
+div.ui-content{
+background: #edf4ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #edf4ff 1%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#edf4ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+form.ui-listview-filter{
+	background: #edf4ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #edf4ff 1%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#edf4ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+li.ui-li.ui-li-divider{
+	background: #edf4ff; /* Old browsers */
+background: -moz-linear-gradient(top,  #edf4ff 1%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#edf4ff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(top,  #edf4ff 1%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4ff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+input.ui-input-text{
+	background: white;
+}
+
+textarea#comments.ui-input-text{
+	background: white;
+}
+
+div.ui-input-search{
+	background: white;
 }

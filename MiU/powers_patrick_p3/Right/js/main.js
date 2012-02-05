@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $(document).ready(function(){
 	
 	var recform = $('#recommendation');
@@ -92,6 +93,9 @@ function storeData(key){
 =======
 function storeData(key){
 >>>>>>> master
+=======
+function storeData(key){
+>>>>>>> master
 		//If there is no key, this means this is a brand new item and we need a new key
 		if(!key){
 			var id 					= Math.floor(Math.random()*10000001);
@@ -116,10 +120,13 @@ function storeData(key){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
 =======
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -145,6 +152,9 @@ function storeData(key){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -165,6 +175,7 @@ function storeData(key){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Recommendation Saved");
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -371,6 +382,8 @@ function storeData(key){
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 
 var save = storeData;
 
@@ -393,6 +406,10 @@ $(document).ready(function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+})
+>>>>>>> master
+=======
 })
 >>>>>>> master
 =======
