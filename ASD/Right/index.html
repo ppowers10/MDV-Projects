@@ -683,20 +683,28 @@
 			
 		
 		<div align="center" id="toggle-btn">
-			<a href="#" data-role="button" value="Clear All" class="viewlists" id="clearRecommendation" />
-				Clear All
-			</a>
-	  		<a href="#" data-role="button" value="Display All" class="viewlists" id="displayRecommendation" />
-	  			Display All
-	  		</a>
-	  		<a href="addrecommendation.html" data-role="button" value="Add Recommendation" class="viewlists" id="addNew" style="display:none;" />
-	  			Add Rec.
-	  		</a>	
+			<div id="clearRec">
+				<a href="#" data-role="button" value="Clear All" class="viewlists" id="clearRecommendation" />
+					Clear All
+				</a>
+			</div>
+			<div id="displayRec">
+		  		<a href="#" data-role="button" value="Display All" class="viewlists" id="displayRecommendation" />
+		  			Display All
+		  		</a>
+	  		</div>
+	  		<div id="addRec">
+		  		<a href="#" data-role="button" value="Add Recommendation" class="viewlists" id="addNew" />
+		  			Add Recommendation
+		  		</a>	
+	  		</div>
 	  	</div>	
 		
-		<p align="center"><em>Fill in the form below to save a recommendation to your profile.</em></p>
+		
 
 		<form action="#" method="post" id="recommendationform">
+			
+			<p align="center"><em>Fill in the form below to save a recommendation to your profile.</em></p>
 
  			<div data-role="fieldcontain">
  				<label for="category">Category</label> 
@@ -766,7 +774,7 @@
 				<ul>
 					<li><a href="#" data-rel="back" data-icon="back"></a></li>
 					<li><a href="#home" data-icon="home"></a></li>
-					<li><a href="#form" data-icon="plus"></a></li>
+					<li><a href="#form" id="addNew"></a></li>
 				</ul>
 			</div><!-- /navbar -->
 		</div>

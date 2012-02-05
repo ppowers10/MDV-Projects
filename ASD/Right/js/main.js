@@ -3,6 +3,8 @@
 
 $(document).ready(function(){
 	
+	toggleControls('off');
+	
 	var recform = $("#recommendationform");
 	
 	recform.validate({
@@ -13,6 +15,31 @@ $(document).ready(function(){
 			console.log(data);
 		}
 });
+
+function toggleControls(n){
+		switch(n){
+			case "on":
+				$('#recommendationform').css("display" , "none");
+				$('#clearRec').css("display" , "inline");
+				$('#displayRec').css("display" , "none");
+				$('#addRec').css("display" , "inline");
+				break;
+			case "off":
+				$('#recommendationform').css("display" , "block");
+				$('#clearRec').css("display" , "block");
+				$('#displayRec').css("display" , "block");
+				$('#addRec').css("display" , "none");
+				$('#items').css("display" , "none");
+				break;
+			//	break;
+			default:
+				return false;
+		}
+	}
+	
+function formBack(){
+	toggleControls('off');
+}	
 
 function storeData(data){
 		//If there is no key, this means this is a brand new item and we need a new key
@@ -44,7 +71,7 @@ function storeData(data){
 		}
 
 function getData(){
-		//toggleControls('on');
+		toggleControls('on');
 		if(localStorage.length === 0){
 			autoFillData();
 			alert("There are no current recommendations, so default data was added.");
@@ -151,9 +178,9 @@ function getData(){
 		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit";
-		editLink.bind("click", editItem);
 		editLink.html(editText);
 		linksLi.append(editLink);
+		editLink.bind("click", editItem);
 		
 		//add Line break
 	//	var breakTag = document.createElement('br');
@@ -174,11 +201,11 @@ function getData(){
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
-		console.log(value);
+		console.log(localStorage.getItem(this.key));
 		var item = JSON.parse(value);
-		
+		console.log(JSON.parse(value));
 		//Show the from to edit the items
-		//toggleControls("off");
+		toggleControls("off");
 		
 		//populate the form feilds with the current localStorage values.
 		$('#groups1').value 	= item.groups1[1];
@@ -225,5 +252,6 @@ function getData(){
 	
 	$('#displayRecommendation').bind("click", getData);
 	$('#clearRecommendation').bind("click", clearLocal);
+	$('#addRec').bind("click", formBack);
 		
 });
