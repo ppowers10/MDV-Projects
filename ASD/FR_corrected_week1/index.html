@@ -1,0 +1,792 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Friendly Recommendation</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+<!-->Home Page<-->		
+	<div data-role="page" data-theme="b" id="home">
+		<a href="#home">
+			<div data-role="header" data-theme="b" data-position="fixed" align="center" >
+				<img src="images/fr_header.png" />
+			</div>
+		</a>
+		<div data-role="content">
+		<div align="center">
+				<a href="#form">
+					<img src="images/calltoaction.png" />
+				</a>
+		</div>
+		<hr>
+		<br>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<a href="#cats">
+					<img src="images/user.png">
+					<p class="homeIcons">Personal</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#stillbuilding">
+					<img src="images/group.png">
+					<p class="homeIcons">Friends</p>
+				</a>
+			</div>
+			<div class="ui-block-a">
+				<a href="#stillbuilding">
+					<img src="images/newspaper.png">
+					<p class="homeIcons">News Feed</p>
+				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#stillbuilding">
+					<img src="images/star.png">
+					<p class="homeIcons">Favorites</p>
+				</a>
+			</div>
+
+		</div><!-- /grid-a -->
+			
+		</div>
+		
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<h4>Tell A Friend!</h4>
+		</div>
+	
+	</div>
+	
+
+<!-->Home Page <-->		
+	<div data-role="page" data-theme="b" id="cats">
+		<a href="#home">
+			<div data-role="header" data-theme="b" data-position="fixed" align="center" >
+				<img src="images/fr_header.png" />
+			</div>
+		</a>
+		<div data-role="content">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+					<img src="images/calltoaction.png" />
+				</a>
+		</div>
+		</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-theme="b" data-filter="true" data-divider-theme="c">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+					<li data-role="list-divider" >
+							Recommendation Categories
+					</li>
+					<li data-role="list-divider">
+						<a href="#restaurants" data-icon="arrow-r">
+							<h3>Restaurants</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#bars" data-icon="arrow-r">
+							<h3>Bars</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#attractions" data-icon="arrow-r">
+							<h3>Attractions</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#events" data-icon="arrow-r">
+							<h3>Events</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#shopping" data-icon="arrow-r">
+							<h3>Shopping</h3>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	
+	</div>
+
+<!-->List All Page<-->	
+	<div data-role="page" data-theme="b" id="listAll" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Blue Springs</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Dave Matthews Band</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Florida Mall</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#eaxmple">
+							<img src="images/Shopping.png">
+							<h2>Lowes</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Orlando Ale House</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Orlando Magic</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Texas de Brazil</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Universal Orlando</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Wall Street</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Disney World</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Filing Station</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Jason's Deli</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Orlando Comedy Festival</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Orlando Outlets</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Outback Steakhouse</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>					
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Boone High School Football</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Golden Corral</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Millenia Mall</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Pour House</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Wet and Wild</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+
+<!-->Restaurants Page<-->	
+	<div data-role="page" data-theme="b" id="restaurants">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctarestaurants.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Texas de Brazil</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Outback Steakhouse</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Jason's Deli</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Restaurant.png">
+							<h2>Golden Corral</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+					
+				</ul>
+			</div>	
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+
+<!-->Bars Page<-->
+	<div data-role="page" data-theme="b" id="bars">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctabars.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Wall Street</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Orlando Ale House</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Filling Station</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Bar.png">
+							<h2>Pour House</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+
+<!-->Attractions Page<-->
+	<div data-role="page" data-theme="b" id="attractions">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctaattractions.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Universal Orlando</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Blue Springs</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Disney World</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Attraction.png">
+							<h2>Wet and Wild</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>	
+
+<!-->Events Page<-->
+	<div data-role="page" data-theme="b" id="events">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctaevents.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#exmaple">
+							<img src="images/Events.png">
+							<h2>Dave Matthews Band</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Orlando Magic</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Orlando Comedy Festival</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Events.png">
+							<h2>Boone High School Football</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>		
+
+<!-->Shopping Page<-->
+	<div data-role="page" data-theme="b" id="shopping">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="images/ctashopping.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true">
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Florida Mall</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Lowes</h2>
+							<p>Rating: 5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Orlando Outlets</h2>
+							<p>Rating: 4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#example">
+							<img src="images/Shopping.png">
+							<h2>Millenia Mall</h2>
+							<p>Rating: 3</p>
+						</a>
+					</li>
+				</ul>
+			</div>				
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+
+<!-->Example Drill Down Page<-->
+	<div data-role="page" data-theme="b" id="stillbuilding">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<h2>Still Under Construction</h2>
+		<div data-role="footer" data-theme="b" data-position="fixed">	
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+		<!-- end of stil buidling page-->
+
+<!-->Example Drill Down Page<-->
+	<div data-role="page" data-theme="b" id="example">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="navbar">
+				<ul>
+					<li><a href="#" >Share</a></li>
+					<li><a href="#" >Edit</a></li>
+				</ul>
+		</div><!-- /navbar -->
+		<div data-role="content" data-theme="b">
+			
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<h3>Coming Soon</h3>
+						<p>Rating: 5</p>
+						<p>222-222-2222</p>
+						<a href="http://www.floridastateparks.org/bluespring/">
+							<p>comingsoon.com</p>
+						</a>
+				</div>
+				<div class="ui-block-b">
+					<a href=http://maps.google.com/maps?oe=utf-8&rls=org.mozilla:en-US:official&client=firefox-a&um=1&ie=UTF-8&q=universal+studios+orlando&fb=1&gl=us&hq=universal+studios&hnear=0x88e773d8fecdbc77:0xac3b2063ca5bf9e,Orlando,+FL&ei=YDEPT5rUB8eztweYjrGeAg&sa=X&oi=local_group&ct=image&ved=0CBAQtgM>
+						<img src="images/mapshot.png">
+					</a>
+				</div>
+			</div>
+			
+			<h4>Review</h4>
+			<p>The Blue Springs State park is a great place to go and relax as a family.  They have great camping grounds and lots of fun outdoor activies.  Be careful of the water because it is extremely cold!</p>					
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+
+
+	<!-- Form Page 
+		style="display:none;"
+		-->
+	<div data-role="page" data-theme="b" id="form">
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="images/fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			
+		
+		<div align="center" id="toggle-btn">
+			<div id="clearRec">
+				<a href="#" data-role="button" value="Clear All" class="viewlists" id="clearRecommendation" />
+					Clear All
+				</a>
+			</div>
+			<div id="displayRec">
+		  		<a href="#" data-role="button" value="Display All" class="viewlists" id="displayRecommendation" />
+		  			Display All
+		  		</a>
+	  		</div>
+	  		<div id="addRec">
+		  		<a href="#" data-role="button" value="Add Recommendation" class="viewlists" id="addNew" />
+		  			Add Recommendation
+		  		</a>	
+	  		</div>
+	  	</div>	
+		
+		
+
+		<form action="#" method="post" id="recommendationform">
+			
+			<p align="center"><em>Fill in the form below to save a recommendation to your profile.</em></p>
+
+ 			<div data-role="fieldcontain">
+ 				<label for="category">Category</label> 
+ 				<select name="category" id="group1" data-native-menu="false" class="required">
+ 					<option data-placeholder="true">--Select Recommendation Type--</option>
+ 					<option value="Restaurant">Restaurant</option>
+ 					<option value="Bar">Bar</option>
+ 					<option value="Attraction">Attraction</option>
+ 					<option value="Events">Events</option>
+ 					<option value="Shopping">Shopping</option>
+ 				</select>
+ 			</div> 
+ 			
+ 			<!-- <label for="contact">Type of Recommendation:</label>
+ 			<span id="select1"></span> -->
+ 			
+ 			<div data-role="fieldcontain">
+	  			<label for="name">Recommendation Title:</label>
+	  			<input type="text" name="name" id="name" class="required"/>
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="rating">Rating (1=bad, 5=amazing):</label>
+	  			<input type="range" value="4" min="1" max="5" name="rating" id="rating" />
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="comments">Details about service requested:</label>
+	  			<textarea name="comments" id="comments" class="required" placeholder="Write a short recommendation here!"></textarea>
+			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="phonenum">Phone Number:</label>
+	  			<input type="tel" name="phonenum" id="phonenum" placeholder="xxx-xxx-xxxx"/>
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="email">Email:</label>
+	  			<input type="email" name="email" id="email" placeholder="example@email.com"/>
+  			</div>
+  			
+  			<div data-role="fieldcontain">
+	  			<label for="url">Website:</label>
+	  			<input type="url" name="url" id="url" placeholder="http://www.example.com"/>
+  			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="location">Address:</label>
+	  			<input type="text" name="location" id="location" placeholder="1234 Main Street, Orlando, FL"/>
+  			</div>
+  			
+  			<!--><ul id="errors"></ul></-->
+  			<div class="ui-grid-a">
+	  			<div class="ui-block-a">
+	  				<input type="submit" value="Save" id="submit"/><!--id="submit"--> 		
+	  			</div>
+				<div class="ui-block-b" align="center" id="cancel">
+					<a href="#home" id="cancel">Cancel</a>
+				</div>
+  			</div>
+  			
+		</form>	
+			
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" id="addNew"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>
+	
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/libs/additional-methods.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/json.js"></script>
+</body>
+</html>
