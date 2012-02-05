@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Patrick Powers, Project 1 MiU, 1201, 1/3/2011
 
 
@@ -68,6 +69,11 @@ function storeData(key){
 
 function storeData(key){
 >>>>>>> master
+=======
+//Patrick Powers, Project 3 MiU, 1201, 1/3/2011
+
+function storeData(key){
+>>>>>>> master
 		//If there is no key, this means this is a brand new item and we need a new key
 		if(!key){
 			var id 					= Math.floor(Math.random()*10000001);
@@ -87,10 +93,13 @@ function storeData(key){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
 =======
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -101,6 +110,9 @@ function storeData(key){
 			item.url			= ["Website:  ", $('url').value];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -111,6 +123,7 @@ function storeData(key){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Recommendation Saved");
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -364,6 +377,8 @@ function storeData(key){
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 
 var save = storeData;
 
@@ -381,6 +396,10 @@ $(document).ready(function(){
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+})
+>>>>>>> master
+=======
 })
 >>>>>>> master
 =======

@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Patrick Powers, Project 1 ASD, 1201, 1/3/2011
+=======
+//Patrick Powers, Project 1 MiU, 1202, 2/2/2011
+>>>>>>> master
 =======
 //Patrick Powers, Project 1 MiU, 1202, 2/2/2011
 >>>>>>> master
@@ -7,6 +11,11 @@
 
 $(document).ready(function(){
 	
+<<<<<<< HEAD
+=======
+	toggleControls('off');
+	
+>>>>>>> master
 	var recform = $("#recommendationform");
 	
 	recform.validate({
@@ -14,9 +23,41 @@ $(document).ready(function(){
 		submitHandler: function(){
 			var data = recform.serializeArray();
 			storeData(data)
+<<<<<<< HEAD
 		}
 });
 
+=======
+			console.log(data);
+		}
+});
+
+function toggleControls(n){
+		switch(n){
+			case "on":
+				$('#recommendationform').css("display" , "none");
+				$('#clearRec').css("display" , "inline");
+				$('#displayRec').css("display" , "none");
+				$('#addRec').css("display" , "inline");
+				break;
+			case "off":
+				$('#recommendationform').css("display" , "block");
+				$('#clearRec').css("display" , "block");
+				$('#displayRec').css("display" , "block");
+				$('#addRec').css("display" , "none");
+				$('#items').css("display" , "none");
+				break;
+			//	break;
+			default:
+				return false;
+		}
+	}
+	
+function formBack(){
+	toggleControls('off');
+}	
+
+>>>>>>> master
 function storeData(data){
 		//If there is no key, this means this is a brand new item and we need a new key
 		if(!data.key){
@@ -32,6 +73,9 @@ function storeData(data){
 		//getCheckboxValue();
 		var item 				= {};
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 			item.groups1		= ["Category:  ", data[0].value];
 			item.name			= ["Recommendation Title:  ", data[1].value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
@@ -40,6 +84,7 @@ function storeData(data){
 			item.email			= ["Email:  ", data[5].value];
 			item.url			= ["Website:  ", data[6].value];
 			item.location		= ["Location:  ", data[7].value];
+<<<<<<< HEAD
 =======
 			item.groups1		= ["Category:  ", data[0].val];
 			item.name			= ["Recommendation Title:  ", data[1].val];
@@ -50,6 +95,8 @@ function storeData(data){
 			item.url			= ["Website:  ", data[6].val];
 			item.location		= ["Location:  ", data[7].val];
 >>>>>>> master
+=======
+>>>>>>> master
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		console.log(id, JSON.stringify(item))
@@ -58,15 +105,22 @@ function storeData(data){
 		}
 
 function getData(){
+<<<<<<< HEAD
 		//toggleControls('on');
+=======
+		toggleControls('on');
+>>>>>>> master
 		if(localStorage.length === 0){
 			autoFillData();
 			alert("There are no current recommendations, so default data was added.");
 		}
 		//Write Data from Local Stograge to the browser.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> master
 		
 		//need to create the JQM page tht the data will be held on
 /*		var makePage = $('<div></div>');
@@ -104,26 +158,41 @@ function getData(){
 		makePage.append(makeContent);		
 */		
 		//previous code
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		var makeDiv = $('<div></div>');
 		makeDiv.attr("id", "items");
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
 		$("#recommendationform").after(makeDiv);
+<<<<<<< HEAD
 		$("#item").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = $('<li></li>');
 			 makeLi.attr("class", "recos")
+=======
+		$("#items").css("display", "block");
+		for(var i=0, j=localStorage.length; i<j; i++){
+			 var makeLi = $('<li></li>');
+			 makeLi.attr("class", "recos");
+>>>>>>> master
 			 var linksLi = $('<li></li>');
 			 makeList.append(makeLi);
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse().
 			 var obj = JSON.parse(value);
+<<<<<<< HEAD
+=======
+			 console.log(JSON.parse(value));
+>>>>>>> master
 			 var makeSubList = $('<ul></ul>');
 			 makeLi.append(makeSubList);
 			 getImage(obj.groups1[1], makeSubList);
 			 for(var n in obj){
+<<<<<<< HEAD
 			 	var makeSubLi = $('<li></li>');
 			 	makeSubList.append(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
@@ -134,15 +203,38 @@ function getData(){
 >>>>>>> master
 			 	makeSubList.append(linksLi); 
 			 }
+=======
+			 	var makeSubLi = document.createElement('li');
+			 	makeSubList.append(makeSubLi);
+			 	var optSubText = obj[n][0]+" "+obj[n][1];
+			 	makeSubLi.innerHTML = optSubText;
+			 	makeSubList.append(linksLi); 
+			 }
+		//	 for(var n in obj){
+		//	 	var makeSubLi = $('<li></li>');
+		//	 	makeSubList.append(makeSubLi);
+		//	 	var optSubText = obj[n][0]+" "+obj[n][1];
+		//	 	makeSubLi.innerHTML = optSubText;
+		//	 	makeSubList.append(linksLi); 
+		//	 }
+>>>>>>> master
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
 	}
 	
 	function getImage(catName, makeSubList){
 		var imageLi = $('<li></li>');
+<<<<<<< HEAD
 		makeSubList.append(imageLi);
 		var newImg = $('<img></img>');
 		var setSrc = newImg.attr("src", "images/"+ catName +".png");
+=======
+		imageLi.css("display", "inline");
+		makeSubList.append(imageLi);
+		var newImg = $('<img></img>');
+		var setSrc = newImg.attr("src", "images/"+ catName +".png");
+		setSrc.css("display", "inline");
+>>>>>>> master
 		imageLi.append(newImg);
 	}
 	
@@ -160,6 +252,7 @@ function getData(){
 		//add edit signle item link
 		var editLink = $('<a></a>');
 <<<<<<< HEAD
+<<<<<<< HEAD
 		editLink.attr({
 			"id": "changeItem",
 			"data-role": "button",
@@ -174,12 +267,22 @@ function getData(){
 		editLink.bind("click", editItem);
 		editLink.html(editText);
 		linksLi.append(editLink);
+=======
+		editLink.attr("id", "changeItem");
+		editLink.href = "#";
+		editLink.key = key;
+		var editText = "Edit";
+		editLink.html(editText);
+		linksLi.append(editLink);
+		editLink.bind("click", editItem);
+>>>>>>> master
 		
 		//add Line break
 	//	var breakTag = document.createElement('br');
 	//	linksLi.appendChild(breakTag);
 		
 		//add a delete single item link
+<<<<<<< HEAD
 <<<<<<< HEAD
 		
 		var deleteLink = $('<a></a>');
@@ -194,6 +297,14 @@ function getData(){
 		deleteLink.attr("id", "deleteItem");
 		deleteLink.href = "#";
 >>>>>>> master
+=======
+		var deleteLink = $('<a></a>');
+		deleteLink.attr({
+			"id": "deleteItem",	
+			"data-role": "button"
+		});
+		deleteLink.href = "#";
+>>>>>>> master
 		deleteLink.key = key;
 		var deleteText = "Delete";
 		deleteLink.bind("click", deleteItem);
@@ -205,10 +316,18 @@ function getData(){
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
+<<<<<<< HEAD
 		var item = JSON.parse(value);
 		
 		//Show the from to edit the items
 		//toggleControls("off");
+=======
+		console.log(localStorage.getItem(this.key));
+		var item = JSON.parse(value);
+		console.log(JSON.parse(value));
+		//Show the from to edit the items
+		toggleControls("off");
+>>>>>>> master
 		
 		//populate the form feilds with the current localStorage values.
 		$('#groups1').value 	= item.groups1[1];
@@ -223,17 +342,23 @@ function getData(){
 		save.removeEventListener("click", storeData);
 		//Change Submit button value to Save Edit
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//$('#submit').val = "Save Edit";
 		//var editSubmit = $('#submit');
 		//Save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data that we edited
 		$('#submit').attr("value", "Save Edit").bind("click", recform.validate);
 =======
+=======
+>>>>>>> master
 		$('#submit').val = "Save Edit";
 		var editSubmit = $('#submit');
 		//Save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data that we edited
 		editSubmit.bind("click", recform.validate);
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		editSubmit.key = this.key;
 	}
@@ -241,7 +366,11 @@ function getData(){
 	function deleteItem(){
 		var ask = confirm("Are you sure you want to delete this recommendation?");
 		if(ask){
+<<<<<<< HEAD
 			localStorage.removeItem(this.key);
+=======
+			localStorage.removeItem('name');
+>>>>>>> master
 			alert("Recommendation was deleted.");
 			window.location.reload();
 		}else{
@@ -262,5 +391,10 @@ function getData(){
 
 	
 	$('#displayRecommendation').bind("click", getData);
+<<<<<<< HEAD
+=======
+	$('#clearRecommendation').bind("click", clearLocal);
+	$('#addRec').bind("click", formBack);
+>>>>>>> master
 		
 });

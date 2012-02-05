@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
@@ -31,6 +32,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
+=======
+	
+>>>>>>> master
 =======
 	
 >>>>>>> master
@@ -81,10 +85,13 @@ window.addEventListener("DOMContentLoaded", function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
 =======
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -95,6 +102,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.url			= ["Website:  ", $('url').value];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -118,7 +128,11 @@ window.addEventListener("DOMContentLoaded", function(){
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
+<<<<<<< HEAD
 		$('items').style.display = "block";
+=======
+		$('item').style.display = "block";
+>>>>>>> master
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
 			 makeLi.setAttribute("class", "recos")
@@ -166,6 +180,7 @@ window.addEventListener("DOMContentLoaded", function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"request2": {
 				"groups1": 		["Select Recommendation Type:", "Event"],
 				"name": 		["Name:", "Dave Mathews Band"],
@@ -175,6 +190,8 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 				}
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -346,6 +363,7 @@ window.addEventListener("DOMContentLoaded", function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//Variable default
 		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
 		var urgentValue = "Not Urgent";
@@ -353,6 +371,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	makeCats1();
 	
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
