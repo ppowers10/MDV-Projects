@@ -188,7 +188,10 @@ function getData(){
 		
 		//add a delete single item link
 		var deleteLink = $('<a></a>');
-		deleteLink.attr("id", "deleteItem");
+		deleteLink.attr({
+			"id": "deleteItem",	
+			"data-role": "button"
+		});
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete";
@@ -230,7 +233,7 @@ function getData(){
 	function deleteItem(){
 		var ask = confirm("Are you sure you want to delete this recommendation?");
 		if(ask){
-			localStorage.removeItem(this.key);
+			localStorage.removeItem('name');
 			alert("Recommendation was deleted.");
 			window.location.reload();
 		}else{
