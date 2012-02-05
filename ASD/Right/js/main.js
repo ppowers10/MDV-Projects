@@ -1,48 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//Patrick Powers, Project 1 ASD, 1201, 1/3/2011
-=======
 //Patrick Powers, Project 1 MiU, 1202, 2/2/2011
->>>>>>> master
-=======
-//Patrick Powers, Project 1 MiU, 1202, 2/2/2011
->>>>>>> master
-=======
-//Patrick Powers, Project 1 MiU, 1202, 2/2/2011
->>>>>>> master
-=======
-//Patrick Powers, Project 1 MiU, 1202, 2/2/2011
->>>>>>> master
-=======
-//Patrick Powers, Project 1 MiU, 1202, 2/2/2011
->>>>>>> master
 
 
 $(document).ready(function(){
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	toggleControls('off');
 	
->>>>>>> master
-=======
-	toggleControls('off');
-	
->>>>>>> master
-=======
-	toggleControls('off');
-	
->>>>>>> master
-=======
-	toggleControls('off');
-	
->>>>>>> master
 	var recform = $("#recommendationform");
 	
 	recform.validate({
@@ -50,20 +12,6 @@ $(document).ready(function(){
 		submitHandler: function(){
 			var data = recform.serializeArray();
 			storeData(data)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		}
-});
-
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 			console.log(data);
 		}
 });
@@ -93,16 +41,6 @@ function formBack(){
 	toggleControls('off');
 }	
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 function storeData(data){
 		//If there is no key, this means this is a brand new item and we need a new key
 		if(!data.key){
@@ -117,19 +55,6 @@ function storeData(data){
 		//Oject properties contain array with the form label and input value.
 		//getCheckboxValue();
 		var item 				= {};
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 			item.groups1		= ["Category:  ", data[0].value];
 			item.name			= ["Recommendation Title:  ", data[1].value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
@@ -138,28 +63,6 @@ function storeData(data){
 			item.email			= ["Email:  ", data[5].value];
 			item.url			= ["Website:  ", data[6].value];
 			item.location		= ["Location:  ", data[7].value];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-			item.groups1		= ["Category:  ", data[0].val];
-			item.name			= ["Recommendation Title:  ", data[1].val];
-			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].val];
-			item.comments		= ["Comments:  ", data[3].val];
-			item.phonenum		= ["Phone Number:  ", data[4].val];
-			item.email			= ["Email:  ", data[5].val];
-			item.url			= ["Website:  ", data[6].val];
-			item.location		= ["Location:  ", data[7].val];
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		console.log(id, JSON.stringify(item))
@@ -168,43 +71,12 @@ function storeData(data){
 		}
 
 function getData(){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		//toggleControls('on');
-=======
 		toggleControls('on');
->>>>>>> master
-=======
-		toggleControls('on');
->>>>>>> master
-=======
-		toggleControls('on');
->>>>>>> master
-=======
-		toggleControls('on');
->>>>>>> master
 		if(localStorage.length === 0){
 			autoFillData();
 			alert("There are no current recommendations, so default data was added.");
 		}
 		//Write Data from Local Stograge to the browser.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		
 		//need to create the JQM page tht the data will be held on
 /*		var makePage = $('<div></div>');
@@ -242,100 +114,26 @@ function getData(){
 		makePage.append(makeContent);		
 */		
 		//previous code
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		var makeDiv = $('<div></div>');
 		makeDiv.attr("id", "items");
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
 		$("#recommendationform").after(makeDiv);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		$("#item").css("display", "block");
-		for(var i=0, j=localStorage.length; i<j; i++){
-			 var makeLi = $('<li></li>');
-			 makeLi.attr("class", "recos")
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		$("#items").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = $('<li></li>');
 			 makeLi.attr("class", "recos");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 			 var linksLi = $('<li></li>');
 			 makeList.append(makeLi);
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse().
 			 var obj = JSON.parse(value);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 			 console.log(JSON.parse(value));
->>>>>>> master
-=======
-			 console.log(JSON.parse(value));
->>>>>>> master
-=======
-			 console.log(JSON.parse(value));
->>>>>>> master
-=======
-			 console.log(JSON.parse(value));
->>>>>>> master
 			 var makeSubList = $('<ul></ul>');
 			 makeLi.append(makeSubList);
 			 getImage(obj.groups1[1], makeSubList);
 			 for(var n in obj){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-			 	var makeSubLi = $('<li></li>');
-			 	makeSubList.append(makeSubLi);
-			 	var optSubText = obj[n][0]+" "+obj[n][1];
-<<<<<<< HEAD
-			 	makeSubLi.html(optSubText);
-=======
-			 	makeSubLi.innerHTML = optSubText;
->>>>>>> master
-			 	makeSubList.append(linksLi); 
-			 }
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 			 	var makeSubLi = document.createElement('li');
 			 	makeSubList.append(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
@@ -349,51 +147,17 @@ function getData(){
 		//	 	makeSubLi.innerHTML = optSubText;
 		//	 	makeSubList.append(linksLi); 
 		//	 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
 	}
 	
 	function getImage(catName, makeSubList){
 		var imageLi = $('<li></li>');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		makeSubList.append(imageLi);
-		var newImg = $('<img></img>');
-		var setSrc = newImg.attr("src", "images/"+ catName +".png");
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		imageLi.css("display", "inline");
 		makeSubList.append(imageLi);
 		var newImg = $('<img></img>');
 		var setSrc = newImg.attr("src", "images/"+ catName +".png");
 		setSrc.css("display", "inline");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		imageLi.append(newImg);
 	}
 	
@@ -410,32 +174,6 @@ function getData(){
 	function makeItemLinks(key, linksLi){
 		//add edit signle item link
 		var editLink = $('<a></a>');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		editLink.attr({
-			"id": "changeItem",
-			"data-role": "button",
-			"href": "#"
-		})
-=======
-		editLink.attr("id", "changeItem");
->>>>>>> master
-		editLink.href = "#";
-		editLink.key = key;
-		var editText = "Edit";
-		editLink.bind("click", editItem);
-		editLink.html(editText);
-		linksLi.append(editLink);
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		editLink.attr("id", "changeItem");
 		editLink.href = "#";
 		editLink.key = key;
@@ -443,63 +181,15 @@ function getData(){
 		editLink.html(editText);
 		linksLi.append(editLink);
 		editLink.bind("click", editItem);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		
 		//add Line break
 	//	var breakTag = document.createElement('br');
 	//	linksLi.appendChild(breakTag);
 		
 		//add a delete single item link
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-		var deleteLink = $('<a></a>');
-		deleteLink.attr({
-			"id": "deleteItem",
-			"data-role": "button",
-			"href": "#"
-		})
-		//deleteLink.href = "#";
-=======
 		var deleteLink = $('<a></a>');
 		deleteLink.attr("id", "deleteItem");
 		deleteLink.href = "#";
->>>>>>> master
-=======
-		var deleteLink = $('<a></a>');
-		deleteLink.attr({
-			"id": "deleteItem",	
-			"data-role": "button"
-		});
-		deleteLink.href = "#";
->>>>>>> master
-=======
-		var deleteLink = $('<a></a>');
-		deleteLink.attr("id", "deleteItem");
-		deleteLink.href = "#";
->>>>>>> master
-=======
-		var deleteLink = $('<a></a>');
-		deleteLink.attr("id", "deleteItem");
-		deleteLink.href = "#";
->>>>>>> master
-=======
-		var deleteLink = $('<a></a>');
-		deleteLink.attr("id", "deleteItem");
-		deleteLink.href = "#";
->>>>>>> master
 		deleteLink.key = key;
 		var deleteText = "Delete";
 		deleteLink.bind("click", deleteItem);
@@ -511,36 +201,11 @@ function getData(){
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		var item = JSON.parse(value);
-		
-		//Show the from to edit the items
-		//toggleControls("off");
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		console.log(localStorage.getItem(this.key));
 		var item = JSON.parse(value);
 		console.log(JSON.parse(value));
 		//Show the from to edit the items
 		toggleControls("off");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		
 		//populate the form feilds with the current localStorage values.
 		$('#groups1').value 	= item.groups1[1];
@@ -554,66 +219,18 @@ function getData(){
 		//Remove the initial listener from the input "save" button.
 		save.removeEventListener("click", storeData);
 		//Change Submit button value to Save Edit
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		//$('#submit').val = "Save Edit";
-		//var editSubmit = $('#submit');
-		//Save the key value established in this function as a property of the editSubmit event
-		//so we can use that value when we save the data that we edited
-		$('#submit').attr("value", "Save Edit").bind("click", recform.validate);
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		$('#submit').val = "Save Edit";
 		var editSubmit = $('#submit');
 		//Save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data that we edited
 		editSubmit.bind("click", recform.validate);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 		editSubmit.key = this.key;
 	}
 	
 	function deleteItem(){
 		var ask = confirm("Are you sure you want to delete this recommendation?");
 		if(ask){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 			localStorage.removeItem(this.key);
-=======
-			localStorage.removeItem('name');
->>>>>>> master
-=======
-			localStorage.removeItem(this.key);
->>>>>>> master
-=======
-			localStorage.removeItem(this.key);
->>>>>>> master
-=======
-			localStorage.removeItem(this.key);
->>>>>>> master
 			alert("Recommendation was deleted.");
 			window.location.reload();
 		}else{
@@ -634,25 +251,7 @@ function getData(){
 
 	
 	$('#displayRecommendation').bind("click", getData);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	$('#clearRecommendation').bind("click", clearLocal);
 	$('#addRec').bind("click", formBack);
->>>>>>> master
-=======
-	$('#clearRecommendation').bind("click", clearLocal);
-	$('#addRec').bind("click", formBack);
->>>>>>> master
-=======
-	$('#clearRecommendation').bind("click", clearLocal);
-	$('#addRec').bind("click", formBack);
->>>>>>> master
-=======
-	$('#clearRecommendation').bind("click", clearLocal);
-	$('#addRec').bind("click", formBack);
->>>>>>> master
 		
 });
