@@ -10,6 +10,7 @@ $(document).ready(function(){
 		submitHandler: function(){
 			var data = recform.serializeArray();
 			storeData(data)
+			console.log(data);
 		}
 });
 
@@ -27,14 +28,14 @@ function storeData(data){
 		//Oject properties contain array with the form label and input value.
 		//getCheckboxValue();
 		var item 				= {};
-			item.groups1		= ["Category:  ", data[0].val];
-			item.name			= ["Recommendation Title:  ", data[1].val];
-			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].val];
-			item.comments		= ["Comments:  ", data[3].val];
-			item.phonenum		= ["Phone Number:  ", data[4].val];
-			item.email			= ["Email:  ", data[5].val];
-			item.url			= ["Website:  ", data[6].val];
-			item.location		= ["Location:  ", data[7].val];
+			item.groups1		= ["Category:  ", data[0].value];
+			item.name			= ["Recommendation Title:  ", data[1].value];
+			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
+			item.comments		= ["Comments:  ", data[3].value];
+			item.phonenum		= ["Phone Number:  ", data[4].value];
+			item.email			= ["Email:  ", data[5].value];
+			item.url			= ["Website:  ", data[6].value];
+			item.location		= ["Location:  ", data[7].value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
 		console.log(id, JSON.stringify(item))
@@ -91,35 +92,45 @@ function getData(){
 		var makeList = $('<ul></ul>');
 		makeDiv.append(makeList);
 		$("#recommendationform").after(makeDiv);
-		$("#item").css("display", "block");
+		$("#items").css("display", "block");
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = $('<li></li>');
-			 makeLi.attr("class", "recos")
+			 makeLi.attr("class", "recos");
 			 var linksLi = $('<li></li>');
 			 makeList.append(makeLi);
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse().
 			 var obj = JSON.parse(value);
+			 console.log(JSON.parse(value));
 			 var makeSubList = $('<ul></ul>');
 			 makeLi.append(makeSubList);
 			 getImage(obj.groups1[1], makeSubList);
 			 for(var n in obj){
-			 	var makeSubLi = $('<li></li>');
+			 	var makeSubLi = document.createElement('li');
 			 	makeSubList.append(makeSubLi);
 			 	var optSubText = obj[n][0]+" "+obj[n][1];
 			 	makeSubLi.innerHTML = optSubText;
 			 	makeSubList.append(linksLi); 
 			 }
+		//	 for(var n in obj){
+		//	 	var makeSubLi = $('<li></li>');
+		//	 	makeSubList.append(makeSubLi);
+		//	 	var optSubText = obj[n][0]+" "+obj[n][1];
+		//	 	makeSubLi.innerHTML = optSubText;
+		//	 	makeSubList.append(linksLi); 
+		//	 }
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
 	}
 	
 	function getImage(catName, makeSubList){
 		var imageLi = $('<li></li>');
+		imageLi.css("display", "inline");
 		makeSubList.append(imageLi);
 		var newImg = $('<img></img>');
 		var setSrc = newImg.attr("src", "images/"+ catName +".png");
+		setSrc.css("display", "inline");
 		imageLi.append(newImg);
 	}
 	
@@ -163,6 +174,7 @@ function getData(){
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
+		console.log(value);
 		var item = JSON.parse(value);
 		
 		//Show the from to edit the items
@@ -212,5 +224,6 @@ function getData(){
 
 	
 	$('#displayRecommendation').bind("click", getData);
+	$('#clearRecommendation').bind("click", clearLocal);
 		
 });
