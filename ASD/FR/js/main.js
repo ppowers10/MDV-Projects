@@ -2,6 +2,8 @@
 
 
 $(document).ready(function(){
+
+$//('#form').live('pageinit', function(){
 	
 	toggleControls('off');
 	
@@ -14,106 +16,69 @@ $(document).ready(function(){
 			storeData(data)
 			console.log(data);
 		}
-});
+	});
 
-function toggleControls(n){
-		switch(n){
-			case "on":
-				$('#recommendationform').css("display" , "none");
-				$('#clearRec').css("display" , "inline");
-				$('#displayRec').css("display" , "none");
-				$('#addRec').css("display" , "inline");
-				break;
-			case "off":
-				$('#recommendationform').css("display" , "block");
-				$('#clearRec').css("display" , "block");
-				$('#displayRec').css("display" , "block");
-				$('#addRec').css("display" , "none");
-				$('#items').css("display" , "none");
-				break;
-			//	break;
-			default:
-				return false;
+	function toggleControls(n){
+			switch(n){
+				case "on":
+					$('#recommendationform').css("display" , "none");
+					$('#clearRec').css("display" , "inline");
+					$('#displayRec').css("display" , "none");
+					$('#addRec').css("display" , "inline");
+					break;
+				case "off":
+					$('#recommendationform').css("display" , "block");
+					$('#clearRec').css("display" , "block");
+					$('#displayRec').css("display" , "block");
+					$('#addRec').css("display" , "none");
+					$('#items').css("display" , "none");
+					break;
+				//	break;
+				default:
+					return false;
+			}
 		}
-	}
 	
-function formBack(){
-	toggleControls('off');
-}	
-
-function storeData(data){
-		//If there is no key, this means this is a brand new item and we need a new key
-		if(!data.key){
-			var id 					= Math.floor(Math.random()*10000001);
-		}else{
-			//set the id to the existing key we're editing so that it will save over the data
-			//the key is the same key that's been passed along from the editSubmit event handler
-			//to the validate function, adn then passed here, into the storeData function
-			var id = data.key;
-		}
-		//Gather up all our form field values and store in an object.
-		//Oject properties contain array with the form label and input value.
-		//getCheckboxValue();
-		var item 				= {};
-			item.groups1		= ["Category:  ", data[0].value];
-			item.name			= ["Recommendation Title:  ", data[1].value];
-			item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
-			item.comments		= ["Comments:  ", data[3].value];
-			item.phonenum		= ["Phone Number:  ", data[4].value];
-			item.email			= ["Email:  ", data[5].value];
-			item.url			= ["Website:  ", data[6].value];
-			item.location		= ["Location:  ", data[7].value];
-		//Save data into Local Storage: Use Stringify to convert our object to a string
-		localStorage.setItem(id, JSON.stringify(item));
-		console.log(id, JSON.stringify(item))
-		alert("Recommendation Saved");
-		
-		}
-
-function getData(){
-		toggleControls('on');
-		if(localStorage.length === 0){
-			autoFillData();
-			alert("There are no current recommendations, so default data was added.");
-		}
-		//Write Data from Local Stograge to the browser.
-		
-		//need to create the JQM page tht the data will be held on
-/*		var makePage = $('<div></div>');
-		makePage.attr({
-			"data-theme": "b",
-			"id": "viewdata"
-		});
-		$('body').append(makePage);
-		var createLink = $('<a></a>');
-		createLink.attr({
-			"href": "#home",
-			"data-direction": "reverse"
-		});
-		makePage.append(createLink);
-		var createLinkDiv = $('<div></div>');
-		createLinkDiv.attr({
-			"data-role": "header",
-			"data-theme": "b",
-			"align": "center"
-		});
-		createLink.append(createLinkDiv);
-		var createLinkImage = $('<img></img>');
-		createLinkImage.attr({
-			"src": "images/fr_header.png"
-		});
-		createLinkDiv.append(createLinkImage);
-		//ends the header section of the page
+	function formBack(){
+		toggleControls('off');
+	}	
+	
+	function storeData(data){
+			//If there is no key, this means this is a brand new item and we need a new key
+			if(!data.key){
+				var id 					= Math.floor(Math.random()*10000001);
+			}else{
+				//set the id to the existing key we're editing so that it will save over the data
+				//the key is the same key that's been passed along from the editSubmit event handler
+				//to the validate function, adn then passed here, into the storeData function
+				var id = data.key;
+			}
+			//Gather up all our form field values and store in an object.
+			//Oject properties contain array with the form label and input value.
+			//getCheckboxValue();
+			var item 				= {};
+				item.groups1		= ["Category:  ", data[0].value];
+				item.name			= ["Recommendation Title:  ", data[1].value];
+				item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
+				item.comments		= ["Comments:  ", data[3].value];
+				item.phonenum		= ["Phone Number:  ", data[4].value];
+				item.email			= ["Email:  ", data[5].value];
+				item.url			= ["Website:  ", data[6].value];
+				item.location		= ["Location:  ", data[7].value];
+			//Save data into Local Storage: Use Stringify to convert our object to a string
+			localStorage.setItem(id, JSON.stringify(item));
+			console.log(id, JSON.stringify(item))
+			alert("Recommendation Saved");
 			
-		//create content area of JQM
-		var makeContent = $('<div></div>');
-		makeContent.attr({
-			"data-role": "content",
-			"data-theme": "b"
-		});
-		makePage.append(makeContent);		
-*/		
-		//previous code
+			}
+	
+	function getData(){
+			toggleControls('on');
+			if(localStorage.length === 0){
+				autoFillData();
+				alert("There are no current recommendations, so default data was added.");
+			}
+		//Write Data from Local Stograge to the browser.
 		var makeDiv = $('<div></div>');
 		makeDiv.attr("id", "items");
 		var makeList = $('<ul></ul>');
@@ -254,4 +219,5 @@ function getData(){
 	$('#clearRecommendation').bind("click", clearLocal);
 	$('#addRec').bind("click", formBack);
 		
+//	});	
 });
