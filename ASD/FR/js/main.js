@@ -4,11 +4,28 @@
 $(document).ready(function(){
 	
 	$('#listAll').live('pageinit', function(){
+		$('#listAllRec').empty();
 		$.ajax({
 			url: "xhr/data.json",
 			type: "GET",
 			dataType: "json",
-			success: function(result){console.log(result);},
+			success: function(response){
+				console.log(response)
+					for (var i=0, j=response.request[i].length; i<j; i++){
+						var rec=result.request.length[i];
+						var Li = $('<li>')
+						$('#listAllRec').append(Li);
+						var linkA = $('<a>').attr('href', '#example');;
+						Li.append(linkA);
+						var img = $('img').attr('src', 'images/'+ rec.groups1 +'.png');
+						linkA.append(img);
+						var head = $('<h2>' + rec.name + '</h2');
+						linkA.append(head);
+						var para = $('<p>' + rec.rating + '</p>');
+						linkA.append(para);	
+						console.log();
+					};
+			},
 			error: function(result){ console.log(result);}
 		});
 		

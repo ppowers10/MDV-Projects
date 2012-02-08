@@ -1,5 +1,5 @@
-		{
-			"request1": {
+{ "request": [
+			 {
 				"groups1": 		["Category:", "Events"],
 				"name": 		["Name:", "Dave Mathews Band"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "5"],
@@ -9,7 +9,7 @@
 				"url": 			["Website:", "http://www.john.doe.com"],
 				"location": 	["Location:", "Amway in Orlando"]
 			},
-			"request2": {
+			{
 				"groups1": 		["Category:", "Attraction"],
 				"name": 		["Name:", "Universal"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "3"],	
@@ -19,7 +19,7 @@
 				"url": 			["Website:", "http://www.universal.com"],
 				"location": 	["Location:", "Orlando"]
 			},
-			"request3": {
+			{
 				"groups1": 		["Category:", "Restaurant"],
 				"name": 		["Name:", "Outback"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "4"],	
@@ -29,7 +29,7 @@
 				"url": 			["Website:", "http://www.outback.com"],
 				"location": 	["Location:", "Aloma Ave"]
 			},
-			"request4": {
+			{
 				"groups1": 		["Category:", "Bar"],
 				"name": 		["Name:", "Filling Station"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "4"],	
@@ -39,7 +39,7 @@
 				"url": 			["Website:", "http://www.filling.com"],
 				"location": 	["Location:", "Michigan"]
 			},
-			"request5": {
+			{
 				"groups1": 		["Category:", "Shopping"],
 				"name": 		["Name:", "Brazilian Grocergy Store"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "4"],
@@ -49,7 +49,7 @@
 				"url": 			["Website:", "http://www.brazil.com"],					
 				"location": 	["Location:", "International drive near the outlets."]
 			},
-			"request6": {
+			{
 				"groups1": 		["Category:", "Restaurant"],
 				"name": 		["Name:", "Camillas"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "5"],	
@@ -59,7 +59,7 @@
 				"url": 			["Website:", "http://www.camillas.com"],
 				"location": 	["Location:", "International Drive near outlets"]
 			},
-			"request7": {
+			{
 				"groups1": 		["Category:", "Bar"],
 				"name": 		["Name:", "Redlight Redlight"],
 				"rating": 		["Rating (1=bad, 5=amazing):", "5"],	
@@ -69,34 +69,35 @@
 				"url": 			["Website:", "http://www.rlrlcom"],
 				"location": 	["Location:", "off rt. 50 on Bennet."]
 			},
-			"request8": {
-				"groups1": 		["Category:", "Attraction"],
-				"name": 		["Name:", "Disney World"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "3"],
-				"comments": 	["Comments:", "It's Disney...enough said."],
-				"phonenum": 	["Phone Number:", "407-340-7829"],
-				"email": 		["Email:", "disney@email.com"],	
-				"url": 			["Website:", "http://www.disney.com"],	
-				"location": 	["Location:", "South of Orlando"]
+			{
+				"groups1":"Attraction",
+				"name": "Disney World",
+				"rating": "3",
+				"comments": "It's Disney...enough said.",
+				"phonenum": "407-340-7829",
+				"email": 	"disney@email.com",	
+				"url": 		"http://www.disney.com",	
+				"location": 	"South of Orlando"
 			},
-			"request9": {
-				"groups1": 		["Category:", "Events"],
-				"name": 		["Name:", "Farmers Market"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "3"],
-				"comments": 	["Comments:", "Every Sunday there is a Farmers Market at downtown lake eola.  Its always fun to walk through if you have time to waste or just want to relax on a Sunday morning."],
-				"phonenum": 	["Phone Number:", "999-999-9999"],
-				"email": 		["Email:", "none@email.com"],	
-				"url": 			["Website:", ""],
-				"location": 	["Location:", "Amway in Orlando"]
+			{
+				"groups1": 		"Events",
+				"name": 		"Farmers Market",
+				"rating": 		"3",
+				"comments": 	"Every Sunday there is a Farmers Market at downtown lake eola.  Its always fun to walk through if you have time to waste or just want to relax on a Sunday morning.",
+				"phonenum": 	"999-999-9999",
+				"email": 		"none@email.com",	
+				"url": 			"",
+				"location": 	"Amway in Orlando"
 			},
-			"request10": {
-				"groups1": 		["Category:", "Shopping"],
-				"name": 		["Name:", "Lowes"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "5"],
-				"comments": 	["Comments:", "I love lowes."],
-				"phonenum": 	["Phone Number:", "407-340-7829"],
-				"email": 		["Email:", "lowes@email.com"],	
-				"url": 			["Website:", "http://www.lowes.com"],
+			{
+				"groups1": 		"Shopping",
+				"name": 		"Lowes",
+				"rating": 		"5",
+				"comments": 	"I love lowes.",
+				"phonenum": 	"407-340-7829",
+				"email": 		"lowes@email.com",	
+				"url": 			"http://www.lowes.com",
 				"location": 	["Location:", "Off Semoran south of the 408."]
 			}
-		}
+			]
+	}
