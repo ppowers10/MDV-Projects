@@ -1,7 +1,4 @@
-//Patrick Powers
-
-	//JSON Object which will auto populate local storage
-		var json = {
+		{
 			"request1": {
 				"groups1": 		["Category:", "Events"],
 				"name": 		["Name:", "Dave Mathews Band"],
@@ -102,4 +99,4 @@
 				"url": 			["Website:", "http://www.lowes.com"],
 				"location": 	["Location:", "Off Semoran south of the 408."]
 			}
-		};
+		}
