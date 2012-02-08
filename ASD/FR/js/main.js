@@ -11,19 +11,31 @@ $(document).ready(function(){
 			dataType: "json",
 			success: function(response){
 				console.log(response)
-					for (var i=0, j=response.request[i].length; i<j; i++){
-						var rec=result.request.length[i];
-						var Li = $('<li>')
-						$('#listAllRec').append(Li);
-						var linkA = $('<a>').attr('href', '#example');;
-						Li.append(linkA);
-						var img = $('img').attr('src', 'images/'+ rec.groups1 +'.png');
-						linkA.append(img);
-						var head = $('<h2>' + rec.name + '</h2');
-						linkA.append(head);
-						var para = $('<p>' + rec.rating + '</p>');
-						linkA.append(para);	
-						console.log();
+					for (var i=0, j = response.request.length; i<j; i++){
+						var rec = response.request[i];
+					$(''+
+						'<li>' +
+							'<a href="#example">' +
+								'<img src="images/' + rec.groups1 + '.png">' +
+								'<h2>' + rec.name +'</h2>' +
+								'<p>' + rec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listAllRec');
+					$("#listAllRec").listview("refresh");
+					
+					
+					//	var Li = $('<li>')
+					//	$('#listAllRec').append(Li);
+					//	var linkA = $('<a>').attr('href', '#example');;
+					//	Li.append(linkA);
+					//	var img = $('img').attr('src', 'images/'+ rec.groups1 +'.png');
+					//	linkA.append(img);
+					//	var head = $('<h2>' + rec.name + '</h2');
+					//	linkA.append(head);
+					//	var para = $('<p>' + rec.rating + '</p>');
+					//	linkA.append(para);	
+					//	console.log();
 					};
 			},
 			error: function(result){ console.log(result);}

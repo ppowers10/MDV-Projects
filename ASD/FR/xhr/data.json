@@ -1,82 +1,82 @@
 { "request": [
 			 {
-				"groups1": 		["Category:", "Events"],
-				"name": 		["Name:", "Dave Mathews Band"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "5"],
-				"comments": 	["Comments:", "The DMB concert was amazing"],
-				"phonenum": 	["Phone Number:", "407-340-7829"],
-				"email": 		["Email:", "john.doe@email.com"],
-				"url": 			["Website:", "http://www.john.doe.com"],
-				"location": 	["Location:", "Amway in Orlando"]
+				"groups1": 		"Events",
+				"name": 		"Dave Mathews Band",
+				"rating": 		"5",
+				"comments": 	"The DMB concert was amazing",
+				"phonenum": 	"407-340-7829",
+				"email": 		"john.doe@email.com",
+				"url": 			"http://www.john.doe.com",
+				"location": 	"Amway in Orlando"
 			},
 			{
-				"groups1": 		["Category:", "Attraction"],
-				"name": 		["Name:", "Universal"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "3"],	
-				"comments": 	["Comments:", "I like city walk.  It is a great place to go and just enjoy walking around from bar to restaurant."],
-				"phonenum": 	["Phone Number:", "407-222-2222"],
-				"email": 		["Email:", "universal@email.com"],
-				"url": 			["Website:", "http://www.universal.com"],
-				"location": 	["Location:", "Orlando"]
+				"groups1": 		"Attraction",
+				"name": 		"Universal",
+				"rating": 		"3",	
+				"comments": 	"I like city walk.  It is a great place to go and just enjoy walking around from bar to restaurant.",
+				"phonenum": 	"407-222-2222",
+				"email": 		"universal@email.com",
+				"url": 			"http://www.universal.com",
+				"location": 	"Orlando"
 			},
 			{
-				"groups1": 		["Category:", "Restaurant"],
-				"name": 		["Name:", "Outback"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "4"],	
-				"comments": 	["Comments:", "Outback steakhouse has great prices.  For $10, you can get a huge meal."],
-				"phonenum": 	["Phone Number:", "407-555-5555"],
-				"email": 		["Email:", "outback@email.com"],
-				"url": 			["Website:", "http://www.outback.com"],
-				"location": 	["Location:", "Aloma Ave"]
+				"groups1": 		"Restaurant",
+				"name": 		"Outback",
+				"rating": 		"4",	
+				"comments": 	"Outback steakhouse has great prices.  For $10, you can get a huge meal.",
+				"phonenum": 	"407-555-5555",
+				"email": 		"outback@email.com",
+				"url": 			"http://www.outback.com",
+				"location": 	"Aloma Ave"
 			},
 			{
-				"groups1": 		["Category:", "Bar"],
-				"name": 		["Name:", "Filling Station"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "4"],	
-				"comments": 	["Comments:", "The filling station has great burgers, but the bar is even more fun.  It can get very crowded on the weekends, so get there early while there are still parking spaces."],
-				"phonenum": 	["Phone Number:", "407-333-7333"],
-				"email": 		["Email:", "filling@email.com"],
-				"url": 			["Website:", "http://www.filling.com"],
-				"location": 	["Location:", "Michigan"]
+				"groups1": 		"Bar",
+				"name": 		"Filling Station",
+				"rating": 		"4",	
+				"comments": 	"The filling station has great burgers, but the bar is even more fun.  It can get very crowded on the weekends, so get there early while there are still parking spaces.",
+				"phonenum": 	"407-333-7333",
+				"email": 		"filling@email.com",
+				"url": 			"http://www.filling.com",
+				"location": 	"Michigan"
 			},
 			{
-				"groups1": 		["Category:", "Shopping"],
-				"name": 		["Name:", "Brazilian Grocergy Store"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "4"],
-				"comments": 	["Comments:", "The Brazilian grocery store is great.  It has a lot of things you won't find at any other store and relatively good prices."],
-				"phonenum": 	["Phone Number:", "407-888-8888"],
-				"email": 		["Email:", "brazil@email.com"],	
-				"url": 			["Website:", "http://www.brazil.com"],					
-				"location": 	["Location:", "International drive near the outlets."]
+				"groups1": 		"Shopping",
+				"name": 		"Brazilian Grocergy Store",
+				"rating": 		"4",
+				"comments": 	"The Brazilian grocery store is great.  It has a lot of things you won't find at any other store and relatively good prices.",
+				"phonenum": 	"407-888-8888",
+				"email": 		"brazil@email.com",	
+				"url": 			"http://www.brazil.com",					
+				"location": 	"International drive near the outlets."
 			},
 			{
-				"groups1": 		["Category:", "Restaurant"],
-				"name": 		["Name:", "Camillas"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "5"],	
-				"comments": 	["Comments:", "Camillas is an all you can eat Brazilian buffet.  The food is great and if you are say you are a resident of FL,  you get a small discount in price."],
-				"phonenum": 	["Phone Number:", "407-233-4567"],
-				"email": 		["Email:", "camillas@email.com"],
-				"url": 			["Website:", "http://www.camillas.com"],
-				"location": 	["Location:", "International Drive near outlets"]
+				"groups1": 		"Restaurant",
+				"name": 		"Camillas",
+				"rating": 		"5",	
+				"comments": 	"Camillas is an all you can eat Brazilian buffet.  The food is great and if you are say you are a resident of FL,  you get a small discount in price.",
+				"phonenum": 	"407-233-4567",
+				"email": 		"camillas@email.com",
+				"url": 			"http://www.camillas.com",
+				"location": 	"International Drive near outlets"
 			},
 			{
-				"groups1": 		["Category:", "Bar"],
-				"name": 		["Name:", "Redlight Redlight"],
-				"rating": 		["Rating (1=bad, 5=amazing):", "5"],	
-				"comments": 	["Comments:", "Best place in town to taste a new and interesting beer."],
-				"phonenum": 	["Phone Number:", "407-789-7829"],
-				"email": 		["Email:", "rlrl@email.com"],
-				"url": 			["Website:", "http://www.rlrlcom"],
-				"location": 	["Location:", "off rt. 50 on Bennet."]
+				"groups1": 		"Bar",
+				"name": 		"Redlight Redlight",
+				"rating": 		"5",	
+				"comments": 	"Best place in town to taste a new and interesting beer.",
+				"phonenum": 	"407-789-7829",
+				"email": 		"rlrl@email.com",
+				"url": 			"http://www.rlrlcom",
+				"location": 	"off rt. 50 on Bennet."
 			},
 			{
-				"groups1":"Attraction",
-				"name": "Disney World",
-				"rating": "3",
-				"comments": "It's Disney...enough said.",
-				"phonenum": "407-340-7829",
-				"email": 	"disney@email.com",	
-				"url": 		"http://www.disney.com",	
+				"groups1":		"Attraction",
+				"name": 		"Disney World",
+				"rating": 		"3",
+				"comments": 	"It's Disney...enough said.",
+				"phonenum": 	"407-340-7829",
+				"email": 		"disney@email.com",	
+				"url": 			"http://www.disney.com",	
 				"location": 	"South of Orlando"
 			},
 			{
@@ -97,7 +97,7 @@
 				"phonenum": 	"407-340-7829",
 				"email": 		"lowes@email.com",	
 				"url": 			"http://www.lowes.com",
-				"location": 	["Location:", "Off Semoran south of the 408."]
+				"location": 	"Off Semoran south of the 408."
 			}
 			]
 	}
