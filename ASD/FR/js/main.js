@@ -3,7 +3,8 @@
 
 $(document).ready(function(){
 	
-	$('#listAll').live('pageinit', function(){
+//Ajax call for JSON
+	var getJSON = $('#listAll').live('pageinit', function(){
 		$('#listAllRec').empty();
 		$.ajax({
 			url: "xhr/data.json",
@@ -18,30 +19,19 @@ $(document).ready(function(){
 							'<a href="#example">' +
 								'<img src="images/' + rec.groups1 + '.png">' +
 								'<h2>' + rec.name +'</h2>' +
-								'<p>' + rec.rating + '</p>' + 
+								'<p>' + 'Rating: ' + rec.rating + '</p>' + 
 							'</a>' +
 						'</li>'
 					).appendTo('#listAllRec');
 					$("#listAllRec").listview("refresh");
-					
-					
-					//	var Li = $('<li>')
-					//	$('#listAllRec').append(Li);
-					//	var linkA = $('<a>').attr('href', '#example');;
-					//	Li.append(linkA);
-					//	var img = $('img').attr('src', 'images/'+ rec.groups1 +'.png');
-					//	linkA.append(img);
-					//	var head = $('<h2>' + rec.name + '</h2');
-					//	linkA.append(head);
-					//	var para = $('<p>' + rec.rating + '</p>');
-					//	linkA.append(para);	
-					//	console.log();
 					};
 			},
 			error: function(result){ console.log(result);}
 		});
 		
 	});
+	
+	$('#jsoncall').bind("click", getJSON);
 
 	//$('#form').live('pageinit', function(){
 		
