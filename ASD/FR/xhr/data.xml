@@ -2,7 +2,7 @@
 		<listrequest>
 			<request>
 				<Category>Events</Category>
-				<Name>Dave Mathews Band</Name>
+				<Name>Dave Mathews Band.xml</Name>
 				<Rating>5</Rating>
 				<Comments>The DMB concert was amazing</Comments>
 				<Phone>407-340-7829</Phone>
@@ -12,7 +12,7 @@
 			</request>
 			<request>
 				<Category>Attraction</Category>
-				<Name>Universal</Name>
+				<Name>Universal.xml</Name>
 				<Rating>3</Rating>
 				<Comments>I like city walk.  It is a great place to go and just enjoy</Comments>
 				<Phone>407-222-2222</Phone>
@@ -22,7 +22,7 @@
 			</request>
 			<request>
 				<Category>Restaurant</Category>
-				<Name>Outback</Name>
+				<Name>Outback.xml</Name>
 				<Rating>4</Rating>
 				<Comments>Outback steakhouse has great prices.  For $10, you can get a huge meanl.</Comments>
 				<Phone>407-555-5555</Phone>
@@ -32,7 +32,7 @@
 			</request>
 			<request>
 				<Category>Bar</Category>
-				<Name>Filling Station</Name>
+				<Name>Filling Station.xml</Name>
 				<Rating>4</Rating>
 				<Comments>The Filling Station has great burgers, but the bar is even better.</Comments>
 				<Phone>407-337-333</Phone>
@@ -42,7 +42,7 @@
 			</request>
 			<request>
 				<Category>Shopping</Category>
-				<Name>Brazilina Grocery Store</Name>
+				<Name>Brazilina Grocery Store.xml</Name>
 				<Rating>4</Rating>
 				<Comments>The Brazilian grocery store is great.  It has a lot of things you won't find at any other store and relatively good prices.</Comments>
 				<Phone>407-888-8888</Phone>
@@ -52,7 +52,7 @@
 			</request>
 			<request>
 				<Category>Restaurant</Category>
-				<Name>Camillas</Name>
+				<Name>Camillas.xml</Name>
 				<Rating>5</Rating>
 				<Comments>Camillas is an all you can eat Brazilian buffet.  The food is great and if you are say you are a resident of FL,  you get a small discount in price.</Comments>
 				<Phone>407-233-4578</Phone>
@@ -62,7 +62,7 @@
 			</request>
 			<request>
 				<Category>Bar</Category>
-				<Name>Redlight Redlight</Name>
+				<Name>Redlight Redlight.xml</Name>
 				<Rating>5</Rating>
 				<Comments>Best place in town to taste a new and interesting beer.</Comments>
 				<Phone>407-789-1234</Phone>
@@ -72,7 +72,7 @@
 			</request>
 			<request>
 				<Category>Attraction</Category>
-				<Name>Disney World</Name>
+				<Name>Disney World.xml</Name>
 				<Rating>3</Rating>
 				<Comments>It's Disney...</Comments>
 				<Phone>407-340-7829</Phone>
@@ -82,7 +82,7 @@
 			</request>
 			<request>
 				<Category>Events</Category>
-				<Name>Farmers Market</Name>
+				<Name>Farmers Market.xml</Name>
 				<Rating>3</Rating>
 				<Comments>Every Sunday there is a Farmers Market at downtown lake eola.  Its always fun to walk through if you have time to waste or just want to relax on a Sunday morning.</Comments>
 				<Phone>407-999-9999</Phone>
@@ -92,7 +92,7 @@
 			</request>
 				<request>
 				<Category>Shopping</Category>
-				<Name>Lowes</Name>
+				<Name>Lowes.xml</Name>
 				<Rating>5</Rating>
 				<Comments>I love lowes!</Comments>
 				<Phone>407-555-9999</Phone>

@@ -215,6 +215,7 @@ $(document).ready(function(){
 				//	 }
 					makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 				}
+				//$("#form").listview("refresh");
 			}
 		
 		function getImage(catName, makeSubList){
@@ -240,7 +241,10 @@ $(document).ready(function(){
 		function makeItemLinks(key, linksLi){
 			//add edit signle item link
 			var editLink = $('<a></a>');
-			editLink.attr("id", "changeItem");
+			editLink.attr({
+				"data-role": "button", 
+				"id": "changeItem"
+			});
 			editLink.href = "#";
 			editLink.key = key;
 			var editText = "Edit";
@@ -254,7 +258,10 @@ $(document).ready(function(){
 			
 			//add a delete single item link
 			var deleteLink = $('<a></a>');
-			deleteLink.attr("id", "deleteItem");
+			deleteLink.attr({
+				"data-role": "button",
+				"id": "deleteItem"
+			});
 			deleteLink.href = "#";
 			deleteLink.key = key;
 			var deleteText = "Delete";
@@ -264,7 +271,8 @@ $(document).ready(function(){
 		}
 		
 		//Edit Single Item
-		function editItem(){
+		function editItem(key){
+			console.log(key);
 			//Grab the data from our item from Local Storage.
 			var value = localStorage.getItem(this.key);
 			console.log(localStorage.getItem(this.key));
