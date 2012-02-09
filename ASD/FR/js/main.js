@@ -15,15 +15,15 @@ $(document).ready(function(){
 				console.log(response)
 					for (var i=0, j = response.request.length; i<j; i++){
 						var rec = response.request[i];
-					$(''+
-						'<li>' +
-							'<a href="#example">' +
-								'<img src="images/' + rec.groups1 + '.png">' +
-								'<h2>' + rec.name +'</h2>' +
-								'<p>' + 'Rating: ' + rec.rating + '</p>' + 
-							'</a>' +
-						'</li>'
-					).appendTo('#listAllRec');
+						$(''+
+							'<li>' +
+								'<a href="#example">' +
+									'<img src="images/' + rec.groups1 + '.png">' +
+									'<h2>' + rec.name +'</h2>' +
+									'<p>' + 'Rating: ' + rec.rating + '</p>' + 
+								'</a>' +
+							'</li>'
+						).appendTo('#listAllRec');
 					$("#listAllRec").listview("refresh");
 					};
 			},
@@ -33,6 +33,10 @@ $(document).ready(function(){
 	});
 	
 //Ajax call for XML
+// when I try and call the var showxml, both showjson and xml load in the same page.  The "click"
+// below allows for each to load, but I'm not sure why.  I placed them in variables and then called
+// them with an event handler listed at bottom of main.js.  The way I have it works, but not sure
+// why the other way does not work.
 //	var showxml = $('#listAll').live('pageinit', function(){
 	$('#showxml').live('click', function(){
 		$('#listAllRec').empty();
@@ -61,7 +65,7 @@ $(document).ready(function(){
 									'</a>' +
 								'</li>'
 							).appendTo('#listAllRec');
-							$("#listAllRec").listview("refresh");
+						$("#listAllRec").listview("refresh");
 				});
 			},
 			error	: function(result){ console.log(result);}
@@ -69,7 +73,36 @@ $(document).ready(function(){
 		
 	});	
 	
-
+//	var showcsv = $('#listAll').live('pageinit', function(){
+	$('#showcsv').live('click', function(){
+		$('#listAllRec').empty();
+		$.ajax({
+			url		: "xhr/data.csv",
+			type	: "GET",
+			dataType: "text",
+			success	: function(csv){
+				console.log(csv);
+				var lines = csv.split("\n");
+				for (var lineNum = 0; lineNum < lines.length; lineNum++){
+					var row = lines[lineNum];
+					var columns = row.split(",");
+					console.log(columns);
+						$(''+
+							'<li>' +
+								'<a href="#example">' +
+									'<img src="images/' + columns[0] + '.png">' +
+									'<h2>' + columns[1] +'</h2>' +
+									'<p>' + 'Rating: ' + columns[2] + '</p>' + 
+								'</a>' +
+							'</li>'
+						).appendTo('#listAllRec');
+					$("#listAllRec").listview("refresh");
+				}
+			},
+			error	: function(result){ console.log(result);}
+		});
+		
+	});	
 
 	//$('#form').live('pageinit', function(){
 		
@@ -288,6 +321,9 @@ $(document).ready(function(){
 		$('#addRec').bind("click", formBack);
 	//	$('#showjson').bind("click", showjson);
 	//	$('#showxml').bind("click", showxml);
+	//	$('#showcsv').bind("click", showxml);
+
+
 			
 	//	});	
 });
