@@ -4,7 +4,7 @@
 $(document).ready(function(){
 	
 //Ajax call for JSON
-	var getJSON = $('#listAll').live('pageinit', function(){
+/*	var getJSON = $('#listAll').live('pageinit', function(){
 		$('#listAllRec').empty();
 		$.ajax({
 			url: "xhr/data.json",
@@ -30,8 +30,36 @@ $(document).ready(function(){
 		});
 		
 	});
+*/	
+
+	var getXML = $('#listAll').live('pageinit', function(){
+		$('#listAllRec').empty();
+		$.ajax({
+			url: "xhr/data.json",
+			type: "GET",
+			dataType: "xml",
+			success: function(response){
+				console.log(response)
+					for (var i=0, j = response.request.length; i<j; i++){
+						var rec = response.request[i];
+					$(''+
+						'<li>' +
+							'<a href="#example">' +
+								'<img src="images/' + rec.groups1 + '.png">' +
+								'<h2>' + rec.name +'</h2>' +
+								'<p>' + 'Rating: ' + rec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listAllRec');
+					$("#listAllRec").listview("refresh");
+					};
+			},
+			error: function(result){ console.log(result);}
+		});
+		
+	});	
 	
-	$('#jsoncall').bind("click", getJSON);
+
 
 	//$('#form').live('pageinit', function(){
 		
@@ -108,43 +136,43 @@ $(document).ready(function(){
 					autoFillData();
 					alert("There are no current recommendations, so default data was added.");
 				}
-			//Write Data from Local Stograge to the browser.
-			var makeDiv = $('<div></div>');
-			makeDiv.attr("id", "items");
-			var makeList = $('<ul></ul>');
-			makeDiv.append(makeList);
-			$("#recommendationform").after(makeDiv);
-			$("#items").css("display", "block");
-			for(var i=0, j=localStorage.length; i<j; i++){
-				 var makeLi = $('<li></li>');
-				 makeLi.attr("class", "recos");
-				 var linksLi = $('<li></li>');
-				 makeList.append(makeLi);
-				 var key = localStorage.key(i);
-				 var value = localStorage.getItem(key);
-				//Convert the string from local storage value back to an object by using JSON.parse().
-				 var obj = JSON.parse(value);
-				 console.log(JSON.parse(value));
-				 var makeSubList = $('<ul></ul>');
-				 makeLi.append(makeSubList);
-				 getImage(obj.groups1[1], makeSubList);
-				 for(var n in obj){
-				 	var makeSubLi = document.createElement('li');
-				 	makeSubList.append(makeSubLi);
-				 	var optSubText = obj[n][0]+" "+obj[n][1];
-				 	makeSubLi.innerHTML = optSubText;
-				 	makeSubList.append(linksLi); 
-				 }
-			//	 for(var n in obj){
-			//	 	var makeSubLi = $('<li></li>');
-			//	 	makeSubList.append(makeSubLi);
-			//	 	var optSubText = obj[n][0]+" "+obj[n][1];
-			//	 	makeSubLi.innerHTML = optSubText;
-			//	 	makeSubList.append(linksLi); 
-			//	 }
-				makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
+				//Write Data from Local Stograge to the browser.
+				var makeDiv = $('<div></div>');
+				makeDiv.attr("id", "items");
+				var makeList = $('<ul></ul>');
+				makeDiv.append(makeList);
+				$("#recommendationform").after(makeDiv);
+				$("#items").css("display", "block");
+				for(var i=0, j=localStorage.length; i<j; i++){
+					 var makeLi = $('<li></li>');
+					 makeLi.attr("class", "recos");
+					 var linksLi = $('<li></li>');
+					 makeList.append(makeLi);
+					 var key = localStorage.key(i);
+					 var value = localStorage.getItem(key);
+					//Convert the string from local storage value back to an object by using JSON.parse().
+					 var obj = JSON.parse(value);
+					 console.log(JSON.parse(value));
+					 var makeSubList = $('<ul></ul>');
+					 makeLi.append(makeSubList);
+					 getImage(obj.groups1[1], makeSubList);
+					 for(var n in obj){
+					 	var makeSubLi = document.createElement('li');
+					 	makeSubList.append(makeSubLi);
+					 	var optSubText = obj[n][0]+" "+obj[n][1];
+					 	makeSubLi.innerHTML = optSubText;
+					 	makeSubList.append(linksLi); 
+					 }
+				//	 for(var n in obj){
+				//	 	var makeSubLi = $('<li></li>');
+				//	 	makeSubList.append(makeSubLi);
+				//	 	var optSubText = obj[n][0]+" "+obj[n][1];
+				//	 	makeSubLi.innerHTML = optSubText;
+				//	 	makeSubList.append(linksLi); 
+				//	 }
+					makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
+				}
 			}
-		}
 		
 		function getImage(catName, makeSubList){
 			var imageLi = $('<li></li>');
@@ -248,6 +276,7 @@ $(document).ready(function(){
 		$('#displayRecommendation').bind("click", getData);
 		$('#clearRecommendation').bind("click", clearLocal);
 		$('#addRec').bind("click", formBack);
+		$('#jsoncall').bind("click", getJSON);
 			
 	//	});	
 });
