@@ -140,13 +140,6 @@ function getData(){
 			 	makeSubLi.innerHTML = optSubText;
 			 	makeSubList.append(linksLi); 
 			 }
-		//	 for(var n in obj){
-		//	 	var makeSubLi = $('<li></li>');
-		//	 	makeSubList.append(makeSubLi);
-		//	 	var optSubText = obj[n][0]+" "+obj[n][1];
-		//	 	makeSubLi.innerHTML = optSubText;
-		//	 	makeSubList.append(linksLi); 
-		//	 }
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons or links for each item in local storage
 		}
 	}
@@ -202,24 +195,24 @@ function getData(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
 		console.log(localStorage.getItem(this.key));
-		var item = JSON.parse(value);
+		var item = jQuery.parseJSON(value);
 		console.log(JSON.parse(value));
 		//Show the from to edit the items
 		toggleControls("off");
 		
 		//populate the form feilds with the current localStorage values.
-		$('#groups1').value 	= item.groups1[1];
-		$('#name').value		= item.name[1];
-		$('#rating').value 		= item.rating[1];
-		$('#phonenum').value 	= item.phonenum[1];
-		$('#email').value		= item.email[1];
-		$('#comments').value 	= item.comments[1];
-		$('#location').value	= item.location[1];
+		//$('#groups1').value(item.groups1[1]);
+		$('#name').value(item.name[1]);
+		$('#rating').value(item.rating[1]);
+		$('#phonenum').value(item.phonenum[1]);
+		$('#email').value(item.email[1]);
+		$('#comments').value(item.comments[1]);
+		$('#location').value(item.location[1]);
 		
 		//Remove the initial listener from the input "save" button.
-		save.removeEventListener("click", storeData);
+		save.unbind("click", storeData);
 		//Change Submit button value to Save Edit
-		$('#submit').val = "Save Edit";
+		$('#submit').value("Save Edit");
 		var editSubmit = $('#submit');
 		//Save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data that we edited
