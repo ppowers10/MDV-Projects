@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-		<xml>
+		<listrequest>
 			<request>
 				<Category>Events</Category>
 				<Name>Dave Mathews Band</Name>
 				<Rating>5</Rating>
 				<Comments>The DMB concert was amazing</Comments>
 				<Phone>407-340-7829</Phone>
-				<email>john.doe@email.com</email>
+				<email>johndoe@email.com</email>
 				<Website>http://www.dmb.com</Website>
 				<Location>Amway Center in Orlando</Location>
 			</request>
@@ -100,4 +100,4 @@
 				<Website>http://www.lowes.com</Website>
 				<Location>Off Semoran Blvd south of the 408.</Location>
 			</request>
-		</xml>
+		</listrequest>

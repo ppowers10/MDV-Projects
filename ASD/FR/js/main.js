@@ -4,7 +4,8 @@
 $(document).ready(function(){
 	
 //Ajax call for JSON
-/*	var getJSON = $('#listAll').live('pageinit', function(){
+//	var showjson = $('#listAll').live('pageinit', function(){
+	$('#showjson').live('click', function(){
 		$('#listAllRec').empty();
 		$.ajax({
 			url: "xhr/data.json",
@@ -30,31 +31,40 @@ $(document).ready(function(){
 		});
 		
 	});
-*/	
-
-	var getXML = $('#listAll').live('pageinit', function(){
+	
+//Ajax call for XML
+//	var showxml = $('#listAll').live('pageinit', function(){
+	$('#showxml').live('click', function(){
 		$('#listAllRec').empty();
 		$.ajax({
-			url: "xhr/data.json",
-			type: "GET",
+			url		: "xhr/data.xml",
+			type	: "GET",
 			dataType: "xml",
-			success: function(response){
-				console.log(response)
-					for (var i=0, j = response.request.length; i<j; i++){
-						var rec = response.request[i];
-					$(''+
-						'<li>' +
-							'<a href="#example">' +
-								'<img src="images/' + rec.groups1 + '.png">' +
-								'<h2>' + rec.name +'</h2>' +
-								'<p>' + 'Rating: ' + rec.rating + '</p>' + 
-							'</a>' +
-						'</li>'
-					).appendTo('#listAllRec');
-					$("#listAllRec").listview("refresh");
-					};
+			success	: function(xml){
+				$(xml).find("request").each(function(){
+					var list = {};
+					    list.category 	= $(this).find("Category").text();
+					    list.name 		= $(this).find("Name").text();
+					    list.rating 	= $(this).find("Rating").text();
+					    list.comments 	= $(this).find("Comments").text();
+					    list.phone 		= $(this).find("Phone").text();
+					    list.email 		= $(this).find("email").text();
+					    list.website 	= $(this).find("Website").text();
+					    list.location 	= $(this).find("Location").text();
+						console.log(list);
+							$(''+
+								'<li>' +
+									'<a href="#example">' +
+										'<img src="images/' + list.category + '.png">' +
+										'<h2>' + list.name +'</h2>' +
+										'<p>' + 'Rating: ' + list.rating + '</p>' + 
+									'</a>' +
+								'</li>'
+							).appendTo('#listAllRec');
+							$("#listAllRec").listview("refresh");
+				});
 			},
-			error: function(result){ console.log(result);}
+			error	: function(result){ console.log(result);}
 		});
 		
 	});	
@@ -276,7 +286,8 @@ $(document).ready(function(){
 		$('#displayRecommendation').bind("click", getData);
 		$('#clearRecommendation').bind("click", clearLocal);
 		$('#addRec').bind("click", formBack);
-		$('#jsoncall').bind("click", getJSON);
+	//	$('#showjson').bind("click", showjson);
+	//	$('#showxml').bind("click", showxml);
 			
 	//	});	
 });
