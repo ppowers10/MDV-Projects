@@ -16,7 +16,7 @@
 	
 	<!-- StyleSheets under here -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="style.css" />
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
@@ -32,59 +32,43 @@
 			</div>
 		</a>
 		<div data-role="content">
-		<div align="center">
-				<a href="#form">
-					<img src="images/calltoaction.png" />
-				</a>
+			<div align="center">
+					<a href="#form">
+						<img src="images/calltoaction.png" />
+					</a>
+			</div>
+			<hr>
+			<br>
+			<div class="ui-grid-a">
+				<div class="ui-block-a" id="showjson">
+					<a href="#listAll">
+						<img src="images/user.png">
+						<p class="homeIcons">Personal</p>
+					</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#stillbuilding">
+						<img src="images/group.png">
+						<p class="homeIcons">Friends</p>
+					</a>
+				</div>
+				<div class="ui-block-a">
+					<a href="#stillbuilding">
+						<img src="images/newspaper.png">
+						<p class="homeIcons">News Feed</p>
+					</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#stillbuilding">
+						<img src="images/star.png">
+						<p class="homeIcons">Favorites</p>
+					</a>
+				</div>
+			</div><!-- /grid-a -->
 		</div>
-		<hr>
-		<br>
-		<div class="ui-grid-a">
-			<div class="ui-block-a" id="showjson">
-				<a href="#listAll">
-					<img src="images/user.png">
-					<p class="homeIcons">Personal (JSON)</p>
-				</a>
-			</div>
-			<div class="ui-block-b">
-				<a href="#stillbuilding">
-					<img src="images/group.png">
-					<p class="homeIcons">Friends</p>
-				</a>
-			</div>
-			<div class="ui-block-a">
-				<a href="#stillbuilding">
-					<img src="images/newspaper.png">
-					<p class="homeIcons">News Feed</p>
-				</a>
-			</div>
-			<div class="ui-block-b">
-				<a href="#stillbuilding">
-					<img src="images/star.png">
-					<p class="homeIcons">Favorites</p>
-				</a>
-			</div>
-			<div class="ui-block-a" id="showxml">
-				<a href="#listAll">
-					<img src="images/user.png">
-					<p class="homeIcons">Personal (xml)</p>
-				</a>
-			</div>
-			<div class="ui-block-b" id="showcsv">
-				<a href="#listAll">
-					<img src="images/user.png">
-					<p class="homeIcons">Personal CSV</p>
-				</a>
-			</div>
-
-		</div><!-- /grid-a -->
-			
-		</div>
-		
 		<div data-role="footer" data-theme="b" data-position="fixed">
 			<h4>Tell A Friend!</h4>
 		</div>
-	
 	</div>
 	
 

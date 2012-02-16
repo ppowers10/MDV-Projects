@@ -14,15 +14,22 @@ $(document).ready(function(){
 			success: function(response){
 				console.log(response);
 					$.each(response.rows, function(index, rec){
-						var category 	= rec.value.groups1;
-						var name		= rec.value.name;
-						var rating		= rec.value.rating;
+						var id = rec.id
+						var oneRec = {};
+							oneRec.category = rec.value.groups1;
+							oneRec.name		= rec.value.name;
+							oneRec.rating	= rec.value.rating;
+							oneRec.comments	= rec.value.comments;
+							oneRec.phonenum = rec.value.phonenum;
+							oneRec.email	= rec.value.email;
+							oneRec.url		= rec.value.url;
+							oneRec.location = rec.value.location;
 						$(''+
 							'<li>' +
-								'<a href="#example">' +
-									'<img src="images/' + category + '.png">' +
-									'<h2>' + name +'</h2>' +
-									'<p>' + 'Rating: ' + rating + '</p>' + 
+								'<a href= "#'+ id +'" id="' + id + '">' +
+									'<img src="images/' + oneRec.category + '.png">' +
+									'<h2>' + oneRec.name +'</h2>' +
+									'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
 								'</a>' +
 							'</li>'
 						).appendTo('#listAllRec');
@@ -33,7 +40,14 @@ $(document).ready(function(){
 		});
 	});
 	
-
+//var createRecPage = function(){
+	
+//};
+	
+	
+function createPage (){
+	var createThisPage = this._id
+};
 
 	//$('#form').live('pageinit', function(){
 		
