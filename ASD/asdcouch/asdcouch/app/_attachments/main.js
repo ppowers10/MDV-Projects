@@ -45,9 +45,9 @@ $(document).ready(function(){
 //};
 	
 	
-function createPage (){
-	var createThisPage = this._id
-};
+//function createPage (){
+//	var createThisPage = this._id
+//};
 
 	//$('#form').live('pageinit', function(){
 		
@@ -161,7 +161,7 @@ function createPage (){
 			imageLi.css("display", "inline");
 			makeSubList.append(imageLi);
 			var newImg = $('<img></img>');
-			var setSrc = newImg.attr("src", "images/"+ catName +".png");
+			var setSrc = newImg.attr("src", "images/" + catName +".png");
 			setSrc.css("display", "inline");
 			imageLi.append(newImg);
 		}
