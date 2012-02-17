@@ -27,7 +27,7 @@ $(document).ready(function(){
 						$(''+
 							'<li>' +
 								'<a href= "#'+ id +'" id="' + id + '">' +
-									'<img src="images/' + oneRec.category + '.png">' +
+									'<img src="' + oneRec.category + '.png">' +
 									'<h2>' + oneRec.name +'</h2>' +
 									'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
 								'</a>' +
@@ -161,7 +161,7 @@ $(document).ready(function(){
 			imageLi.css("display", "inline");
 			makeSubList.append(imageLi);
 			var newImg = $('<img></img>');
-			var setSrc = newImg.attr("src", "images/" + catName +".png");
+			var setSrc = newImg.attr("src", catName +".png");
 			setSrc.css("display", "inline");
 			imageLi.append(newImg);
 		}
