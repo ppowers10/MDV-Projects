@@ -15,11 +15,6 @@ $(document).ready(function(){
 						oneRec.category = rec.value.groups1;
 						oneRec.name		= rec.value.name;
 						oneRec.rating	= rec.value.rating;
-						oneRec.comments	= rec.value.comments;
-						oneRec.phonenum = rec.value.phonenum;
-						oneRec.email	= rec.value.email;
-						oneRec.url		= rec.value.url;
-						oneRec.location = rec.value.location;
 					$(''+
 						'<li>' +
 							'<a href= "recall.html?recall=' + id + '">' +
@@ -47,11 +42,6 @@ $(document).ready(function(){
 						oneRec.category = rec.value.groups1;
 						oneRec.name		= rec.value.name;
 						oneRec.rating	= rec.value.rating;
-						oneRec.comments	= rec.value.comments;
-						oneRec.phonenum = rec.value.phonenum;
-						oneRec.email	= rec.value.email;
-						oneRec.url		= rec.value.url;
-						oneRec.location = rec.value.location;
 					$(''+
 						'<li>' +
 							'<a href= "recall.html?recall=' + id + '">' +
@@ -79,11 +69,6 @@ $(document).ready(function(){
 						oneRec.category = rec.value.groups1;
 						oneRec.name		= rec.value.name;
 						oneRec.rating	= rec.value.rating;
-						oneRec.comments	= rec.value.comments;
-						oneRec.phonenum = rec.value.phonenum;
-						oneRec.email	= rec.value.email;
-						oneRec.url		= rec.value.url;
-						oneRec.location = rec.value.location;
 					$(''+
 						'<li>' +
 							'<a href= "recall.html?recall=' + id + '">' +
@@ -111,11 +96,6 @@ $(document).ready(function(){
 						oneRec.category = rec.value.groups1;
 						oneRec.name		= rec.value.name;
 						oneRec.rating	= rec.value.rating;
-						oneRec.comments	= rec.value.comments;
-						oneRec.phonenum = rec.value.phonenum;
-						oneRec.email	= rec.value.email;
-						oneRec.url		= rec.value.url;
-						oneRec.location = rec.value.location;
 					$(''+
 						'<li>' +
 							'<a href= "recall.html?recall=' + id + '">' +
@@ -143,11 +123,6 @@ $(document).ready(function(){
 						oneRec.category = rec.value.groups1;
 						oneRec.name		= rec.value.name;
 						oneRec.rating	= rec.value.rating;
-						oneRec.comments	= rec.value.comments;
-						oneRec.phonenum = rec.value.phonenum;
-						oneRec.email	= rec.value.email;
-						oneRec.url		= rec.value.url;
-						oneRec.location = rec.value.location;
 					$(''+
 						'<li>' +
 							'<a href= "recall.html?recall=' + id + '">' +
@@ -175,11 +150,6 @@ $(document).ready(function(){
 						oneRec.category = rec.value.groups1;
 						oneRec.name		= rec.value.name;
 						oneRec.rating	= rec.value.rating;
-						oneRec.comments	= rec.value.comments;
-						oneRec.phonenum = rec.value.phonenum;
-						oneRec.email	= rec.value.email;
-						oneRec.url		= rec.value.url;
-						oneRec.location = rec.value.location;
 					$(''+
 						'<li>' +
 							'<a href= "recall.html?recall=' + id + '">' +
@@ -239,23 +209,46 @@ var urlVars = function(){
 			},
 		})
 	});
-		
-	
 
-	//$('#form').live('pageinit', function(){
+//form validation________________________________________________________	
+var recform = $("#recommendationform");
+	
+recform.validate({
+	invalidHandler: function(form, validator){},
+	submitHandler: function(){
+		var data = recform.serializeArray();
+		storeData(data)
+		//console.log(data);
+	}
+});	
+
+//save recommendation information_______________________________________
+function storeData(){
+	var item 				= {};
+		item.groups1		= ["Category:", $('#groups1').val()];
+		item.name			= ["Recommendation Title:", $('#name').val()];
+		item.rating			= ["Rating (1=bad, 5=amazing):", $('#rating').val()];
+		item.comments		= ["Comments:", $('#comments').val()];
+		item.phonenum		= ["Phone Number:", $('#phonenum').val()];
+		item.email			= ["Email:", $('#email').val()];
+		item.url			= ["Website:", $('#url').val()];
+		item.location		= ["Location:", $('#location').val()];
+	$.couch.db("frproject").saveDoc(item, {
+		success: function(data) {
+			console.log(data);
+			alert("Recommendation Saved");
+		},
+		error: function(status) {
+			console.log(status);
+			alert("Error while saving Recommendation");
+		}
+	})
+	
+};
 		
 		toggleControls('off');
 		
-		var recform = $("#recommendationform");
-		
-		recform.validate({
-			//invalidHandler: function(form, validator){},
-			submitHandler: function(){
-				var data = recform.serializeArray();
-				storeData(data)
-				console.log(data);
-			}
-		});
+
 	
 		function toggleControls(n){
 				switch(n){
@@ -282,7 +275,7 @@ var urlVars = function(){
 			toggleControls('off');
 		}	
 		
-		function storeData(data){
+/*		function storeData(data){
 				if(!data.key){
 					var id 					= Math.floor(Math.random()*10000001);
 				}else{
@@ -303,7 +296,7 @@ var urlVars = function(){
 				alert("Recommendation Saved");
 				
 				}
-		
+*/		
 		function getData(){
 				toggleControls('on');
 				if(localStorage.length === 0){
