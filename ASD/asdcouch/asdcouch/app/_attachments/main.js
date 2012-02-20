@@ -275,28 +275,7 @@ function storeData(){
 			toggleControls('off');
 		}	
 		
-/*		function storeData(data){
-				if(!data.key){
-					var id 					= Math.floor(Math.random()*10000001);
-				}else{
-					var id = data.key;
-				}
-				var item 				= {};
-					item.groups1		= ["Category:  ", data[0].value];
-					item.name			= ["Recommendation Title:  ", data[1].value];
-					item.rating			= ["Rating (1=bad, 5=amazing):  ", data[2].value];
-					item.comments		= ["Comments:  ", data[3].value];
-					item.phonenum		= ["Phone Number:  ", data[4].value];
-					item.email			= ["Email:  ", data[5].value];
-					item.url			= ["Website:  ", data[6].value];
-					item.location		= ["Location:  ", data[7].value];
-				//Save data into Local Storage: Use Stringify to convert our object to a string
-				localStorage.setItem(id, JSON.stringify(item));
-				console.log(id, JSON.stringify(item))
-				alert("Recommendation Saved");
-				
-				}
-*/		
+		
 		function getData(){
 				toggleControls('on');
 				if(localStorage.length === 0){
