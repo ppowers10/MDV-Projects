@@ -3,43 +3,205 @@
 
 $(document).ready(function(){
 	
-//Ajax call for JSON
-//	var showjson = $('#listAll').live('pageinit', function(){
-	$('#showjson').live('click', function(){
+//couch ajax call for list all____________________________________________________
+	$('#listAll').live('pageshow', function(){
 		$('#listAllRec').empty();
-		$.ajax({
-			url: "_view/recall",
-			type: "GET",
-			dataType: "json",
-			success: function(response){
-				console.log(response);
-					$.each(response.rows, function(index, rec){
-						var id = rec.id
-						var oneRec = {};
-							oneRec.category = rec.value.groups1;
-							oneRec.name		= rec.value.name;
-							oneRec.rating	= rec.value.rating;
-							oneRec.comments	= rec.value.comments;
-							oneRec.phonenum = rec.value.phonenum;
-							oneRec.email	= rec.value.email;
-							oneRec.url		= rec.value.url;
-							oneRec.location = rec.value.location;
-						$(''+
-							'<li>' +
-								'<a href= "#'+ id +'" id="' + id + '">' +
-									'<img src="' + oneRec.category + '.png">' +
-									'<h2>' + oneRec.name +'</h2>' +
-									'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
-								'</a>' +
-							'</li>'
-						).appendTo('#listAllRec');
-					});
-					$("#listAllRec").listview("refresh");
-			},
-			error: function(result){ console.log(result);}
-		});
+		$.couch.db("frproject").view("frapp/recall",{
+			success: function(data){
+				console.log(data);
+				$.each(data.rows, function(index, rec){
+					var id = rec.id
+					var oneRec = {};
+						oneRec.category = rec.value.groups1;
+						oneRec.name		= rec.value.name;
+						oneRec.rating	= rec.value.rating;
+						oneRec.comments	= rec.value.comments;
+						oneRec.phonenum = rec.value.phonenum;
+						oneRec.email	= rec.value.email;
+						oneRec.url		= rec.value.url;
+						oneRec.location = rec.value.location;
+					$(''+
+						'<li>' +
+							'<a href= "recall.html?recall=' + id + '">' +
+								'<img src="' + oneRec.category + '.png">' +
+								'<h2>' + oneRec.name +'</h2>' +
+								'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listAllRec');
+				});
+				$("#listAllRec").listview("refresh");
+			}
+		})
 	});
+
+//couch ajax call for only restaurants_____________________________________________
+	$('#restaurants').live('pageshow', function(){
+		$('#listAllRec').empty();
+		$.couch.db("frproject").view("frapp/restaurants",{
+			success: function(data){
+				console.log(data);
+				$.each(data.rows, function(index, rec){
+					var id = rec.id
+					var oneRec = {};
+						oneRec.category = rec.value.groups1;
+						oneRec.name		= rec.value.name;
+						oneRec.rating	= rec.value.rating;
+						oneRec.comments	= rec.value.comments;
+						oneRec.phonenum = rec.value.phonenum;
+						oneRec.email	= rec.value.email;
+						oneRec.url		= rec.value.url;
+						oneRec.location = rec.value.location;
+					$(''+
+						'<li>' +
+							'<a href= "recall.html?recall=' + id + '">' +
+								'<img src="' + oneRec.category + '.png">' +
+								'<h2>' + oneRec.name +'</h2>' +
+								'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listRestaurants');
+				});
+				$("#listRestaurants").listview("refresh");
+			}
+		})
+	});	
+
+//couch ajax call for only bars_____________________________________________
+	$('#bars').live('pageshow', function(){
+		$('#listBars').empty();
+		$.couch.db("frproject").view("frapp/bars",{
+			success: function(data){
+				console.log(data);
+				$.each(data.rows, function(index, rec){
+					var id = rec.id
+					var oneRec = {};
+						oneRec.category = rec.value.groups1;
+						oneRec.name		= rec.value.name;
+						oneRec.rating	= rec.value.rating;
+						oneRec.comments	= rec.value.comments;
+						oneRec.phonenum = rec.value.phonenum;
+						oneRec.email	= rec.value.email;
+						oneRec.url		= rec.value.url;
+						oneRec.location = rec.value.location;
+					$(''+
+						'<li>' +
+							'<a href= "recall.html?recall=' + id + '">' +
+								'<img src="' + oneRec.category + '.png">' +
+								'<h2>' + oneRec.name +'</h2>' +
+								'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listBars');
+				});
+				$("#listBars").listview("refresh");
+			}
+		})
+	});	
+
+//couch ajax call for only attractions_____________________________________________
+	$('#attractions').live('pageshow', function(){
+		$('#listBars').empty();
+		$.couch.db("frproject").view("frapp/attractions",{
+			success: function(data){
+				console.log(data);
+				$.each(data.rows, function(index, rec){
+					var id = rec.id
+					var oneRec = {};
+						oneRec.category = rec.value.groups1;
+						oneRec.name		= rec.value.name;
+						oneRec.rating	= rec.value.rating;
+						oneRec.comments	= rec.value.comments;
+						oneRec.phonenum = rec.value.phonenum;
+						oneRec.email	= rec.value.email;
+						oneRec.url		= rec.value.url;
+						oneRec.location = rec.value.location;
+					$(''+
+						'<li>' +
+							'<a href= "recall.html?recall=' + id + '">' +
+								'<img src="' + oneRec.category + '.png">' +
+								'<h2>' + oneRec.name +'</h2>' +
+								'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listAttractions');
+				});
+				$("#listAttractions").listview("refresh");
+			}
+		})
+	});	
+
+//couch ajax call for only events_____________________________________________
+	$('#events').live('pageshow', function(){
+		$('#listEvents').empty();
+		$.couch.db("frproject").view("frapp/events",{
+			success: function(data){
+				console.log(data);
+				$.each(data.rows, function(index, rec){
+					var id = rec.id
+					var oneRec = {};
+						oneRec.category = rec.value.groups1;
+						oneRec.name		= rec.value.name;
+						oneRec.rating	= rec.value.rating;
+						oneRec.comments	= rec.value.comments;
+						oneRec.phonenum = rec.value.phonenum;
+						oneRec.email	= rec.value.email;
+						oneRec.url		= rec.value.url;
+						oneRec.location = rec.value.location;
+					$(''+
+						'<li>' +
+							'<a href= "recall.html?recall=' + id + '">' +
+								'<img src="' + oneRec.category + '.png">' +
+								'<h2>' + oneRec.name +'</h2>' +
+								'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listEvents');
+				});
+				$("#listEvents").listview("refresh");
+			}
+		})
+	});		
 	
+//couch ajax call for only shopping_____________________________________________
+	$('#shopping').live('pageshow', function(){
+		$('#listShopping').empty();
+		$.couch.db("frproject").view("frapp/shopping",{
+			success: function(data){
+				console.log(data);
+				$.each(data.rows, function(index, rec){
+					var id = rec.id
+					var oneRec = {};
+						oneRec.category = rec.value.groups1;
+						oneRec.name		= rec.value.name;
+						oneRec.rating	= rec.value.rating;
+						oneRec.comments	= rec.value.comments;
+						oneRec.phonenum = rec.value.phonenum;
+						oneRec.email	= rec.value.email;
+						oneRec.url		= rec.value.url;
+						oneRec.location = rec.value.location;
+					$(''+
+						'<li>' +
+							'<a href= "recall.html?recall=' + id + '">' +
+								'<img src="' + oneRec.category + '.png">' +
+								'<h2>' + oneRec.name +'</h2>' +
+								'<p>' + 'Rating: ' + oneRec.rating + '</p>' + 
+							'</a>' +
+						'</li>'
+					).appendTo('#listShopping');
+				});
+				$("#listShopping").listview("refresh");
+			}
+		})
+	});	
+	
+	
+//______________________________________________________________
+	$('#recall').live('pageshow', function(){
+		var urlData = $(this).data("url");
+		console.log(urlData);
+	});
+		
 //var createRecPage = function(){
 	
 //};

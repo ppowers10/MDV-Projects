@@ -33,42 +33,61 @@
 		</a>
 		<div data-role="content">
 			<div align="center">
-					<a href="#form">
-						<img src="calltoaction.png" />
-					</a>
+				<a href="#form" data-ajax="false">
+					<img src="calltoaction.png" />
+				</a>
+		</div>
+		</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-theme="b" data-filter="true" data-divider-theme="c">
+					<li>
+						<a href="#listAll" data-icon="arrow-r">
+							<h3>List All Recommendations</h3>
+						</a>
+					</li>
+					<li data-role="list-divider" >
+							Recommendation Categories
+					</li>
+					<li data-role="list-divider">
+						<a href="#restaurants" data-icon="arrow-r">
+							<h3>Restaurants</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#bars" data-icon="arrow-r">
+							<h3>Bars</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#attractions" data-icon="arrow-r">
+							<h3>Attractions</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#events" data-icon="arrow-r">
+							<h3>Events</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#shopping" data-icon="arrow-r">
+							<h3>Shopping</h3>
+						</a>
+					</li>
+				</ul>
 			</div>
-			<hr>
-			<br>
-			<div class="ui-grid-a">
-				<div class="ui-block-a" id="showjson">
-					<a href="#listAll">
-						<img src="user.png">
-						<p class="homeIcons">Personal</p>
-					</a>
-				</div>
-				<div class="ui-block-b">
-					<a href="#stillbuilding">
-						<img src="group.png">
-						<p class="homeIcons">Friends</p>
-					</a>
-				</div>
-				<div class="ui-block-a">
-					<a href="#stillbuilding">
-						<img src="newspaper.png">
-						<p class="homeIcons">News Feed</p>
-					</a>
-				</div>
-				<div class="ui-block-b">
-					<a href="#stillbuilding">
-						<img src="star.png">
-						<p class="homeIcons">Favorites</p>
-					</a>
-				</div>
-			</div><!-- /grid-a -->
+			
 		</div>
+		
 		<div data-role="footer" data-theme="b" data-position="fixed">
-			<h4>Tell A Friend!</h4>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
+	
 	</div>
 	
 
@@ -104,6 +123,166 @@
 			</div><!-- /navbar -->
 		</div>
 	</div>
+	
+<!-->Restaurants Page<-->	
+	<div data-role="page" data-theme="b" id="restaurants" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true" id="listRestaurants">
+					<!-->Enter Ajax call herer</-->
+						
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>	
+
+<!-->Restaurants Page<-->	
+	<div data-role="page" data-theme="b" id="bars" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true" id="listBars">
+					<!-->Enter Ajax call herer</-->
+						
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>	
+
+<!-->Attractions Page<-->	
+	<div data-role="page" data-theme="b" id="attractions" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true" id="listAttractions">
+					<!-->Enter Ajax call herer</-->
+						
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>	
+
+<!-->Events Page<-->	
+	<div data-role="page" data-theme="b" id="events" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true" id="listEvents">
+					<!-->Enter Ajax call herer</-->
+						
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>	
+
+<!-->Shopping Page<-->	
+	<div data-role="page" data-theme="b" id="shopping" >
+		<a href="#home" data-direction="reverse">
+			<div data-role="header" data-theme="b" align="center" >
+				<img src="fr_header.png" />		
+			</div>
+		</a>
+		<div data-role="content" data-theme="b">
+			<div align="center">
+				<a href="#form" data-ajax="false">
+				<img src="calltoaction.png" />
+				</a>
+			</div>
+			</br>
+			<div>
+				<ul class="ui-listview" data-role="listview" data-filter="true" id="listShopping">
+					<!-->Enter Ajax call herer</-->
+						
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="b" data-position="fixed" >
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="back"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+					<li><a href="#form" data-icon="plus"></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+	</div>	
 
 <!-->Example Drill Down Page<-->
 	<div data-role="page" data-theme="b" id="stillbuilding">
@@ -287,6 +466,7 @@
 	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 	<script type="text/javascript" src="jquery.validate.min.js"></script>
 	<script type="text/javascript" src="additional-methods.min.js"></script>
+	<script type="text/javascript" src="jquery_couch.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="json.js"></script>
 </body>

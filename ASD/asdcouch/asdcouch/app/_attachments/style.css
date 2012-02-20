@@ -34,8 +34,8 @@ div.ui-btn-inner.ui-li{
 	height: 45px;
 }
 
-div.ui-btn-text{
-	height:68px;
+#home div.ui-btn-inner.ui-li{
+	height:45px;
 }
 
 img.ui-li-thumb{
