@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 //couch ajax call for only restaurants_____________________________________________
 	$('#restaurants').live('pageshow', function(){
-		$('#listAllRec').empty();
+		$('#listRestaurants').empty();
 		$.couch.db("frproject").view("frapp/restaurants",{
 			success: function(data){
 				console.log(data);
@@ -101,7 +101,7 @@ $(document).ready(function(){
 
 //couch ajax call for only attractions_____________________________________________
 	$('#attractions').live('pageshow', function(){
-		$('#listBars').empty();
+		$('#listAttractions').empty();
 		$.couch.db("frproject").view("frapp/attractions",{
 			success: function(data){
 				console.log(data);
@@ -195,21 +195,52 @@ $(document).ready(function(){
 		})
 	});	
 	
+
+var urlVars = function(){
+	var urlData = $($.mobile.activePage).data("url");
+	var urlParts = urlData.split('?');
+	var urlPairs = urlParts[1].split('&');
+	var urlValues = {};
+	for(var pair in urlPairs) {
+		var keyValue = urlPairs[pair].split('=');
+		var key = decodeURIComponent(keyValue[0]);
+		var value = decodeURIComponent(keyValue[1]);
+		urlValues[key] = value;
+	}
+	return urlValues;
+};	
 	
-//______________________________________________________________
-	$('#recall').live('pageshow', function(){
-		var urlData = $(this).data("url");
-		console.log(urlData);
+//create drill down page_________$($.mobile.activePage)_______________________________________________
+	$('#rec').live('pageshow', function(){
+		var recIdent = urlVars()["recall"];
+		$.couch.db("frproject").openDoc(recIdent, {
+			success: function(data) {
+				console.log(data);
+				console.log(data.comments)
+				$(''+
+					'<div class="ui-grid-a">' +
+						'<div class="ui-block-a">' +
+							'<h3>' + data.name[1] + '</h3>' +
+							'<p> Rating: ' + data.rating[1] + '</p>' +
+							'<p>' + data.phonenum[1] + '</p>' +
+							'<a href="' + data.url[1] + '">' +
+								'<p>' + data.url[1] + '</p>' +
+							'</a>' +
+						'</div>' +
+						'<div class="ui-block-b">' +
+							'<a href="#" >' +
+								'<img src="mapshot.png">' +
+							'</a>' +
+						'</div>' +
+					'</div>' +
+					'<h4>Review:</h4>' +
+						'<p>' + data.comments[1] + '</p>'
+					).appendTo('#contentArea');	
+			},
+		})
 	});
 		
-//var createRecPage = function(){
 	
-//};
-	
-	
-//function createPage (){
-//	var createThisPage = this._id
-//};
 
 	//$('#form').live('pageinit', function(){
 		
