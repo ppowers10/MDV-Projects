@@ -273,17 +273,23 @@ $('#deleteRec').live('click', function(){
 		success: function(data) {
 			console.log(data);
 			var doc = {
-					_id: data[0],
-					_rev: data[1]
+					_id: data["_id"],
+					_rev: data["_rev"]
 			};
-			$.couch.db("frproject").removeDoc(doc, {
-				success: function(data) {
-			         console.log(data);
-			    },
-			    error: function(status) {
-			        console.log(status);
-			    }
-			});
+			var deleteRec = confirm("Do you wish to delete this recommendation?");
+			if(deleteRec){
+				$.couch.db("frproject").removeDoc(doc, {
+					success: function(data) {
+				         console.log(data);
+				         document.location.href = 'index.html';
+				    },
+				    error: function(status) {
+				        console.log(status);
+				    }
+			    });
+			}else{
+				alert("Your recommendation has been deleted.")	
+			}
 		},
 		error: function(status) {
 			console.log(status);	
