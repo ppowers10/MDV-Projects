@@ -187,7 +187,6 @@ var urlVars = function(){
 		$.couch.db("frproject").openDoc(recIdent, {
 			success: function(data) {
 				console.log(data);
-				console.log(data.comments)
 				$(''+
 					'<div class="ui-grid-a">' +
 						'<div class="ui-block-a">' +
@@ -269,28 +268,32 @@ var urlRemove = function(){
 };
 
 $('#deleteRec').live('click', function(){
-	var recIdent = urlRemove()["recall"];
-//	var doc = {
-//			_id	: urlRemove()
-//			_rev: 
-//	};
-	console.log(recIdent);
-	var removeRec = confirm("Click OK to Delete Recommendation");
-	if (removeRec){
-		$.couch.db("frproject").removeDoc(recIdent, {
-		     success: function(data) {
-		         console.log(data);
-		         alert("Recommendation Deleted");
-		         document.location.href = 'index.html';
-		    },
-		    error: function(status) {
-		        console.log(status);
-		    }
-		});
-	}else{
-		alert("Your Recommendation Thanks You!")
-	}
+	console.log(urlRemove());
+	$.couch.db("frproject").openDoc(urlRemove(), {
+		success: function(data) {
+			console.log(data);
+			var doc = {
+					_id: data[0],
+					_rev: data[1]
+			};
+			$.couch.db("frproject").removeDoc(doc, {
+				success: function(data) {
+			         console.log(data);
+			    },
+			    error: function(status) {
+			        console.log(status);
+			    }
+			});
+		},
+		error: function(status) {
+			console.log(status);	
+		}
+	})
 });
+
+	
+	
+	
 
 
 		
