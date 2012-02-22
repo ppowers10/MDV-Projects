@@ -183,6 +183,7 @@ var urlVars = function(){
 //create drill down page_________$($.mobile.activePage)_______________________________________________
 	$('#rec').live('pageshow', function(){
 		var recIdent = urlVars()["recall"];
+		console.log(recIdent);
 		$.couch.db("frproject").openDoc(recIdent, {
 			success: function(data) {
 				console.log(data);
@@ -224,6 +225,7 @@ recform.validate({
 
 //save recommendation information_______________________________________
 function storeData(){
+	var id 					= "rec:" + $('#name').val();
 	var item 				= {};
 		item.groups1		= ["Category:", $('#groups1').val()];
 		item.name			= ["Recommendation Title:", $('#name').val()];
@@ -233,7 +235,18 @@ function storeData(){
 		item.email			= ["Email:", $('#email').val()];
 		item.url			= ["Website:", $('#url').val()];
 		item.location		= ["Location:", $('#location').val()];
-	$.couch.db("frproject").saveDoc(item, {
+	var doc = {
+			_id		: id,
+			groups1	: item.groups1,
+			name	: item.name,
+			rating	: item.rating,
+			comments: item.comments,
+			phonenum: item.phonenum,
+			email	: item.email,
+			url		: item.url,
+			location: item.location
+	};
+	$.couch.db("frproject").saveDoc(doc, {
 		success: function(data) {
 			console.log(data);
 			alert("Recommendation Saved");
@@ -246,6 +259,38 @@ function storeData(){
 	})
 	
 };
+
+//revmove single recommendation_____________________________________
+var urlRemove = function(){
+	var urlData = $($.mobile.activePage).data("url");
+	var urlParts = urlData.split('=');
+	var urlEnd = urlParts[1];
+	return urlEnd
+};
+
+$('#deleteRec').live('click', function(){
+	var recIdent = urlRemove()["recall"];
+//	var doc = {
+//			_id	: urlRemove()
+//			_rev: 
+//	};
+	console.log(recIdent);
+	var removeRec = confirm("Click OK to Delete Recommendation");
+	if (removeRec){
+		$.couch.db("frproject").removeDoc(recIdent, {
+		     success: function(data) {
+		         console.log(data);
+		         alert("Recommendation Deleted");
+		         document.location.href = 'index.html';
+		    },
+		    error: function(status) {
+		        console.log(status);
+		    }
+		});
+	}else{
+		alert("Your Recommendation Thanks You!")
+	}
+});
 
 
 		
