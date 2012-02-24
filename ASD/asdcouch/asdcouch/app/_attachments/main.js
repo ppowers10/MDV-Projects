@@ -211,56 +211,58 @@ var urlVars = function(){
 	});
 
 //form validation________________________________________________________	
-var recform = $("#recommendationform");
-	
-recform.validate({
-	invalidHandler: function(form, validator){},
-	submitHandler: function(){
-		var data = recform.serializeArray();
-		storeData(data)
-		//console.log(data);
-	}
-});	
-
-//save recommendation information_______________________________________
-function storeData(){
-	var id 					= "rec:" + $('#name').val();
-	var item 				= {};
-		item.groups1		= ["Category:", $('#groups1').val()];
-		item.name			= ["Recommendation Title:", $('#name').val()];
-		item.rating			= ["Rating (1=bad, 5=amazing):", $('#rating').val()];
-		item.comments		= ["Comments:", $('#comments').val()];
-		item.phonenum		= ["Phone Number:", $('#phonenum').val()];
-		item.email			= ["Email:", $('#email').val()];
-		item.url			= ["Website:", $('#url').val()];
-		item.location		= ["Location:", $('#location').val()];
-	var doc = {
-			_id		: id,
-			groups1	: item.groups1,
-			name	: item.name,
-			rating	: item.rating,
-			comments: item.comments,
-			phonenum: item.phonenum,
-			email	: item.email,
-			url		: item.url,
-			location: item.location
-	};
-	$.couch.db("frproject").saveDoc(doc, {
-		success: function(data) {
-			console.log(data);
-			alert("Recommendation Saved");
-			document.location.href = 'index.html';
-		},
-		error: function(status) {
-			console.log(status);
-			alert("Error while saving Recommendation");
+$('#submit').bind('click', function(){
+	var recform = $("#recommendationform");
+		
+	recform.validate({
+		invalidHandler: function(form, validator){},
+		submitHandler: function(){
+			var data = recform.serializeArray();
+			storeData(data)
+			//console.log(data);
 		}
-	})
+	});	
 	
-};
+	//save recommendation information_______________________________________
+	function storeData(){
+		var id 					= "rec:" + $('#name').val();
+		var item 				= {};
+			item.groups1		= ["Category:", $('#groups1').val()];
+			item.name			= ["Recommendation Title:", $('#name').val()];
+			item.rating			= ["Rating (1=bad, 5=amazing):", $('#rating').val()];
+			item.comments		= ["Comments:", $('#comments').val()];
+			item.phonenum		= ["Phone Number:", $('#phonenum').val()];
+			item.email			= ["Email:", $('#email').val()];
+			item.url			= ["Website:", $('#url').val()];
+			item.location		= ["Location:", $('#location').val()];
+		var doc = {
+				_id		: id,
+				groups1	: item.groups1,
+				name	: item.name,
+				rating	: item.rating,
+				comments: item.comments,
+				phonenum: item.phonenum,
+				email	: item.email,
+				url		: item.url,
+				location: item.location
+		};
+		$.couch.db("frproject").saveDoc(doc, {
+			success: function(data) {
+				console.log(data);
+				alert("Recommendation Saved");
+				document.location.href = 'index.html';
+			},
+			error: function(status) {
+				console.log(status);
+				alert("Error while saving Recommendation");
+			}
+		})
+		
+	};
+});
 
 //revmove single recommendation_____________________________________
-var urlRemove = function(){
+var urlUpdate = function(){
 	var urlData = $($.mobile.activePage).data("url");
 	var urlParts = urlData.split('=');
 	var urlEnd = urlParts[1];
@@ -268,8 +270,7 @@ var urlRemove = function(){
 };
 
 $('#deleteRec').live('click', function(){
-	console.log(urlRemove());
-	$.couch.db("frproject").openDoc(urlRemove(), {
+	$.couch.db("frproject").openDoc(urlUpdate(), {
 		success: function(data) {
 			console.log(data);
 			var doc = {
@@ -298,98 +299,79 @@ $('#deleteRec').live('click', function(){
 });
 
 	
-	
-	
-
-
-		
-		toggleControls('off');
-		
-
-	
-		function toggleControls(n){
-				switch(n){
-					case "on":
-						$('#recommendationform').css("display" , "none");
-						$('#clearRec').css("display" , "inline");
-						$('#displayRec').css("display" , "none");
-						$('#addRec').css("display" , "inline");
-						break;
-					case "off":
-						$('#recommendationform').css("display" , "block");
-						$('#clearRec').css("display" , "block");
-						$('#displayRec').css("display" , "block");
-						$('#addRec').css("display" , "none");
-						$('#items').css("display" , "none");
-						break;
-					//	break;
-					default:
-						return false;
+//edit recommendation___________________________________________________
+$('#editRec').live('click', function(){
+	var recIdent = urlVars()["recall"];
+	console.log(recIdent);
+	$.mobile.changePage("index.html#form");
+	$.couch.db("frproject").openDoc(recIdent, {
+		success: function(data) {
+			console.log(data);
+			$('#name').attr('disabled','disabled');
+			$('#groups1').val(data.groups1[1]);
+			$('#name').val(data.name[1]);
+			$('#rating').val(data.rating[1]);
+			$('#comments').val(data.comments[1]);
+			$('#phonenum').val(data.phonenum[1]); 
+			$('#email').val(data.email[1]);
+			$('#url').val(data.url[1]);
+			$('#location').val(data.location[1]);
+			var recform1 = $("#recommendationform");
+			
+			recform1.validate({
+				invalidHandler: function(form, validator){},
+				submitHandler: function(){
+					var data = recform1.serializeArray();
+					storeAgain(data)
+					//console.log(data);
 				}
-			}
-		
-		function formBack(){
-			toggleControls('off');
-		}	
-		
-		
-		
-		//Edit Single Item
-		function editItem(key){
-			console.log(key);
-			//Grab the data from our item from Local Storage.
-			var value = localStorage.getItem(this.key);
-			console.log(localStorage.getItem(this.key));
-			var item = JSON.parse(value);
-			console.log(JSON.parse(value));
-			//Show the from to edit the items
-			toggleControls("off");
-			
-			//populate the form feilds with the current localStorage values.
-			$('#groups1').value 	= item.groups1[1];
-			$('#name').value		= item.name[1];
-			$('#rating').value 		= item.rating[1];
-			$('#phonenum').value 	= item.phonenum[1];
-			$('#email').value		= item.email[1];
-			$('#comments').value 	= item.comments[1];
-			$('#location').value	= item.location[1];
-			
-			//Remove the initial listener from the input "save" button.
-			save.removeEventListener("click", storeData);
-			//Change Submit button value to Save Edit
-			$('#submit').val = "Save Edit";
-			var editSubmit = $('#submit');
-			//Save the key value established in this function as a property of the editSubmit event
-			//so we can use that value when we save the data that we edited
-			editSubmit.bind("click", recform.validate);
-			editSubmit.key = this.key;
-		}
-		
-		function deleteItem(){
-			var ask = confirm("Are you sure you want to delete this recommendation?");
-			if(ask){
-				localStorage.removeItem(this.key);
-				alert("Recommendation was deleted.");
-				window.location.reload();
-			}else{
-				alert("Recommendation was not deleted.");
-			}
-		}
-		
-		function clearLocal(){
-			if(localStorage.lenght === 0){
-				alert("There are no recommendations to clear.");
-			}else{
-				localStorage.clear();
-				alert("All recommendations were deleted!");
-				window.location.reload();
-				return false;
-			}
-		}
-	
-		
-//		$('#displayRecommendation').bind("click", getData);
-//		$('#clearRecommendation').bind("click", clearLocal);
-//		$('#addRec').bind("click", formBack);
+			});
 
+			//$('#submit').live('click', function(){
+			function storeAgain(){
+				var id 					= "rec:" + $('#name').val();
+				var rev					= data._rev;
+				var item 				= {};
+					item.groups1		= ["Category:", $('#groups1').val()];
+					item.name			= ["Recommendation Title:", $('#name').val()];
+					item.rating			= ["Rating (1=bad, 5=amazing):", $('#rating').val()];
+					item.comments		= ["Comments:", $('#comments').val()];
+					item.phonenum		= ["Phone Number:", $('#phonenum').val()];
+					item.email			= ["Email:", $('#email').val()];
+					item.url			= ["Website:", $('#url').val()];
+					item.location		= ["Location:", $('#location').val()];
+				console.log(item);
+				var doc = {
+						_id		: id,
+						_rev	: rev,
+						groups1	: item.groups1,
+						name	: item.name,
+						rating	: item.rating,
+						comments: item.comments,
+						phonenum: item.phonenum,
+						email	: item.email,
+						url		: item.url,
+						location: item.location
+				};
+				console.log(doc);
+				$.couch.db("frproject").saveDoc(doc, {
+					success: function(data) {
+						console.log(data);
+						alert("Recommendation Saved");
+						document.location.href = 'index.html';
+					},
+					error: function(status) {
+						console.log(status);
+						alert("Error while saving Recommendation");
+					}
+				})
+				};
+			//});
+		},
+		error: function(status) {
+			console.log(status);	
+		}
+	})
+});
+	
 });
