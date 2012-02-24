@@ -323,11 +323,8 @@ $('#editRec').live('click', function(){
 				submitHandler: function(){
 					var data = recform1.serializeArray();
 					storeAgain(data)
-					//console.log(data);
 				}
 			});
-
-			//$('#submit').live('click', function(){
 			function storeAgain(){
 				var id 					= "rec:" + $('#name').val();
 				var rev					= data._rev;
