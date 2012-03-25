@@ -1,0 +1,72 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>PP Design & Development</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+	<div data-role="page" data-theme="b" id="index">
+		<div data-role="content">
+			
+			<div>
+				<div align="center">
+					<img src="pplogo2.png" id="mainLogo" />
+				</div>
+			</div>
+			
+			<ul data-role="listview" data-inset="true" data-theme="d">
+				<li data-role="list-divider"">Crud Apps</li>
+				<li><a href="https://ppowers.cloudant.com/frapp/_design/frapp/index.html">Original App</a></li>
+				<li><a href="#">New App</a></li>
+			</ul>
+			
+			<ul data-role="listview" data-inset="true" data-theme="d">
+				<li data-role="list-divider" data-theme="a">iOS/Android Native Feature Demos</li>
+				<li><a href="#">Alert</a></li>
+				<li><a href="#">Geo</a></li>
+				<li><a href="#">Accelerometer</a></li>
+			</ul>
+			
+			<ul data-role="listview" data-inset="true" data-theme="d">
+				<li data-role="list-divider" data-theme="a">iOS or Android Native Feature Demos</li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Camera</a></li>
+				<li><a href="#">Network</a></li>
+			</ul>
+			
+			<ul data-role="listview" data-inset="true" data-theme="d">	
+				<li data-role="list-divider" data-theme="a">Research</li>
+				<li><a href="#">Week 1: Discussion Question 1</a></li>
+				<li><a href="#">Week 2: Discussion Question 2</a></li>
+				<li><a href="#">Week 3: Discussion Question 3</a></li>
+				<li><a href="#">Week 4: Discussion Question 4</a></li>
+			</ul>
+			
+			
+		</div>	
+	</div>		
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</body>
+</html>

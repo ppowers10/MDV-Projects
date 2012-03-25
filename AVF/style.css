@@ -1,0 +1,15 @@
+#index {
+	background-image:url('bglogo.png');
+	background-repeat:repeat;
+} 
+
+.ui-content {
+	position: relative;
+}
+
+#mainLogo {
+	width: 80%;
+}
+
+
+
