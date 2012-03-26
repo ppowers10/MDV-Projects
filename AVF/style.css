@@ -3,6 +3,11 @@
 	background-repeat:repeat;
 } 
 
+#week1 {
+	background-image:url('bglogo.png');
+	background-repeat:repeat;
+} 
+
 .ui-content {
 	position: relative;
 }
@@ -11,5 +16,7 @@
 	width: 80%;
 }
 
-
+#contact {
+	padding: 5px 15px;
+}
 
