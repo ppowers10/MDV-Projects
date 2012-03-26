@@ -1,5 +1,13 @@
 
-//Patrick Powers, Project 1 MiU, 1201, 1/3/2011
+//Patrick Powers, Project 3 MiU, 1201, 1/3/2011
+
+$(document).ready(function(){
+	
+	var recform = ('#recommendation');
+	
+	recform.validate();
+	
+})
 
 
 //Wait until the DOM is ready
@@ -11,26 +19,13 @@ window.addEventListener("DOMContentLoaded", function(){
 		return theElement;
 	}
 	
-<<<<<<< HEAD
-	
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
  
 	function makeCats1(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
 			selectSpan = $('select1'),
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "groups1");
+			makeSelect.setAttribute("data-native-menu", "false")
 		for(var i=0, j=recommendationType.length; i<j; i++){
 			var makeOption = document.createElement('option');
 			var optText = recommendationType[i];
@@ -42,54 +37,20 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
-=======
-	
->>>>>>> master
->>>>>>> gh-pages
 	function toggleControls(n){
 		switch(n){
 			case "on":
 				$('recommendation').style.display = "none";
-				$('clearRecommendation').style.display = "inline";
+				$('clearRecommendation').style.display = "inline"; //inline
 				$('displayRecommendation').style.display = "none";
-				$('addNew').style.display = "inline";
+				$('addNew').style.display = "inline"; //inline
 				break;
 			case "off":
-				$('recommendation').style.display = "block";
-				$('clearRecommendation').style.display = "inline";
-				$('displayRecommendation').style.display = "inline";
-				$('addNew').style.display = "none";
-				$('items').style.display = "none";
+				$('recommendation').style.display = "block"; //block
+				$('clearRecommendation').style.display = "inline"; //inline
+				$('displayRecommendation').style.display = "inline"; //inline
+				$('addNew').style.display = "none"; //none
+				$('items').style.display = "none"; //none
 				break;
 			//	break;
 			default:
@@ -114,82 +75,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.groups1		= ["Recommendation Type:  ", $('groups1').value];
 			item.name			= ["Recommendation Name:  ", $('name').value];
 			item.rating			= ["Rating (1=bad, 5=amazing):  ", $('rating').value];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
 			item.email			= ["Email:  ", $('email').value];
 			item.comments		= ["Comments:  ", $('comments').value];
-=======
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> gh-pages
-			item.comments		= ["Comments:  ", $('comments').value];
-			item.phonenum		= ["Phone Number:  ", $('phonenum').value];
-			item.email			= ["Email:  ", $('email').value];
-			item.url			= ["Website:  ", $('url').value];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> gh-pages
 			item.location		= ["Location:  ", $('location').value];
 		//Save data into Local Storage: Use Stringify to convert our object to a string
 		localStorage.setItem(id, JSON.stringify(item));
@@ -205,46 +93,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Write Data from Local Stograge to the browser.
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
+		//makeDiv.setAttribute("data-role", "page");
+		makeDiv.setAttribute("data-theme", "b");
+		var makeContentDiv = document.createElement('div');
+		makeContentDiv.setAttribute("data-role", "content");
+		makeContentDiv.setAttribute("data-theme", "b");
+		makeDiv.appendChild(makeContentDiv);
 		var makeList = document.createElement('ul');
-		makeDiv.appendChild(makeList);
+		makeContentDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-<<<<<<< HEAD
-		$('item').style.display = "block";
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		$('items').style.display = "block";
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
-=======
-		$('item').style.display = "block";
->>>>>>> master
->>>>>>> gh-pages
 		for(var i=0, j=localStorage.length; i<j; i++){
 			 var makeLi = document.createElement('li');
 			 makeLi.setAttribute("class", "recos")
@@ -289,19 +147,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 			},
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"request2": {
 				"groups1": 		["Select Recommendation Type:", "Event"],
 				"name": 		["Name:", "Dave Mathews Band"],
@@ -311,29 +156,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				"comments": 	["Comments:", "The DMB concert was amazing"]
 				"location": 	["Location:", "Amway in Orlando"]
 				}
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> gh-pages
 		};
 */		
 		json;
@@ -496,19 +318,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		//Variable default
 		var recommendationType = ["--Select Recommendation Type--", "Restaurant", "Bar", "Attraction", "Events", "Shopping"];
 		var urgentValue = "Not Urgent";
@@ -516,29 +325,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	makeCats1();
 	
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
->>>>>>> gh-pages
 	//Set Link and Submit Click Events
 	var displayLink = $('displayRecommendation');
 	displayLink.addEventListener("click", getData);
