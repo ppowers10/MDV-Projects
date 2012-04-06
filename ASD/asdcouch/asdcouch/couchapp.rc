@@ -1,0 +1,10 @@
+{
+  "env": {
+    "local": {
+      "db": "http://127.0.0.1:5984/frproject"
+    },
+    "cloudant": {
+      "db": "https://mingessemanseamightracce:fYL8QPE5ej5KyKrc7HxiESXo@ppowers.cloudant.com/frapp"
+    }    
+  }
+}
