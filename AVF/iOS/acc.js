@@ -4,7 +4,7 @@
 
     // PhoneGap is ready
     //
-    function onDeviceReady() {
+    function checkAcc() {
         navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
     }
 
