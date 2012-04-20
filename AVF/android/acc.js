@@ -5,7 +5,11 @@
     // PhoneGap is ready
     //
     function onDeviceReady() {
-        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+        
+    }
+    
+    function showAcc() {
+    	navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
     }
 
     // onSuccess: Get a snapshot of the current acceleration
