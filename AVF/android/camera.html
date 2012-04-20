@@ -1,0 +1,35 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>PP Design & Development</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="style.css" />
+
+	<script type="text/javascript" src="cordova-1.5.0.js"></script>
+
+        </head>
+    <body>
+        <header>
+            <div align="center">
+                <a href="index.html"><img src="img/pplogo2.png" id="mainLogo" /></a>
+            </div>
+        </header>
+        <button onclick="getImage();">Capture Photo</button> <br>
+        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Album</button><br>
+        <img style="display:none;" id="largeImage" src="" />
+        <!-- JavaScript under here -->
+        <script type="text/javascript" src="camera.js"></script>
+    </body>
+</html>
