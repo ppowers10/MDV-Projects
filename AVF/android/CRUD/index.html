@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>eJournal</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+            
+            <link rel="stylesheet" href="responsive.css" />
+            <link rel="stylesheet" href="styles.css" />
+            <!-- iPad/iPhone specific css below, add after your main css >
+             <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+             <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+             -->
+           
+            <script type="text/javascript" charset="utf-8" src="cordova-1.5.0.js"></script>
+  
+            </head>
+    <body>
+	<header>
+        <header>
+            <h1>eJournal</h1>
+        </header>
+        <nav class="g1">
+            <a href="#" style="display:none;" id="clearEntry">Clear Journal Entries</a>
+            <img src="images/list.png" id="displayEntry" class="sideNav"/>
+            <a href="index.html" id="addNew" style="display:none;">
+            <img src="images/new.png" class="sideNav"/>
+            </a>	
+            <img src="images/camera.png" onclick="getImage();" class="sideNav" id="camera"/>
+            <img src="images/picture.png" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" class="sideNav" id="picture"/>
+            <input type="image" src="images/save.png" value="Save Request" id="submit" class="sideNav"/>
+            
+        </nav>
+        <form class="g2" action="#" method="post" id="addEntry">
+                <label for="name">Title of Journal Entry:</label>
+                <input type="text" id="name"/>
+         
+                <label id="dateLabel" for="startdate">Entry Date:</label>
+                <input type="date" id="startdate" name="startdate" aria-required="true" />            
+            
+                <label for="comments"></label>
+                <textarea id="comments"></textarea>
+            
+             <img style="display:none;" id="eJImage" src="" />
+  
+            <footer>
+                                
+            </footer>
+        </form>
+    <script type="text/javascript" src="camera.js"></script>
+  	<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

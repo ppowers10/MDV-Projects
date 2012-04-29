@@ -5,6 +5,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
 //
 
+function onDeviceReady() {
+    // Empty
+}
+
 function checkConnection() {
     var networkState = navigator.network.connection.type;
     
@@ -14,7 +18,7 @@ function checkConnection() {
     states[Connection.WIFI]     = 'WiFi connection';
     states[Connection.CELL_2G]  = 'Cell 2G connection';
     states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL_4G]  =  'Cell 4G connection';
     states[Connection.NONE]     = 'No network connection';
     
     alert('Connection type: ' + states[networkState]);

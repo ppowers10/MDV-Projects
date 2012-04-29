@@ -4,12 +4,13 @@
 
     // PhoneGap is ready
     //
-function onDeviceReady() {}
-
-function checkGeo () {
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+    function onDeviceReady() {
+        
     }
 
+    function showGeo() {
+    	navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+    }
     // onSuccess Geolocation
     //
     var onSuccess = function(position) {
@@ -29,4 +30,3 @@ function checkGeo () {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
-

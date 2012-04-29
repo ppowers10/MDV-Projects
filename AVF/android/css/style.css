@@ -60,11 +60,6 @@ img {
     width:50%;
 }
 
-#largeMap {
-    margin-left:auto;
-    margin-right:auto;
-}
-
 button
 {
 	width: 100%;
@@ -121,4 +116,3 @@ button
 	"rgba(0,0,0,0.75)" 	Color, a transparant black. */
 
 }
-
