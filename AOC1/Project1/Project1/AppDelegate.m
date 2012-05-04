@@ -41,7 +41,7 @@
     }
     else
     {
-        NSLog(@"I have %.1f gallon(s) of gas left, but it might not be a bad idea to get gas now.");
+        NSLog(@"I have %.1f gallon(s) of gas left, but it might not be a bad idea to get gas now.", gasCurrent);
     }    
 
 //  4.  Perform a single for loop printing out values to the console
@@ -65,6 +65,7 @@
         NSLog(@"I can drive a little further.");
         gasCurrent -= .5;
     }
+    NSLog(@"I better take a break from driving.");
     
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
