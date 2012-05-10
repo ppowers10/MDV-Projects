@@ -30,6 +30,8 @@
     {
         labelTitle.text = @"HTML5 & CSS3 for the Real World";
         labelTitle.textAlignment = UITextAlignmentCenter;
+        labelTitle.backgroundColor = [UIColor whiteColor];
+        labelTitle.textColor = [UIColor blackColor];
     }
     [self.view addSubview:labelTitle];
     
