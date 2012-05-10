@@ -40,6 +40,8 @@
     {
         labelAuthor.text = @"Author:";
         labelAuthor.textAlignment = UITextAlignmentRight;
+        labelAuthor.backgroundColor = [UIColor redColor];
+        labelAuthor.textColor = [UIColor whiteColor];
     }
     [self.view addSubview:labelAuthor];
     
@@ -51,6 +53,8 @@
         labelAuthorName.text = @"Alexis Goldstein, Louis Lazaris, & Estelle Weyl";
         labelAuthorName.textAlignment = UITextAlignmentLeft;
         labelAuthorName.numberOfLines = 2;
+        labelAuthorName.textColor = [UIColor yellowColor]; 
+        labelAuthorName.backgroundColor = [UIColor orangeColor];
     }
     [self.view addSubview:labelAuthorName];
     
@@ -61,6 +65,8 @@
     {
         labelPublished.text = @"Published:";
         labelPublished.textAlignment = UITextAlignmentRight;
+        labelPublished.textColor = [UIColor redColor];
+        labelPublished.backgroundColor = [UIColor blackColor];
     }
     [self.view addSubview:labelPublished];
     
@@ -71,6 +77,8 @@
     {
         labelPublishedDate.text = @"May 2011";
         labelPublishedDate.textAlignment = UITextAlignmentLeft;
+        labelPublishedDate.backgroundColor = [UIColor purpleColor];
+        labelPublishedDate.textColor = [UIColor lightGrayColor];
     }
     [self.view addSubview:labelPublishedDate];
     
@@ -81,6 +89,8 @@
     {
         labelSummary.text = @"Summary:";
         labelSummary.textAlignment = UITextAlignmentLeft;
+        labelSummary.backgroundColor = [UIColor brownColor];
+        labelSummary.textColor = [UIColor cyanColor];
     }
     [self.view addSubview:labelSummary];
     
@@ -91,6 +101,8 @@
         labelSummaryText.text = @"This book is an introduction to the latest in web development technologies. It is an easy-to-follow guide that will allow readers to master semantic HTML5 and CSS3.";
         labelSummaryText.textAlignment = UITextAlignmentCenter;
         labelSummaryText.numberOfLines = 4;
+        labelSummaryText.backgroundColor = [UIColor colorWithRed:179/255 green:255/255 blue:223/255 alpha:1];
+        labelSummaryText.textColor = [UIColor colorWithRed:212/255.0 green:31/255.0 blue:31/255.0 alpha:1];
     }
     [self.view addSubview:labelSummaryText];
     
@@ -120,8 +132,10 @@
     UILabel *labelList = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 335.0f, 110.0f, 25.0f)];
     if(labelList != nil)
     {
-        labelList.text = @"Summary:";
+        labelList.text = @"List of items:";
         labelList.textAlignment = UITextAlignmentLeft;
+        labelList.backgroundColor = [UIColor colorWithRed:26/255.0 green:179/255.0 blue:244/255.0 alpha:1];
+        labelList.textColor = [UIColor colorWithRed:251/255.0 green:26/255.0 blue:26/255.0 alpha:1];
     }
     [self.view addSubview:labelList];    
     
@@ -132,6 +146,8 @@
         labelListText.text = itemList;
         labelListText.textAlignment = UITextAlignmentCenter;
         labelListText.numberOfLines = 4;
+        labelListText.backgroundColor = [UIColor darkGrayColor];
+        labelListText.textColor = [UIColor colorWithRed:251/255.0 green:171/255.0 blue:31/255.0 alpha:1];
     }
     [self.view addSubview:labelListText];    
     
