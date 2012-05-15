@@ -13,9 +13,9 @@
 		C08B4BCC1561E6B000FBA736 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C08B4BCA1561E6B000FBA736 /* InfoPlist.strings */; };
 		C08B4BCE1561E6B000FBA736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C08B4BCD1561E6B000FBA736 /* main.m */; };
 		C08B4BD21561E6B000FBA736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C08B4BD11561E6B000FBA736 /* AppDelegate.m */; };
-		C08B4BD51561E6B000FBA736 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08B4BD41561E6B000FBA736 /* ViewController.m */; };
 		C08B4BD81561E6B000FBA736 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08B4BD61561E6B000FBA736 /* ViewController_iPhone.xib */; };
 		C08B4BDB1561E6B000FBA736 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08B4BD91561E6B000FBA736 /* ViewController_iPad.xib */; };
+		C08B4BE11561E8C600FBA736 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08B4BD41561E6B000FBA736 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +23,13 @@
 		C08B4BC11561E6B000FBA736 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C08B4BC31561E6B000FBA736 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C08B4BC51561E6B000FBA736 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C08B4BC91561E6B000FBA736 /* project3-Info.plist */ = {isa = PBXFileReference; path = "project3-Info.plist"; sourceTree = "<group>"; };
+		C08B4BC91561E6B000FBA736 /* project3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "project3-Info.plist"; sourceTree = "<group>"; };
 		C08B4BCB1561E6B000FBA736 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C08B4BCD1561E6B000FBA736 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C08B4BCF1561E6B000FBA736 /* project3-Prefix.pch */ = {isa = PBXFileReference; path = "project3-Prefix.pch"; sourceTree = "<group>"; };
-		C08B4BD01561E6B000FBA736 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C08B4BCF1561E6B000FBA736 /* project3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "project3-Prefix.pch"; sourceTree = "<group>"; };
+		C08B4BD01561E6B000FBA736 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C08B4BD11561E6B000FBA736 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C08B4BD31561E6B000FBA736 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		C08B4BD31561E6B000FBA736 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C08B4BD41561E6B000FBA736 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C08B4BD71561E6B000FBA736 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		C08B4BDA1561E6B000FBA736 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 			files = (
 				C08B4BCE1561E6B000FBA736 /* main.m in Sources */,
 				C08B4BD21561E6B000FBA736 /* AppDelegate.m in Sources */,
-				C08B4BD51561E6B000FBA736 /* ViewController.m in Sources */,
+				C08B4BE11561E8C600FBA736 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
