@@ -21,6 +21,7 @@
     int num2 = 8;
     NSInteger addNumbers = [self addOne:num1 addTwo:num2];
     NSInteger compareNumbers = [self compareOne:num1 compareTwo:num2];
+    NSString *appStrings = [self appendOne:@"This is string one." appendTwo:@"This is string two."];
 }
  
 //Create a function called Add. This function will take two NSInteger or int types and return the result of an addition between these two.
@@ -39,10 +40,15 @@
     }
 }
 
-
 //Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
-    
-    
+
+-(NSString*)appendOne:(NSString*)aOne appendTwo:(NSString*)aTwo
+{
+    NSMutableString *appendedStrings = [[NSMutableString alloc] initWithString:@""];
+        [appendedStrings appendString:aOne];
+        [appendedStrings appendString:aTwo];
+    return appendedStrings;
+}
 
 //Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
     

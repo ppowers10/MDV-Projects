@@ -15,4 +15,8 @@
 
 -(NSInteger)addOne:(NSInteger)one addTwo:(NSInteger)two;
 
+-(BOOL)compareOne:(NSInteger)cOne compareTwo:(NSInteger)cTwo;
+
+-(NSString*)appendOne:(NSString*)aOne appendTwo:(NSString*)aTwo;
+
 @end

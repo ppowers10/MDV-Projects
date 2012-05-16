@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "project3/ViewController.m"
-         timestampString = "358746253.864723"
+         timestampString = "358866702.809498"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
-         landmarkName = "-compareOne:compareTwo:"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
+         landmarkName = "-appendOne:appendTwo:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
