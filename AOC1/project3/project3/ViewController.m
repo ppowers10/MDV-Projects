@@ -80,15 +80,13 @@
     NSString *messageNumber = [[NSString alloc] initWithFormat:@"This number is %@", displayAlertWithString];
     //DisplayAlertWithString Function
     //Take the passed in NSString and display it in the alert view
+    //Create an AlertView
     UIAlertView *alertNumber = [[UIAlertView alloc] initWithTitle:@"Number" message:messageNumber delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     if (alertNumber != nil)
     {
         [alertNumber show];
     }
 }
-
-//Create an NSAlertView
-
 
 - (void)viewDidUnload
 {
