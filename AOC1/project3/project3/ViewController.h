@@ -19,4 +19,6 @@
 
 -(NSString*)appendOne:(NSString*)aOne appendTwo:(NSString*)aTwo;
 
+-(NSString*)displayAlertWithString:(NSString*)displayAlertWithString;
+
 @end
