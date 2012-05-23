@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#define BUTTON_ZERO 0
+#define BUTTON_ONE 2
+#define BUTTON_TWO 3
 
 @interface ViewController ()
 
@@ -41,7 +44,7 @@
         [self.view addSubview:loginButton];
     //Login: 5 Add a target to the UIButton to call a function called onClick when the user presses the Login button.    
         [loginButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
-        loginButton.tag = 0;
+        loginButton.tag = BUTTON_ZERO;
     }
     //Login: 4 Create another UILabel beneath with the default text "Please Enter Username".
     UILabel *usernamePrompt = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 310.0f, 80.0f)];
@@ -52,9 +55,6 @@
         usernamePrompt.backgroundColor = [UIColor blueColor];
     }
     [self.view addSubview:usernamePrompt];
-   
-    //**6 If the user has not entered any text into the UITextField, display in the UILabel, "Username cannot be empty". Otherwise, display "User: username has been logged in".
-    //**7 Hint: NSString has a property called length that tells you how many characters are in the string.
     
     //Date - this section will display a UIAlertView with the current date and time in it using an NSDate object.
     //Date: 1 Create a UIButton using the rounded rectangle type. Give this button any color you wish.
@@ -65,41 +65,57 @@
         [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
         [self.view addSubview:dateButton];   
         [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
-        dateButton.tag = 1;
+        dateButton.tag = BUTTON_ONE;
     }
     
-    //Information - this section will display the text "This application was created by: Firstname Lastname" in a label when the info button is clicked.
-    //1 Create a UIButton using either the light or dark info type and position it somewhere near the bottom of the screen.
+    //Info: 1 Create a UIButton using either the light or dark info type and position it somewhere near the bottom of the screen.
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
     if (infoButton != nil) {
         infoButton.frame = CGRectMake(5.0f, 280.0f, 25.0f, 25.0f);
         [self.view addSubview:infoButton]; 
         [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
-        infoButton.tag = 2;
+        infoButton.tag = BUTTON_TWO;
     }
-    //2 Create a UILabel beneath it that contains no initial text.
-    UILabel *infoPrompt = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 320.0f, 310.0f, 80.0f)];
-    if (infoPrompt != nil) {
-        infoPrompt.text = @"Please Enter Username";
-        infoPrompt.textAlignment = UITextAlignmentCenter;
-        infoPrompt.textColor = [UIColor whiteColor];
-        infoPrompt.backgroundColor = [UIColor blueColor];
+    //Info: 2 Create a UILabel beneath it that contains no initial text.
+    UILabel *infoPrompt1 = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 320.0f, 310.0f, 80.0f)];
+    if (infoPrompt1 != nil) {
+        infoPrompt1.backgroundColor = [UIColor blueColor];
     }
-    [self.view addSubview:infoPrompt];
-    //3 Hook up an action to the info button to have it call the onClick handler you created earlier.
-    //4 When the button is pressed, have the text "This application was created by: Firstname Lastname" appear in the info UILabel. Please replace firstname lastname with your name.
-    
-}
+    [self.view addSubview:infoPrompt1];
+    }
 
-//Date: 3 Add an action to the button that when clicked, it will call the same onClick handler you already defined. Make sure to add a tag to the date button so you know which one was pressed.
+
 -(void)onClick:(UIButton*)button
 {
-    if (button.tag == 0) 
+    if (button.tag == BUTTON_ZERO) 
     {
-        //do something
+        //Login: 6 If the user has not entered any text into the UITextField, display in the UILabel, "Username cannot be empty". Otherwise, display "User: username has been logged in".
+        //Login: 7 Hint: NSString has a property called length that tells you how many characters are in the string.
+        if (button != nil) {
+        UILabel *usernamePrompt1 = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 310.0f, 80.0f)];
+        if (usernamePrompt1 != nil) {
+            usernamePrompt1.text = @"Username cannot be empty";
+            usernamePrompt1.textAlignment = UITextAlignmentCenter;
+            usernamePrompt1.textColor = [UIColor whiteColor];
+            usernamePrompt1.backgroundColor = [UIColor blueColor];
+        }
+        [self.view addSubview:usernamePrompt1];
+        }
+        else {
+        UILabel *usernamePrompt1 = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 310.0f, 80.0f)];
+        if (usernamePrompt1 != nil) {
+            usernamePrompt1.text = @"User: username has logged in";
+            usernamePrompt1.textAlignment = UITextAlignmentCenter;
+            usernamePrompt1.textColor = [UIColor whiteColor];
+            usernamePrompt1.backgroundColor = [UIColor blueColor];
+        }
+        [self.view addSubview:usernamePrompt1];
+        }
+
     }
-    else if (button.tag == 1)
+    else if (button.tag == BUTTON_ONE)
     {
+        //Date: 3 Add an action to the button that when clicked, it will call the same onClick handler you already defined. Make sure to add a tag to the date button so you know which one was pressed.
         NSDate *dateTime = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         if (dateFormatter != nil) {
@@ -113,8 +129,20 @@
             }
         }  
     }
-    else if (button.tag == 2) {
-        //do something
+    else if (button.tag == BUTTON_TWO) {
+        //Info: 3 Hook up an action to the info button to have it call the onClick handler you created earlier.
+        //Info: 4 When the button is pressed, have the text "This application was created by: Firstname Lastname" appear in the info UILabel. Please replace firstname lastname with your name.
+        UILabel *infoPrompt2 = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 320.0f, 310.0f, 80.0f)];
+        if (infoPrompt2 != nil) {
+            infoPrompt2.text = @"This application was created by: Patrick Powers";
+            infoPrompt2.numberOfLines = 2; 
+            infoPrompt2.textAlignment = UITextAlignmentCenter;
+            infoPrompt2.textColor = [UIColor whiteColor];
+            infoPrompt2.backgroundColor = [UIColor blueColor];
+        }
+        [self.view addSubview:infoPrompt2];
+
+        
     }
     
     
