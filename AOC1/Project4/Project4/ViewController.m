@@ -17,6 +17,8 @@
 
 @implementation ViewController
 
+UITextField *loginTextField;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,7 +33,7 @@
     [self.view addSubview:username];
 
     //Login: 2 Create a UITextField to the right of the username label
-    UITextField *loginTextField = [[UITextField alloc] initWithFrame:CGRectMake(100.0f, 5.0f, 200.0f, 30.0f)];
+    loginTextField = [[UITextField alloc] initWithFrame:CGRectMake(100.0f, 5.0f, 200.0f, 30.0f)];
     if (loginTextField != nil) {
         loginTextField.borderStyle = UITextBorderStyleRoundedRect;
         [self.view addSubview:loginTextField];
@@ -91,7 +93,8 @@
     {
         //Login: 6 If the user has not entered any text into the UITextField, display in the UILabel, "Username cannot be empty". Otherwise, display "User: username has been logged in".
         //Login: 7 Hint: NSString has a property called length that tells you how many characters are in the string.
-        if (button != nil) {
+        NSString *result = loginTextField.text;
+        if (result.length==0) {
         UILabel *usernamePrompt1 = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 310.0f, 80.0f)];
         if (usernamePrompt1 != nil) {
             usernamePrompt1.text = @"Username cannot be empty";
@@ -104,14 +107,14 @@
         else {
         UILabel *usernamePrompt1 = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 310.0f, 80.0f)];
         if (usernamePrompt1 != nil) {
-            usernamePrompt1.text = @"User: username has logged in";
+            usernamePrompt1.text = [[NSString alloc] initWithFormat:@"User: %@ has logged in", result];
+            usernamePrompt1.numberOfLines = 2;
             usernamePrompt1.textAlignment = UITextAlignmentCenter;
             usernamePrompt1.textColor = [UIColor whiteColor];
             usernamePrompt1.backgroundColor = [UIColor blueColor];
         }
         [self.view addSubview:usernamePrompt1];
         }
-
     }
     else if (button.tag == BUTTON_ONE)
     {
