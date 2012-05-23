@@ -41,6 +41,7 @@ UITextField *loginTextField;
     //Login: 3 Create a rounded rectangle UIButton of any color under the UITextField with the text "Login" on it.
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (loginButton != nil) {
+        loginButton.tintColor = [UIColor darkGrayColor];
         loginButton.frame = CGRectMake(220.0f, 40.0f, 80.0f, 30.0f);
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];
         [self.view addSubview:loginButton];
@@ -65,6 +66,7 @@ UITextField *loginTextField;
         dateButton.frame = CGRectMake(5.0f, 210.0f, 100.0f, 30.0f);
     //Date: 2 Add the text "Show Date" to the button
         [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
+        dateButton.tintColor = [UIColor orangeColor];
         [self.view addSubview:dateButton];   
         [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         dateButton.tag = BUTTON_ONE;
@@ -125,7 +127,6 @@ UITextField *loginTextField;
             //Date: 4 Display a UIAlertView with the current date and time displayed in the format seen in the dateAlert graphic in the assets section of this project assignment. You can either format the date and time manually or use the date and time styles. You must use an NSDate object to gather the date and time information.
             [dateFormatter setDateFormat:@"MMM d, yyyy hh:mm:ss aaa zzzz"];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Date & Time" message:[dateFormatter stringFromDate:dateTime] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
             if (alertView != nil) 
             {
                 [alertView show];
@@ -143,12 +144,8 @@ UITextField *loginTextField;
             infoPrompt2.textColor = [UIColor whiteColor];
             infoPrompt2.backgroundColor = [UIColor blueColor];
         }
-        [self.view addSubview:infoPrompt2];
-
-        
+        [self.view addSubview:infoPrompt2];        
     }
-    
-    
 }
 
 - (void)viewDidUnload
