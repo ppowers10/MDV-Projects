@@ -7,7 +7,16 @@
 //
 
 #import "BeagleDog.h"
+#import "DogClass.h"
 
 @implementation BeagleDog
 
+-(id)init
+{
+    if(self != nil)
+    {
+        [self setAttributes:Beagle_Dog dogName:@"Aspen" pounds:20];
+    }
+    return self;
+}
 @end

@@ -7,7 +7,16 @@
 //
 
 #import "MastiffDog.h"
+#import "DogClass.h"
 
 @implementation MastiffDog
 
+-(id)init
+{
+    if(self != nil)
+    {
+        [self setAttributes:Mastiff_Dog dogName:@"Doozer" pounds:120];
+    }
+    return self;
+}
 @end

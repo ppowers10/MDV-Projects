@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DogClass.h"
 
 @interface ViewController : UIViewController
-
+{
+    UILabel *textLabel;
+    
+    DogClass *dogClass;
+}
 @end

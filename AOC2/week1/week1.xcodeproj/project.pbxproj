@@ -16,6 +16,10 @@
 		C0F40717159942DF00E93848 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F40716159942DF00E93848 /* ViewController.m */; };
 		C0F4071A159942DF00E93848 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F40718159942DF00E93848 /* ViewController_iPhone.xib */; };
 		C0F4071D159942DF00E93848 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F4071B159942DF00E93848 /* ViewController_iPad.xib */; };
+		C0F40789159A921E00E93848 /* DogClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F40788159A921E00E93848 /* DogClass.m */; };
+		C0F4078C159ABB4300E93848 /* BoxerDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F4078B159ABB4300E93848 /* BoxerDog.m */; };
+		C0F4078F159ABB5600E93848 /* MastiffDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F4078E159ABB5600E93848 /* MastiffDog.m */; };
+		C0F40792159ABB6400E93848 /* BeagleDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F40791159ABB6400E93848 /* BeagleDog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +27,24 @@
 		C0F40703159942DF00E93848 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0F40705159942DF00E93848 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0F40707159942DF00E93848 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C0F4070B159942DF00E93848 /* week1-Info.plist */ = {isa = PBXFileReference; path = "week1-Info.plist"; sourceTree = "<group>"; };
+		C0F4070B159942DF00E93848 /* week1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "week1-Info.plist"; sourceTree = "<group>"; };
 		C0F4070D159942DF00E93848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0F4070F159942DF00E93848 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C0F40711159942DF00E93848 /* week1-Prefix.pch */ = {isa = PBXFileReference; path = "week1-Prefix.pch"; sourceTree = "<group>"; };
-		C0F40712159942DF00E93848 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C0F40711159942DF00E93848 /* week1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "week1-Prefix.pch"; sourceTree = "<group>"; };
+		C0F40712159942DF00E93848 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0F40713159942DF00E93848 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C0F40715159942DF00E93848 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		C0F40715159942DF00E93848 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C0F40716159942DF00E93848 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C0F40719159942DF00E93848 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		C0F4071C159942DF00E93848 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		C0F40787159A921E00E93848 /* DogClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogClass.h; sourceTree = "<group>"; };
+		C0F40788159A921E00E93848 /* DogClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogClass.m; sourceTree = "<group>"; };
+		C0F4078A159ABB4300E93848 /* BoxerDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxerDog.h; sourceTree = "<group>"; };
+		C0F4078B159ABB4300E93848 /* BoxerDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxerDog.m; sourceTree = "<group>"; };
+		C0F4078D159ABB5600E93848 /* MastiffDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MastiffDog.h; sourceTree = "<group>"; };
+		C0F4078E159ABB5600E93848 /* MastiffDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MastiffDog.m; sourceTree = "<group>"; };
+		C0F40790159ABB6400E93848 /* BeagleDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeagleDog.h; sourceTree = "<group>"; };
+		C0F40791159ABB6400E93848 /* BeagleDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeagleDog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,14 @@
 				C0F40718159942DF00E93848 /* ViewController_iPhone.xib */,
 				C0F4071B159942DF00E93848 /* ViewController_iPad.xib */,
 				C0F4070A159942DF00E93848 /* Supporting Files */,
+				C0F40787159A921E00E93848 /* DogClass.h */,
+				C0F40788159A921E00E93848 /* DogClass.m */,
+				C0F4078A159ABB4300E93848 /* BoxerDog.h */,
+				C0F4078B159ABB4300E93848 /* BoxerDog.m */,
+				C0F4078D159ABB5600E93848 /* MastiffDog.h */,
+				C0F4078E159ABB5600E93848 /* MastiffDog.m */,
+				C0F40790159ABB6400E93848 /* BeagleDog.h */,
+				C0F40791159ABB6400E93848 /* BeagleDog.m */,
 			);
 			path = week1;
 			sourceTree = "<group>";
@@ -168,6 +188,10 @@
 				C0F40710159942DF00E93848 /* main.m in Sources */,
 				C0F40714159942DF00E93848 /* AppDelegate.m in Sources */,
 				C0F40717159942DF00E93848 /* ViewController.m in Sources */,
+				C0F40789159A921E00E93848 /* DogClass.m in Sources */,
+				C0F4078C159ABB4300E93848 /* BoxerDog.m in Sources */,
+				C0F4078F159ABB5600E93848 /* MastiffDog.m in Sources */,
+				C0F40792159ABB6400E93848 /* BeagleDog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

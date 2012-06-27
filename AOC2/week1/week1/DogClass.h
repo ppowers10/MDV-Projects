@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum
+{
+    Boxer_Dog=0,
+    Mastiff_Dog,
+    Beagle_Dog
+} EDogType;
+
 @interface DogClass : NSObject
+{
+    EDogType dogType;
+    int lbs;
+    NSString *name;
+}
+
+-(void)setAttributes:(EDogType)type dogName:(NSString*)dogName pounds:(int)pounds;
+
+
+-(NSString*)printLabel;
+
+@property int lbs;
+@property NSString *name; 
 
 @end

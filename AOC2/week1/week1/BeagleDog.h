@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DogClass.h"
 
-@interface BeagleDog : NSObject
+@interface BeagleDog : DogClass
+
 
 @end

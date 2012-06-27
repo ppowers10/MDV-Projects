@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DogClass.h"
 
-@interface MastiffDog : NSObject
+@interface MastiffDog : DogClass
 
 @end

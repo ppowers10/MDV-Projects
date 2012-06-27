@@ -10,4 +10,21 @@
 
 @implementation DogClass
 
+@synthesize lbs, name;
+
+-(void)setAttributes:(EDogType)type dogName:(NSString*)dogName pounds:(int)pounds
+{
+    lbs = pounds;
+    name = dogName;
+    dogType = type;
+}
+
+-(NSString*)printLabel
+{
+    NSString *words = [[NSString alloc] initWithFormat:@"Name: %@, Pounds: %i", name, lbs];
+    return words;
+}
+
+
+
 @end

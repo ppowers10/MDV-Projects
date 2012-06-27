@@ -7,7 +7,22 @@
 //
 
 #import "BoxerDog.h"
+#import "DogClass.h"
 
 @implementation BoxerDog
 
+-(id)init
+{
+    if(self != nil)
+    {
+        [self setAttributes:Boxer_Dog dogName:@"Suzie" pounds:45];
+    }
+    return self;
+}
+
+-(NSString*)printLabel
+{
+    NSString *words = [[NSString alloc] initWithFormat:@"Pounds: %i, Name:%@", lbs, name];
+    return words;
+}
 @end
