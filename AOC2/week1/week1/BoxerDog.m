@@ -22,7 +22,7 @@
 
 -(NSString*)printLabel
 {
-    NSString *words = [[NSString alloc] initWithFormat:@"Pounds: %i, Name:%@", lbs, name];
+    NSString *words = [[NSString alloc] initWithFormat:@"The dog's name is %@ and weighs %i", name, lbs];
     return words;
 }
 @end

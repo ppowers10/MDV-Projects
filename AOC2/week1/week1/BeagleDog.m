@@ -19,4 +19,10 @@
     }
     return self;
 }
+
+-(NSString*)printLabel
+{
+    NSString *words = [[NSString alloc] initWithFormat:@"The dog's name is %@ & weighs %i", name, lbs];
+    return words;
+}
 @end
