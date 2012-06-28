@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DogClass.h"
 
 @interface DogFactory : NSObject
+
++(DogClass*)GetDog:(int)dogType;
 
 @end

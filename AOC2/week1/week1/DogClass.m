@@ -10,13 +10,37 @@
 
 @implementation DogClass
 
-@synthesize lbs, name;
 
--(void)setAttributes:(EDogType)type dogName:(NSString*)dogName pounds:(int)pounds
+-(id)init
 {
-    lbs = pounds;
-    name = dogName;
-    dogType = type;
+    self = [super init];
+    if (self != nil)
+    {
+    lbs = 0;
+    name = @"name";
+    dogType = 0;
+    }
+    return self;
+}
+
+-(int)getLbs
+{
+    return lbs;
+}
+
+-(NSString*)getName
+{
+    return name;
+}
+
+-(void)setLbs :(int)newLbs
+{
+    lbs = newLbs;
+}
+
+-(void)setName : (NSString*)newName
+{
+    name = newName; 
 }
 
 -(NSString*)printLabel

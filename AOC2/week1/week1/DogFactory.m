@@ -7,7 +7,29 @@
 //
 
 #import "DogFactory.h"
+#import "DogClass.h"
+#import "BoxerDog.h"
+#import "MastiffDog.h"
+#import "BeagleDog.h"
 
 @implementation DogFactory
+
+
+-(DogClass*)GetDog:(int)dogType;
+{
+    if (dogType == 0)
+    {
+        return [[BoxerDog alloc] init];
+    }
+    else if (dogType == 1)
+    {
+        return [[MastiffDog alloc] init];
+    }
+    else if (dogType == 2)
+    {
+        return [[BeagleDog alloc] init];
+    }
+    return nil;
+}
 
 @end

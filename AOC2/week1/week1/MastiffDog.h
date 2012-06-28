@@ -10,5 +10,10 @@
 #import "DogClass.h"
 
 @interface MastiffDog : DogClass
+{
+    NSString *ownerName;
+}
+
+-(NSString*)getOwnerName;
 
 @end

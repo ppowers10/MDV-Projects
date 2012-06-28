@@ -22,12 +22,14 @@ typedef enum
     NSString *name;
 }
 
--(void)setAttributes:(EDogType)type dogName:(NSString*)dogName pounds:(int)pounds;
+-(int)getLbs;
+-(NSString*)getName;
+-(void)setLbs :(int)newLbs;
+-(void)setName : (NSString*)newName;
 
 
 -(NSString*)printLabel;
 
-@property int lbs;
-@property NSString *name; 
+
 
 @end

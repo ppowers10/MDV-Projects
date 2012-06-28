@@ -11,6 +11,7 @@
 #import "BoxerDog.h"
 #import "MastiffDog.h"
 #import "BeagleDog.h"
+#import "DogFactory.h"
 
 @interface ViewController ()
 
@@ -24,7 +25,11 @@
     if (boxerDog !=nil)
     {
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-        textLabel.text = [boxerDog printLabel];
+        textLabel.text = [NSString stringWithFormat:@"Name: %@, Pounds: %i", [boxerDog  getName], [boxerDog getLbs]];
+        [self.view addSubview:textLabel];
+        
+        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 180, 320, 60)];
+        textLabel.text = [NSString stringWithFormat:@"%@ is %d years old.", [boxerDog  getName], [boxerDog getAge]];
         [self.view addSubview:textLabel];
     }
     
@@ -32,7 +37,11 @@
     if (mastiffDog != nil)
     {
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, 320, 60)];
-        textLabel.text = [mastiffDog printLabel];
+        textLabel.text = [NSString stringWithFormat:@"Name: %@, Pounds: %i", [mastiffDog getName], [mastiffDog getLbs]];
+        [self.view addSubview:textLabel];
+        
+        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 240, 320, 60)];
+        textLabel.text = [NSString stringWithFormat:@"%@ is the owner of %@.", [mastiffDog getOwnerName], [mastiffDog  getName]];
         [self.view addSubview:textLabel];
     }
     
@@ -40,20 +49,13 @@
     if(beagleDog != nil)
     {
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 320, 60)];
-        textLabel.text = [beagleDog printLabel];
+        textLabel.text = [NSString stringWithFormat:@"Name: %@, Pounds: %i", [beagleDog  getName], [beagleDog getLbs]];
+        [self.view addSubview:textLabel];
+        
+        textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, 320, 60)];
+        textLabel.text = [NSString stringWithFormat:@"%@ has %d toys.", [beagleDog getName], [beagleDog  getToys]];
         [self.view addSubview:textLabel];
     }
-    //DogClass *dog = [[DogClass alloc] init];
-    //if (dogClass !=nil)
-    //{
-        
-    //}
-    
-    
-    //textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    //textLabel.text = [[NSString alloc] initWithFormat:@"Pounds:%d, Name: %@", dog->lbs, dog->name];
-    //[self.view addSubview:textLabel];
-    
         
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

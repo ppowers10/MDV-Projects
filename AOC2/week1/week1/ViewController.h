@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "DogClass.h"
+#import "DogClass.h"
+#import "BoxerDog.h"
+#import "MastiffDog.h"
+#import "BeagleDog.h"
+#import "DogFactory.h"
 
 @interface ViewController : UIViewController
 {
     UILabel *textLabel;
-    
-    DogClass *dogClass;
 }
 @end

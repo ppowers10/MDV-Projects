@@ -10,6 +10,9 @@
 #import "DogClass.h"
 
 @interface BeagleDog : DogClass
-
+{
+    int toys; 
+}
+-(int)getToys;
 
 @end

@@ -10,5 +10,10 @@
 #import "DogClass.h"
 
 @interface BoxerDog : DogClass
+{
+    int age;
+}
+
+-(int)getAge;
 
 @end

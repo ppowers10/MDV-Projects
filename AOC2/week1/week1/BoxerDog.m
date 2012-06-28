@@ -13,16 +13,26 @@
 
 -(id)init
 {
-    if(self != nil)
+    self = [super init];
+    if (self != nil)
     {
-        [self setAttributes:Boxer_Dog dogName:@"Suzie" pounds:45];
+        lbs = 50;
+        name = @"Suzie";
+        dogType = 0;
+        age = 6;
     }
     return self;
 }
 
+-(int)getAge
+{
+    return age;
+}
+
 -(NSString*)printLabel
 {
-    NSString *words = [[NSString alloc] initWithFormat:@"The dog's name is %@ and weighs %i", name, lbs];
+    NSString *words = [[NSString alloc] initWithFormat:@"Pounds: %i, Name: %@", lbs, name];
     return words;
 }
+
 @end

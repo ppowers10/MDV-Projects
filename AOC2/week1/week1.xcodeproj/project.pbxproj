@@ -20,6 +20,7 @@
 		C0F4078C159ABB4300E93848 /* BoxerDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F4078B159ABB4300E93848 /* BoxerDog.m */; };
 		C0F4078F159ABB5600E93848 /* MastiffDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F4078E159ABB5600E93848 /* MastiffDog.m */; };
 		C0F40792159ABB6400E93848 /* BeagleDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F40791159ABB6400E93848 /* BeagleDog.m */; };
+		C0F40799159B3D1A00E93848 /* DogFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F40798159B3D1A00E93848 /* DogFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		C0F4078E159ABB5600E93848 /* MastiffDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MastiffDog.m; sourceTree = "<group>"; };
 		C0F40790159ABB6400E93848 /* BeagleDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeagleDog.h; sourceTree = "<group>"; };
 		C0F40791159ABB6400E93848 /* BeagleDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeagleDog.m; sourceTree = "<group>"; };
+		C0F40797159B3D1A00E93848 /* DogFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogFactory.h; sourceTree = "<group>"; };
+		C0F40798159B3D1A00E93848 /* DogFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				C0F40718159942DF00E93848 /* ViewController_iPhone.xib */,
 				C0F4071B159942DF00E93848 /* ViewController_iPad.xib */,
 				C0F4070A159942DF00E93848 /* Supporting Files */,
+				C0F40797159B3D1A00E93848 /* DogFactory.h */,
+				C0F40798159B3D1A00E93848 /* DogFactory.m */,
 				C0F40787159A921E00E93848 /* DogClass.h */,
 				C0F40788159A921E00E93848 /* DogClass.m */,
 				C0F4078A159ABB4300E93848 /* BoxerDog.h */,
@@ -192,6 +197,7 @@
 				C0F4078C159ABB4300E93848 /* BoxerDog.m in Sources */,
 				C0F4078F159ABB5600E93848 /* MastiffDog.m in Sources */,
 				C0F40792159ABB6400E93848 /* BeagleDog.m in Sources */,
+				C0F40799159B3D1A00E93848 /* DogFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
