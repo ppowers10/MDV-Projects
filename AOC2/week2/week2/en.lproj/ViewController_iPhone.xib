@@ -331,7 +331,7 @@
 						<reference key="IBUITintColor" ref="1059456257"/>
 						<string key="IBUINormalTitle">x</string>
 						<reference key="IBUIHighlightedTitleColor" ref="770359911"/>
-						<object class="NSColor" key="IBUIDisabledTitleColor" id="821229949">
+						<object class="NSColor" key="IBUIDisabledTitleColor" id="15597691">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 						</object>
@@ -432,7 +432,7 @@
 						<reference key="IBUITintColor" ref="1059456257"/>
 						<string key="IBUINormalTitle">/</string>
 						<reference key="IBUIHighlightedTitleColor" ref="770359911"/>
-						<reference key="IBUIDisabledTitleColor" ref="821229949"/>
+						<reference key="IBUIDisabledTitleColor" ref="15597691"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
@@ -478,7 +478,6 @@
 						<string key="NSFrame">{{226, 418}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -557,12 +556,15 @@
 					<object class="IBUILabel" id="267500984">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{38, 9}, {195, 65}}</string>
+						<string key="NSFrame">{{37, 1}, {202, 79}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="149976664"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<reference key="IBUIBackgroundColor" ref="770359911"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45Mzg4Mzc0NjYgMC45Mzg4Mzc0NjYgMC45Mzg4Mzc0NjYAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>

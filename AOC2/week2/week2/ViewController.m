@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -23,6 +24,10 @@
     //set defualt background to white
     self.view.backgroundColor = [UIColor whiteColor];
     switch1.on = true;
+    calc.layer.cornerRadius =8.0;
+    calc.layer.borderColor = [UIColor grayColor].CGColor;
+    calc.layer.borderWidth = 1.0;
+
     
 }
 
