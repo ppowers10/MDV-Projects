@@ -19,8 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     //set defualt background to white
     self.view.backgroundColor = [UIColor whiteColor];
+    
 }
 
 
@@ -34,11 +36,51 @@
     }
 }
 
-//number that is clicked
+//clear the label
+-(IBAction)clearCalc:(id)sender;
+{
+    newCalc.text = @"";
+}
+
+//number that is clicked and added to the label
 -(IBAction)numberClicked:(id)sender
 {
-    
+    UIButton *numButton = (UIButton*)sender;
+    if (numButton != nil) {
+        if (numButton.tag == 0) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@0", calc.text];
+        }
+        else if (numButton.tag == 1) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@1", calc.text];
+        }
+        else if (numButton.tag == 2) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@2", calc.text];
+        }
+        else if (numButton.tag == 3) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@3", calc.text];
+        }
+        else if (numButton.tag == 4) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@4", calc.text];
+        }
+        else if (numButton.tag == 5) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@5", calc.text];
+        }
+        else if (numButton.tag == 6) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@6", calc.text];
+        }
+        else if (numButton.tag == 7) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@7", calc.text];
+        }
+        else if (numButton.tag == 8) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@8", calc.text];
+        }
+        else if (numButton.tag == 9) {
+            newCalc.text = [[NSString alloc] initWithFormat:@"%@9", calc.text];
+        }
+    }
 }
+
+
 
 //segmented control for background colors
 -(IBAction)onChange:(id)sender
@@ -59,10 +101,21 @@
         else if (selectedIndex == 2) {
             self.view.backgroundColor = [UIColor greenColor];
         }
-        else{
-            nil;
-        }
+    }
+}
 
+//switch chnge
+-(IBAction)onOff:(id)sender
+{
+    if (switchOne != nil) {
+        if (switchOne.on = TRUE) {
+            UIButton *allButton = (UIButton*)sender;
+            allButton.enabled = YES;
+        }
+        else{
+            UIButton *allButton = (UIButton*)sender;
+            allButton.enabled = NO;
+        }
     }
 }
 

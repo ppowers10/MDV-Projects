@@ -12,9 +12,10 @@
 {
     //where the input is displayed
     IBOutlet UILabel *calc;
+    IBOutlet UILabel *newCalc;
     
     //switch
-    IBOutlet UISwitch *inputOnOff;
+    IBOutlet UISwitch *switchOne;
     
 }
 //the click event that triggers the SecondViewController to open
