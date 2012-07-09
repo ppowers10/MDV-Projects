@@ -13,6 +13,9 @@
     //where the input is displayed
     IBOutlet UILabel *calc;
     IBOutlet UILabel *newCalc;
+    int x;
+    int result;
+    IBOutlet UISwitch *switch1;
     
 }
 //the click event that triggers the SecondViewController to open
@@ -24,8 +27,16 @@
 //determines button that was pressed
 -(IBAction)numberClicked:(id)sender;
 
+//add
+-(IBAction)plusClicked:(id)sender;
+
+//equal
+-(IBAction)equalClicked:(id)sender;
+
 //clear
 -(IBAction)clearCalc:(id)sender;
 
+//switch
+-(IBAction)switchOn:(id)sender;
 
 @end

@@ -22,6 +22,7 @@
     
     //set defualt background to white
     self.view.backgroundColor = [UIColor whiteColor];
+    switch1.on = true;
     
 }
 
@@ -45,41 +46,61 @@
 //number that is clicked and added to the label
 -(IBAction)numberClicked:(id)sender
 {
-    UIButton *numButton = (UIButton*)sender;
-    if (numButton != nil) {
-        if (numButton.tag == 0) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@0", calc.text];
+    if (switch1.on == true) {
+   
+        UIButton *numButton = (UIButton*)sender;
+        if (numButton != nil) {
+            if (numButton.tag == 0) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@0", calc.text];
+            }
+            else if (numButton.tag == 1) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@1", calc.text];
+            }
+            else if (numButton.tag == 2) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@2", calc.text];
+            }
+            else if (numButton.tag == 3) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@3", calc.text];
+            }
+            else if (numButton.tag == 4) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@4", calc.text];
+            }
+            else if (numButton.tag == 5) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@5", calc.text];
+            }
+            else if (numButton.tag == 6) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@6", calc.text];
+            }
+            else if (numButton.tag == 7) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@7", calc.text];
+            }
+            else if (numButton.tag == 8) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@8", calc.text];
+            }
+            else if (numButton.tag == 9) {
+                newCalc.text = [[NSString alloc] initWithFormat:@"%@9", calc.text];
+            }
         }
-        else if (numButton.tag == 1) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@1", calc.text];
-        }
-        else if (numButton.tag == 2) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@2", calc.text];
-        }
-        else if (numButton.tag == 3) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@3", calc.text];
-        }
-        else if (numButton.tag == 4) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@4", calc.text];
-        }
-        else if (numButton.tag == 5) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@5", calc.text];
-        }
-        else if (numButton.tag == 6) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@6", calc.text];
-        }
-        else if (numButton.tag == 7) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@7", calc.text];
-        }
-        else if (numButton.tag == 8) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@8", calc.text];
-        }
-        else if (numButton.tag == 9) {
-            newCalc.text = [[NSString alloc] initWithFormat:@"%@9", calc.text];
-        }
+    }
+    else if (switch1.on == false)
+    {
+        NSLog(@"Input not currently working");
     }
 }
 
+//gets the text value and stores it in a variable to calculate with future number
+-(IBAction)plusClicked:(id)sender
+{
+    x = [calc.text intValue];
+    calc.text = @"";
+}
+
+//equal
+-(IBAction)equalClicked:(id)sender
+{
+    result = x + [calc.text intValue];
+    calc.text = [NSString stringWithFormat:@"%d", result];
+}
 
 
 //segmented control for background colors
@@ -103,6 +124,13 @@
         }
     }
 }
+
+//switch
+-(IBAction)switchOn:(id)sender
+{
+    calc.text = @"";
+}
+
 
 - (void)viewDidUnload
 {
