@@ -104,21 +104,6 @@
     }
 }
 
-//switch chnge
--(IBAction)onOff:(id)sender
-{
-    if (switchOne != nil) {
-        if (switchOne.on = TRUE) {
-            UIButton *allButton = (UIButton*)sender;
-            allButton.enabled = YES;
-        }
-        else{
-            UIButton *allButton = (UIButton*)sender;
-            allButton.enabled = NO;
-        }
-    }
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
