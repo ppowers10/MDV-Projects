@@ -48,13 +48,14 @@
     newCalc.text = @"";
 }
 
-//number that is clicked and added to the label
+//number that is clicked and added to the label and checks to make sure switch is on. If off, calculator does not work.
 -(IBAction)numberClicked:(id)sender
 {
     if (switch1.on == true) {
    
         UIButton *numButton = (UIButton*)sender;
         if (numButton != nil) {
+            //type in numbers and continue to add to those numbers within the "string"
             if (numButton.tag == 0) {
                 newCalc.text = [[NSString alloc] initWithFormat:@"%@0", calc.text];
             }
@@ -100,7 +101,7 @@
     calc.text = @"";
 }
 
-//equal
+//equal button
 -(IBAction)equalClicked:(id)sender
 {
     result = x + [calc.text intValue];
@@ -130,7 +131,7 @@
     }
 }
 
-//switch
+//switch to clear
 -(IBAction)switchOn:(id)sender
 {
     calc.text = @"";
