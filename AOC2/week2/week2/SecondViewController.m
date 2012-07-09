@@ -29,6 +29,12 @@
 	// Do any additional setup after loading the view.
 }
 
+//closes the SecondViewController
+-(IBAction)onClose:(id)sender
+{
+    [self dismissModalViewControllerAnimated:TRUE];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

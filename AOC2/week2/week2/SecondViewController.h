@@ -10,4 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+//closes the SecondViewController
+-(IBAction)onClose:(id)sender;
+
 @end

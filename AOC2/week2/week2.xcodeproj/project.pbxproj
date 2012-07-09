@@ -15,7 +15,8 @@
 		C0F407BA15AA098300E93848 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F407B915AA098300E93848 /* AppDelegate.m */; };
 		C0F407BD15AA098300E93848 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F407BC15AA098300E93848 /* ViewController.m */; };
 		C0F407C015AA098300E93848 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F407BE15AA098300E93848 /* ViewController_iPhone.xib */; };
-		C0F407C315AA098300E93848 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F407C115AA098300E93848 /* ViewController_iPad.xib */; };
+		C0F407CC15AA137300E93848 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0F407CB15AA137300E93848 /* SecondView.xib */; };
+		C0F407D815AA212A00E93848 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F407D715AA212A00E93848 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +24,18 @@
 		C0F407A915AA098300E93848 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0F407AB15AA098300E93848 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0F407AD15AA098300E93848 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C0F407B115AA098300E93848 /* week2-Info.plist */ = {isa = PBXFileReference; path = "week2-Info.plist"; sourceTree = "<group>"; };
+		C0F407B115AA098300E93848 /* week2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "week2-Info.plist"; sourceTree = "<group>"; };
 		C0F407B315AA098300E93848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0F407B515AA098300E93848 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C0F407B715AA098300E93848 /* week2-Prefix.pch */ = {isa = PBXFileReference; path = "week2-Prefix.pch"; sourceTree = "<group>"; };
-		C0F407B815AA098300E93848 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C0F407B715AA098300E93848 /* week2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "week2-Prefix.pch"; sourceTree = "<group>"; };
+		C0F407B815AA098300E93848 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0F407B915AA098300E93848 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C0F407BB15AA098300E93848 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		C0F407BB15AA098300E93848 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C0F407BC15AA098300E93848 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C0F407BF15AA098300E93848 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		C0F407C215AA098300E93848 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		C0F407CB15AA137300E93848 /* SecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		C0F407D615AA212A00E93848 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C0F407D715AA212A00E93848 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +87,10 @@
 				C0F407BB15AA098300E93848 /* ViewController.h */,
 				C0F407BC15AA098300E93848 /* ViewController.m */,
 				C0F407BE15AA098300E93848 /* ViewController_iPhone.xib */,
-				C0F407C115AA098300E93848 /* ViewController_iPad.xib */,
 				C0F407B015AA098300E93848 /* Supporting Files */,
+				C0F407CB15AA137300E93848 /* SecondView.xib */,
+				C0F407D615AA212A00E93848 /* SecondViewController.h */,
+				C0F407D715AA212A00E93848 /* SecondViewController.m */,
 			);
 			path = week2;
 			sourceTree = "<group>";
@@ -154,7 +159,7 @@
 			files = (
 				C0F407B415AA098300E93848 /* InfoPlist.strings in Resources */,
 				C0F407C015AA098300E93848 /* ViewController_iPhone.xib in Resources */,
-				C0F407C315AA098300E93848 /* ViewController_iPad.xib in Resources */,
+				C0F407CC15AA137300E93848 /* SecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +173,7 @@
 				C0F407B615AA098300E93848 /* main.m in Sources */,
 				C0F407BA15AA098300E93848 /* AppDelegate.m in Sources */,
 				C0F407BD15AA098300E93848 /* ViewController.m in Sources */,
+				C0F407D815AA212A00E93848 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +194,6 @@
 				C0F407BF15AA098300E93848 /* en */,
 			);
 			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		C0F407C115AA098300E93848 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C0F407C215AA098300E93848 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

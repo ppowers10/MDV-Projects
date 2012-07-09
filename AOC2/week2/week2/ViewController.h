@@ -9,5 +9,30 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    //where the input is displayed
+    IBOutlet UILabel *calc;
+    
+    //switch
+    IBOutlet UISwitch *inputOnOff;
+    
+}
+//the click event that triggers the SecondViewController to open
+-(IBAction)onClick:(id)sender;
+
+//the click event that changes the background color
+-(IBAction)onChange:(id)sender;
+
+//determines button that was pressed
+-(IBAction)numberClicked:(id)sender;
+
+//addition
+-(IBAction)plusClicked:(id)sender;
+
+//clear
+-(IBAction)clearCalc:(id)sender;
+
+//switch chnge
+-(IBAction)onOff:(id)sender;
 
 @end
