@@ -45,7 +45,13 @@
 //clear the label
 -(IBAction)clearCalc:(id)sender;
 {
-    newCalc.text = @"";
+    if (switch1.on == true) {
+        newCalc.text = @"";
+    }
+    else if (switch1.on == false)
+    {
+        NSLog(@"Input not currently working");
+    }
 }
 
 //number that is clicked and added to the label and checks to make sure switch is on. If off, calculator does not work.
@@ -97,15 +103,28 @@
 //gets the text value and stores it in a variable to calculate with future number
 -(IBAction)plusClicked:(id)sender
 {
-    x = [calc.text intValue];
-    calc.text = @"";
+    if (switch1.on == true) {
+        x = [calc.text intValue];
+        calc.text = @"";
+    }
+    else if (switch1.on == false)
+    {
+        NSLog(@"Input not currently working");
+    }
+
 }
 
 //equal button
 -(IBAction)equalClicked:(id)sender
 {
-    result = x + [calc.text intValue];
-    calc.text = [NSString stringWithFormat:@"%d", result];
+    if (switch1.on == true) {
+        result = x + [calc.text intValue];
+        calc.text = [NSString stringWithFormat:@"%d", result];
+    }
+    else if (switch1.on == false)
+    {
+        NSLog(@"Input not currently working");
+    }
 }
 
 
@@ -135,6 +154,7 @@
 -(IBAction)switchOn:(id)sender
 {
     calc.text = @"";
+    x = 0;
 }
 
 
