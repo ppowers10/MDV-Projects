@@ -11,11 +11,13 @@
 
 @implementation BoxerDog
 
+//init function for the BoxerDog subclass
 -(id)init
 {
     self = [super init];
     if (self != nil)
     {
+         //set attributes for the BoxerDog Class
         lbs = 50;
         name = @"Suzie";
         dogType = 0;
@@ -29,10 +31,11 @@
     return age;
 }
 
--(NSString*)printLabel
+//overrides the weight gain to 30% of the dog's weight compared to DogClass.m and 20%
+-(int)gainWeight
 {
-    NSString *words = [[NSString alloc] initWithFormat:@"Pounds: %i, Name: %@", lbs, name];
-    return words;
+    int newWeight = lbs + (.3*lbs);
+    return newWeight;
 }
 
 @end

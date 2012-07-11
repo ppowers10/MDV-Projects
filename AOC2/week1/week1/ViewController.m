@@ -31,6 +31,8 @@
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 180, 320, 60)];
         textLabel.text = [NSString stringWithFormat:@"%@ is %d years old.", [boxerDog  getName], [boxerDog getAge]];
         [self.view addSubview:textLabel];
+         //add the calculation override through NSLog
+        NSLog(@"The dog now weighs %i", [boxerDog gainWeight]);
     }
     
     MastiffDog *mastiffDog = [[MastiffDog alloc] init];
@@ -43,6 +45,8 @@
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 240, 320, 60)];
         textLabel.text = [NSString stringWithFormat:@"%@ is the owner of %@.", [mastiffDog getOwnerName], [mastiffDog  getName]];
         [self.view addSubview:textLabel];
+         //add the calculation override through NSLog
+        NSLog(@"The dog now weighs %i", [mastiffDog gainWeight]);
     }
     
     BeagleDog *beagleDog = [[BeagleDog alloc] init];
@@ -55,6 +59,8 @@
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, 320, 60)];
         textLabel.text = [NSString stringWithFormat:@"%@ has %d toys.", [beagleDog getName], [beagleDog  getToys]];
         [self.view addSubview:textLabel];
+        //add the calculation override through NSLog
+        NSLog(@"The dog now weighs %i", [beagleDog gainWeight]);
     }
         
     [super viewDidLoad];

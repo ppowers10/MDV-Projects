@@ -10,12 +10,13 @@
 
 @implementation DogClass
 
-
+//create a base class init
 -(id)init
 {
     self = [super init];
     if (self != nil)
     {
+    //set basic attributes
     lbs = 0;
     name = @"name";
     dogType = 0;
@@ -23,32 +24,36 @@
     return self;
 }
 
+//getter function for Lbs
 -(int)getLbs
 {
     return lbs;
 }
 
+//getter function for name
 -(NSString*)getName
 {
     return name;
 }
 
+//setter function for Lbs
 -(void)setLbs :(int)newLbs
 {
     lbs = newLbs;
 }
 
+//setter function for name
 -(void)setName : (NSString*)newName
 {
     name = newName; 
 }
 
--(NSString*)printLabel
+//calculation method
+-(int)gainWeight
 {
-    NSString *words = [[NSString alloc] initWithFormat:@"Name: %@, Pounds: %i", name, lbs];
-    return words;
+    int newWeight = lbs + (.3*lbs);
+    return newWeight;
 }
-
 
 
 @end

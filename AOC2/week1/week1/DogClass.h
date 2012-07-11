@@ -22,13 +22,17 @@ typedef enum
     NSString *name;
 }
 
+//getter for Lbs
 -(int)getLbs;
+//getter for name
 -(NSString*)getName;
+//setter for Lbs
 -(void)setLbs :(int)newLbs;
+//setter for name
 -(void)setName : (NSString*)newName;
 
-
--(NSString*)printLabel;
+//calculation method
+-(int)gainWeight;
 
 
 

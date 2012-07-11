@@ -11,11 +11,13 @@
 
 @implementation MastiffDog
 
+//init function for the MastiffDog subclass
 -(id)init
 {
     self = [super init];
     if (self != nil)
     {
+         //set attributes for the MastiffDog Class
         lbs = 120;
         name = @"Boss";
         dogType = 2;
@@ -29,10 +31,11 @@
     return ownerName;
 }
 
--(NSString*)printLabel
+//overrides the weight gain to 30% of the dog's weight compared to DogClass.m and 20%
+-(int)gainWeight
 {
-    NSString *words = [[NSString alloc] initWithFormat:@"%@ is huge. The dog weighs %d lbs.", name, lbs];
-    return words;
+    int newWeight = lbs + (.3*lbs);
+    return newWeight;
 }
 
 @end
