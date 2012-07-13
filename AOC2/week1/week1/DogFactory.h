@@ -11,6 +11,6 @@
 
 @interface DogFactory : NSObject
 
-+(DogClass*)GetDog:(int)dogType;
+-(DogClass*)GetDog:(int)dogType;
 
 @end
