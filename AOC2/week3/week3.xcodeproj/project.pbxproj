@@ -15,7 +15,8 @@
 		C020784B15B3B1D200E68618 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C020784A15B3B1D200E68618 /* AppDelegate.m */; };
 		C020784E15B3B1D200E68618 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C020784D15B3B1D200E68618 /* ViewController.m */; };
 		C020785115B3B1D200E68618 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C020784F15B3B1D200E68618 /* ViewController_iPhone.xib */; };
-		C020785415B3B1D200E68618 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C020785215B3B1D200E68618 /* ViewController_iPad.xib */; };
+		C020785B15B3B5D000E68618 /* AddEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C020785A15B3B5D000E68618 /* AddEvent.xib */; };
+		C020785E15B3B64A00E68618 /* AddEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C020785D15B3B64A00E68618 /* AddEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +24,18 @@
 		C020783A15B3B1D200E68618 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C020783C15B3B1D200E68618 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C020783E15B3B1D200E68618 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C020784215B3B1D200E68618 /* week3-Info.plist */ = {isa = PBXFileReference; path = "week3-Info.plist"; sourceTree = "<group>"; };
+		C020784215B3B1D200E68618 /* week3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "week3-Info.plist"; sourceTree = "<group>"; };
 		C020784415B3B1D200E68618 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C020784615B3B1D200E68618 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C020784815B3B1D200E68618 /* week3-Prefix.pch */ = {isa = PBXFileReference; path = "week3-Prefix.pch"; sourceTree = "<group>"; };
-		C020784915B3B1D200E68618 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C020784815B3B1D200E68618 /* week3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "week3-Prefix.pch"; sourceTree = "<group>"; };
+		C020784915B3B1D200E68618 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C020784A15B3B1D200E68618 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C020784C15B3B1D200E68618 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		C020784C15B3B1D200E68618 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C020784D15B3B1D200E68618 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C020785015B3B1D200E68618 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		C020785315B3B1D200E68618 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		C020785A15B3B5D000E68618 /* AddEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEvent.xib; sourceTree = "<group>"; };
+		C020785C15B3B64A00E68618 /* AddEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEvent.h; sourceTree = "<group>"; };
+		C020785D15B3B64A00E68618 /* AddEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +87,10 @@
 				C020784C15B3B1D200E68618 /* ViewController.h */,
 				C020784D15B3B1D200E68618 /* ViewController.m */,
 				C020784F15B3B1D200E68618 /* ViewController_iPhone.xib */,
-				C020785215B3B1D200E68618 /* ViewController_iPad.xib */,
 				C020784115B3B1D200E68618 /* Supporting Files */,
+				C020785A15B3B5D000E68618 /* AddEvent.xib */,
+				C020785C15B3B64A00E68618 /* AddEvent.h */,
+				C020785D15B3B64A00E68618 /* AddEvent.m */,
 			);
 			path = week3;
 			sourceTree = "<group>";
@@ -154,7 +159,7 @@
 			files = (
 				C020784515B3B1D200E68618 /* InfoPlist.strings in Resources */,
 				C020785115B3B1D200E68618 /* ViewController_iPhone.xib in Resources */,
-				C020785415B3B1D200E68618 /* ViewController_iPad.xib in Resources */,
+				C020785B15B3B5D000E68618 /* AddEvent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +173,7 @@
 				C020784715B3B1D200E68618 /* main.m in Sources */,
 				C020784B15B3B1D200E68618 /* AppDelegate.m in Sources */,
 				C020784E15B3B1D200E68618 /* ViewController.m in Sources */,
+				C020785E15B3B64A00E68618 /* AddEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +194,6 @@
 				C020785015B3B1D200E68618 /* en */,
 			);
 			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		C020785215B3B1D200E68618 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C020785315B3B1D200E68618 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

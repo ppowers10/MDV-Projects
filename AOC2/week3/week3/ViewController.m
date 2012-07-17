@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AddEvent.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(IBAction)addEventClick:(id)sender
+{
+    //create the action that will change the first view to the second view controller
+    AddEvent *addEventPage = [[AddEvent alloc] initWithNibName:@"AddEvent" bundle:nil];
+    if (addEventPage != nil)
+    {
+        [self presentModalViewController:addEventPage animated:TRUE];
+    }
 }
 
 - (void)viewDidUnload

@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+
+-(IBAction)addEventClick:(id)sender;
+
 @end
