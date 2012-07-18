@@ -10,12 +10,12 @@
 
 @interface AddEvent : UIViewController <UIPickerViewDelegate, UIPageViewControllerDataSource>
 {
+    @public
     IBOutlet UITextField *textField1;
-    IBOutlet UIDatePicker *pickerView;
-    NSString *getEvent;
-    NSString *getDate;
+    IBOutlet UIDatePicker *datePicked;
+    NSString *currentEvent;
+    NSString *currentDate;
 
-    
 }
 
 //save and go back to event list
@@ -24,7 +24,7 @@
 //close keyboard
 -(IBAction)closeKeyboard:(id)sender;
 
-//change date picker
+//minimun date
 -(IBAction)onChange:(id)sender;
 
 @end

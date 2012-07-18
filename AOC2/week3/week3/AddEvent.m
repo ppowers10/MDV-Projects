@@ -7,6 +7,7 @@
 //
 
 #import "AddEvent.h"
+#import "ViewController.h"
 
 @interface AddEvent ()
 
@@ -27,20 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
 }
 
--(void) keyboardWillShow:(NSNotification *)notification 
-{
-    
-}
-
--(void) keyboardWillHide:(NSNotification *)notification 
-{
-    
-}
 
 - (void)viewDidUnload
 {
@@ -59,23 +49,24 @@
 {
     UIDatePicker *datepicker = (UIDatePicker*)sender;
     if (datepicker != nil) {
+        datepicker.minimumDate = [NSDate date];
         NSDate *dateTime = datepicker.date;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         if (dateFormatter != nil) {
             [dateFormatter setDateFormat:@"MMM d, yyyy hh:mm aaa"];
             NSString *setDate = [[NSString alloc] initWithFormat:@"%@", [dateFormatter stringFromDate:dateTime]];
-            getDate  = setDate; 
+            currentDate  = setDate; 
         }
-    }    
+    }
 }
 
 //save and go back to event list
 -(IBAction)onSave:(id)sender
 {
-    getEvent = textField1.text;
+    currentEvent = textField1.text;
+    NSLog(@"%@ , %@ ", currentDate, currentEvent);
+    
     [self dismissModalViewControllerAnimated:TRUE];
-    NSLog(@"%@", getEvent);
-    NSLog(@"%@", getDate);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
