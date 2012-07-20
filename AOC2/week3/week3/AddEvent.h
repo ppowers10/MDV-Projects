@@ -8,15 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddEvent : UIViewController <UIPickerViewDelegate, UIPageViewControllerDataSource>
+@protocol AddEventDelegate <NSObject>
+
+-(void)DidClose:(NSString*)nameString;
+
+@end
+
+@interface AddEvent : UIViewController 
 {
     @public
     IBOutlet UITextField *textField1;
     IBOutlet UIDatePicker *datePicked;
-    NSString *currentEvent;
     NSString *currentDate;
-
+    NSString *currentEvent;
+    NSString *eventDateString;
+    id<AddEventDelegate> delegate;
 }
+
+@property (strong) id<AddEventDelegate> delegate;
 
 //save and go back to event list
 -(IBAction)onSave:(id)sender;
@@ -27,4 +36,7 @@
 //minimun date
 -(IBAction)onChange:(id)sender;
 
+
 @end
+
+

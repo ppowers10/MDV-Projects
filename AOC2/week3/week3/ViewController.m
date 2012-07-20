@@ -27,8 +27,15 @@
     AddEvent *addEventPage = [[AddEvent alloc] initWithNibName:@"AddEvent" bundle:nil];
     if (addEventPage != nil)
     {
+        addEventPage.delegate = self;
         [self presentModalViewController:addEventPage animated:TRUE];
     }
+}
+
+//return the event string inputed in AddEvent view
+-(void)DidClose:(NSString *)nameString
+{
+       textView.text = nameString; 
 }
 
 

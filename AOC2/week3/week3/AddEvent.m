@@ -15,6 +15,8 @@
 
 @implementation AddEvent
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,12 +41,13 @@
 }
 
 
-
+//closes the keyboard when opened from the Event textfield
 -(IBAction)closeKeyboard:(id)sender;
 {
     [textField1 resignFirstResponder];
 }
 
+//allows for a minimum date of today and saves the date into a variable
 -(IBAction)onChange:(id)sender
 {
     UIDatePicker *datepicker = (UIDatePicker*)sender;
@@ -64,10 +67,12 @@
 -(IBAction)onSave:(id)sender
 {
     currentEvent = textField1.text;
-    NSLog(@"%@ , %@ ", currentDate, currentEvent);
-    
+    eventDateString = [[NSString alloc] initWithFormat:@"%@ \n %@", currentEvent, currentDate];
+    [delegate DidClose:eventDateString];
     [self dismissModalViewControllerAnimated:TRUE];
+
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
