@@ -13,6 +13,7 @@
 {
     @public
     IBOutlet UITextView *textView;
+    NSString *eventString;
 
 }
 

@@ -35,7 +35,13 @@
 //return the event string inputed in AddEvent view
 -(void)DidClose:(NSString *)nameString
 {
-       textView.text = nameString; 
+    if ([textView.text isEqualToString:@"All the events go here..."]) {
+        textView.text = nameString; 
+    }  
+    else {
+        eventString = textView.text;
+        textView.text = [eventString stringByAppendingString:nameString];
+    }
 }
 
 

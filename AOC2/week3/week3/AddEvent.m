@@ -67,7 +67,7 @@
 -(IBAction)onSave:(id)sender
 {
     currentEvent = textField1.text;
-    eventDateString = [[NSString alloc] initWithFormat:@"%@ \n %@", currentEvent, currentDate];
+    eventDateString = [[NSString alloc] initWithFormat:@"%@ \n %@ \n", currentEvent, currentDate];
     [delegate DidClose:eventDateString];
     [self dismissModalViewControllerAnimated:TRUE];
 
