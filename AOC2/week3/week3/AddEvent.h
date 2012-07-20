@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//create the delegate that can pass the events to the viewController
 @protocol AddEventDelegate <NSObject>
 
 -(void)DidClose:(NSString*)nameString;
@@ -33,7 +34,7 @@
 //close keyboard
 -(IBAction)closeKeyboard:(id)sender;
 
-//minimun date
+//minimun date and determine date that is set
 -(IBAction)onChange:(id)sender;
 
 

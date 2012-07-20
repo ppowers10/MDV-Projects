@@ -17,6 +17,7 @@
 
 }
 
+//links to AddEvent view
 -(IBAction)addEventClick:(id)sender;
 
 
