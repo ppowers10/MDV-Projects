@@ -24,16 +24,15 @@
     rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabelMain addGestureRecognizer:rightSwiper];
     
-    if ([textView.text isEqualToString:@"All the events go here..."]) {
-        textView.text = @"All the events go here...";
-    }
-    else {
     NSUserDefaults *defualts = [NSUserDefaults standardUserDefaults];
     if (defualts != nil) {
-        NSString *eventStringView = [defualts objectForKey:@"evens"];
+        NSString *eventStringView = [defualts objectForKey:@"events"];
         
         textView.text = eventStringView;
     }
+    
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"All the events go here...";
     }
 }
 
