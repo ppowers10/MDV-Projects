@@ -23,6 +23,18 @@
     rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(OnRight:)];
     rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabelMain addGestureRecognizer:rightSwiper];
+    
+    if ([textView.text isEqualToString:@"All the events go here..."]) {
+        textView.text = @"All the events go here...";
+    }
+    else {
+    NSUserDefaults *defualts = [NSUserDefaults standardUserDefaults];
+    if (defualts != nil) {
+        NSString *eventStringView = [defualts objectForKey:@"evens"];
+        
+        textView.text = eventStringView;
+    }
+    }
 }
 
 -(void)OnRight:(UISwipeGestureRecognizer*)recognizer
@@ -48,6 +60,18 @@
     else {
         eventString = textView.text;
         textView.text = [eventString stringByAppendingString:nameString];
+    }
+}
+
+-(IBAction)onSave:(id)sender
+{
+    NSUserDefaults *defualts = [NSUserDefaults standardUserDefaults];
+    if (defualts != nil) {
+        NSString *eventStringView = textView.text;
+        
+        [defualts setObject:eventStringView forKey:@"events"];
+        
+        [defualts synchronize];
     }
 }
 
