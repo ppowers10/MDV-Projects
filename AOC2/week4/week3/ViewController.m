@@ -20,6 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //set up the right swipe gesture
     rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(OnRight:)];
     rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabelMain addGestureRecognizer:rightSwiper];
@@ -36,6 +37,7 @@
     }
 }
 
+//once the gesture is set up in the viewDidLoad, create the function for it to be used
 -(void)OnRight:(UISwipeGestureRecognizer*)recognizer
 {
     //create the action that will change the first view to the second view controller
@@ -62,6 +64,8 @@
     }
 }
 
+
+//save the text in the textView
 -(IBAction)onSave:(id)sender
 {
     NSUserDefaults *defualts = [NSUserDefaults standardUserDefaults];

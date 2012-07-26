@@ -30,12 +30,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //set up the left swipe gesture 
     leftSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(OnLeft:)];
     leftSwiper.direction = UISwipeGestureRecognizerDirectionLeft;
     [swipeLabelAdd addGestureRecognizer:leftSwiper];
 
 }
 
+//use the left swipe gesture to grab the event text and date and return it to the ViewController
 -(void)OnLeft:(UISwipeGestureRecognizer*)recognizer
 {
     currentEvent = textField1.text;
