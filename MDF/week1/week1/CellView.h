@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface CellView : UITableViewCell
+{
+    //create outlets for the Labels on the custom cell view.  One for each string.
+    IBOutlet UILabel *stateLabel;
+    IBOutlet UILabel *locationLabel;
+}
+
+//allow accessability from the ViewController
+@property (strong, nonatomic)IBOutlet UILabel *stateLabel;
+@property (strong, nonatomic)IBOutlet UILabel *locationLabel;
 
 @end

@@ -15,7 +15,15 @@
 		C03B11BD15EAE73C00299714 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C03B11BC15EAE73C00299714 /* AppDelegate.m */; };
 		C03B11C015EAE73C00299714 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03B11BF15EAE73C00299714 /* ViewController.m */; };
 		C03B11C315EAE73D00299714 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B11C115EAE73D00299714 /* ViewController_iPhone.xib */; };
-		C03B11C615EAE73D00299714 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B11C415EAE73D00299714 /* ViewController_iPad.xib */; };
+		C03B11CF15EB054700299714 /* us_flag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C03B11CE15EB054700299714 /* us_flag.jpg */; };
+		C03B11E015EC6BD600299714 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B11DF15EC6BD600299714 /* SecondView.xib */; };
+		C03B11E615EC6C2600299714 /* SecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = C03B11E515EC6C2600299714 /* SecondView.m */; };
+		C03B11E815ED96D800299714 /* flag_flying.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C03B11E715ED96D800299714 /* flag_flying.jpg */; };
+		C03B11EA15ED9CF300299714 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03B11E915ED9CF300299714 /* CellView.xib */; };
+		C03B11ED15ED9ECA00299714 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C03B11EC15ED9ECA00299714 /* CellView.m */; };
+		C03B11F315EDBCD700299714 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C03B11F215EDBCD700299714 /* Default.png */; };
+		C03B11F715EDC09800299714 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C03B11F615EDC09800299714 /* Icon.png */; };
+		C03B11F915EEEE4700299714 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C03B11F815EEEE4700299714 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +31,26 @@
 		C03B11AC15EAE73C00299714 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C03B11AE15EAE73C00299714 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C03B11B015EAE73C00299714 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C03B11B415EAE73C00299714 /* week1-Info.plist */ = {isa = PBXFileReference; path = "week1-Info.plist"; sourceTree = "<group>"; };
+		C03B11B415EAE73C00299714 /* week1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "week1-Info.plist"; sourceTree = "<group>"; };
 		C03B11B615EAE73C00299714 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C03B11B815EAE73C00299714 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C03B11BA15EAE73C00299714 /* week1-Prefix.pch */ = {isa = PBXFileReference; path = "week1-Prefix.pch"; sourceTree = "<group>"; };
-		C03B11BB15EAE73C00299714 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		C03B11BA15EAE73C00299714 /* week1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "week1-Prefix.pch"; sourceTree = "<group>"; };
+		C03B11BB15EAE73C00299714 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C03B11BC15EAE73C00299714 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C03B11BE15EAE73C00299714 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		C03B11BE15EAE73C00299714 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C03B11BF15EAE73C00299714 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C03B11C215EAE73D00299714 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		C03B11C515EAE73D00299714 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		C03B11CE15EB054700299714 /* us_flag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = us_flag.jpg; path = ../../../../../../Desktop/us_flag.jpg; sourceTree = "<group>"; };
+		C03B11DF15EC6BD600299714 /* SecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		C03B11E415EC6C2600299714 /* SecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondView.h; sourceTree = "<group>"; };
+		C03B11E515EC6C2600299714 /* SecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondView.m; sourceTree = "<group>"; };
+		C03B11E715ED96D800299714 /* flag_flying.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = flag_flying.jpg; path = ../../../../../../Desktop/flag_flying.jpg; sourceTree = "<group>"; };
+		C03B11E915ED9CF300299714 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		C03B11EB15ED9ECA00299714 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
+		C03B11EC15ED9ECA00299714 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
+		C03B11F215EDBCD700299714 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../../../../Desktop/Default.png; sourceTree = "<group>"; };
+		C03B11F615EDC09800299714 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../../../../../Desktop/Icon.png; sourceTree = "<group>"; };
+		C03B11F815EEEE4700299714 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +70,7 @@
 		C03B119D15EAE73C00299714 = {
 			isa = PBXGroup;
 			children = (
+				C03B11F815EEEE4700299714 /* Icon.png */,
 				C03B11B215EAE73C00299714 /* week1 */,
 				C03B11AB15EAE73C00299714 /* Frameworks */,
 				C03B11A915EAE73C00299714 /* Products */,
@@ -79,13 +98,22 @@
 		C03B11B215EAE73C00299714 /* week1 */ = {
 			isa = PBXGroup;
 			children = (
+				C03B11F615EDC09800299714 /* Icon.png */,
+				C03B11F215EDBCD700299714 /* Default.png */,
+				C03B11E715ED96D800299714 /* flag_flying.jpg */,
+				C03B11CE15EB054700299714 /* us_flag.jpg */,
 				C03B11BB15EAE73C00299714 /* AppDelegate.h */,
 				C03B11BC15EAE73C00299714 /* AppDelegate.m */,
 				C03B11BE15EAE73C00299714 /* ViewController.h */,
 				C03B11BF15EAE73C00299714 /* ViewController.m */,
 				C03B11C115EAE73D00299714 /* ViewController_iPhone.xib */,
-				C03B11C415EAE73D00299714 /* ViewController_iPad.xib */,
 				C03B11B315EAE73C00299714 /* Supporting Files */,
+				C03B11DF15EC6BD600299714 /* SecondView.xib */,
+				C03B11E415EC6C2600299714 /* SecondView.h */,
+				C03B11E515EC6C2600299714 /* SecondView.m */,
+				C03B11E915ED9CF300299714 /* CellView.xib */,
+				C03B11EB15ED9ECA00299714 /* CellView.h */,
+				C03B11EC15ED9ECA00299714 /* CellView.m */,
 			);
 			path = week1;
 			sourceTree = "<group>";
@@ -154,7 +182,13 @@
 			files = (
 				C03B11B715EAE73C00299714 /* InfoPlist.strings in Resources */,
 				C03B11C315EAE73D00299714 /* ViewController_iPhone.xib in Resources */,
-				C03B11C615EAE73D00299714 /* ViewController_iPad.xib in Resources */,
+				C03B11CF15EB054700299714 /* us_flag.jpg in Resources */,
+				C03B11E015EC6BD600299714 /* SecondView.xib in Resources */,
+				C03B11E815ED96D800299714 /* flag_flying.jpg in Resources */,
+				C03B11EA15ED9CF300299714 /* CellView.xib in Resources */,
+				C03B11F315EDBCD700299714 /* Default.png in Resources */,
+				C03B11F715EDC09800299714 /* Icon.png in Resources */,
+				C03B11F915EEEE4700299714 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +202,8 @@
 				C03B11B915EAE73C00299714 /* main.m in Sources */,
 				C03B11BD15EAE73C00299714 /* AppDelegate.m in Sources */,
 				C03B11C015EAE73C00299714 /* ViewController.m in Sources */,
+				C03B11E615EC6C2600299714 /* SecondView.m in Sources */,
+				C03B11ED15ED9ECA00299714 /* CellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +224,6 @@
 				C03B11C215EAE73D00299714 /* en */,
 			);
 			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		C03B11C415EAE73D00299714 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C03B11C515EAE73D00299714 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

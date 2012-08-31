@@ -10,6 +10,10 @@
 
 @implementation CellView
 
+//allow accessability from the ViewController
+@synthesize stateLabel;
+@synthesize locationLabel;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

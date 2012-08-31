@@ -7,12 +7,17 @@
 //
 
 #import "SecondView.h"
+#import "ViewController.h"
 
 @interface SecondView ()
 
 @end
 
 @implementation SecondView
+
+@synthesize delegate;
+@synthesize stateView;
+@synthesize textView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +32,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //stateView.text = currentState;
+    //textView.text = stateString;
 }
 
 - (void)viewDidUnload
@@ -39,5 +46,15 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+//save and go back to event list
+-(IBAction)onBack:(id)sender
+{
+
+    [self dismissModalViewControllerAnimated:TRUE];
+    
+}
+
+
 
 @end
