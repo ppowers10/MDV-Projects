@@ -4,5 +4,6 @@
     <string name="app_name">AndroidWeekOne</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="title">I like Even #\'s and 5\'s</string>
 
 </resources>
