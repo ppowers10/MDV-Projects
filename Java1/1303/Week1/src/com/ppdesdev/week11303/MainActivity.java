@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
 				int two = getResources().getInteger(R.integer.two);
 				int three = getResources().getInteger(R.integer.three);
 				int four = getResources().getInteger(R.integer.four);
-				boolean x = (zero != 0);
+				boolean x = (zero == 0);
 				
 				int num = Integer.parseInt(eSpace2.getText().toString());
 				String pet = (String) eSpace.getText().toString();
@@ -107,7 +107,13 @@ public class MainActivity extends Activity {
 				
 				for (int i = 0; i < pets.length; i++) {
 					String petArrayText = (String) tSpace5.getText().toString();
+					if (i == 0) {
+						tSpace5.setText(pets[i]);
+					}else if (i == pets.length - 1) {
+						tSpace5.setText(petArrayText + ", or " + pets[i]);
+					}else{
 					tSpace5.setText(petArrayText + ", " + pets[i]);
+					}
 				}
 				
 				myPet();
