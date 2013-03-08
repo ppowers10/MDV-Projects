@@ -5,7 +5,7 @@
  * 
  * 	@author		patrickpowers
  * 
- * 	date		Mar 4, 2013
+ * 	date		Mar 7, 2013
  * 
  */
 package com.ppdesdev.week11303;
@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	//define variables
 	LinearLayout lv;
 	LinearLayout.LayoutParams la;
 	EditText eSpace;
@@ -34,6 +35,7 @@ public class MainActivity extends Activity {
 	static TextView tSpace6;
 	static private String[] pets = {"Lion", "Tiger","Bear", "Shark"};
 	
+	//function
 	private static void myPet(){
 		tSpace6.setText("I have 2 dogs.");
 	}
@@ -43,17 +45,20 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		
-		
+		//set up linear layout for app
 		lv = new LinearLayout(this);
 		lv.setOrientation(LinearLayout.VERTICAL);
 		la = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 		lv.setLayoutParams(la);
 		
+		//text view with initial text
 		TextView tSpace = new TextView(this);
 		tSpace.setText("What type of pet do you own?");
 		
+		//add text view to layout
 		lv.addView(tSpace);
 		
+		//two edit text feilds for pet type and number
 		eSpace = new EditText(this);
 		eSpace.setHint("Type name of pet type here.");
 		
@@ -62,26 +67,29 @@ public class MainActivity extends Activity {
 		eSpace2 = new EditText(this);
 		eSpace2.setHint("Type how many you own here.");
 		
-		
+		//button for submitting and receiving results
 		Button bSpace = new Button(this);
 		bSpace.setText("Button");
-		//lv.addView(bSpace);
 		
+		//on click funtion for button
 		bSpace.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
+				
+				//calling to resources to set int values
 				int zero = getResources().getInteger(R.integer.zero);
 				int one = getResources().getInteger(R.integer.one);
 				int two = getResources().getInteger(R.integer.two);
 				int three = getResources().getInteger(R.integer.three);
 				int four = getResources().getInteger(R.integer.four);
-				boolean x = (zero == 0);
+				boolean x = (zero != 0);
 				
 				int num = Integer.parseInt(eSpace2.getText().toString());
 				String pet = (String) eSpace.getText().toString();
 				
-				if (x == true) {
+				//conditional
+				if (num == 0 && x == true) {
 					tSpace3.setText("You have " + num + " " + pet +"(s). That means you don't own any " + pet + "(s).  Why did you say you owned a " + pet +".");
 				}else if (num == one) {
 					tSpace3.setText("You have " + num + " " + pet +"(s).");
@@ -94,16 +102,19 @@ public class MainActivity extends Activity {
 				}else {
 				}
 				
+				//set 
 				tSpace4.setText("\nDid you ever want to own a:");
 				
 				for (int i = 0; i < pets.length; i++) {
-					tSpace5.setText(pets[i]);
+					String petArrayText = (String) tSpace5.getText().toString();
+					tSpace5.setText(petArrayText + ", " + pets[i]);
 				}
 				
 				myPet();
 			}
 		});
 		
+		//creating the layout for the second edit text and button
 		LinearLayout lv2 = new LinearLayout(this);
 		lv2.setOrientation(LinearLayout.HORIZONTAL);
 		la = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -113,6 +124,8 @@ public class MainActivity extends Activity {
 		lv2.addView(bSpace);
 		
 		lv.addView(lv2);
+		
+		//the remaining text views that are added after the on click function is called
 		
 		tSpace3 = new TextView(this);
 		
@@ -136,7 +149,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
