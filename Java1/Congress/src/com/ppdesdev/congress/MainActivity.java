@@ -92,13 +92,17 @@ public class MainActivity extends Activity {
 					String didRun = congressMember.get("runForPresident").toString();
 					Log.i("Run for Present" , didRun);
 					
+					//Enum for the static data 
+					States location = States.ARIZONA;
+					
 					if (didRun.equals("Yes")) {
 						tSpace.setText(
 								congressMember.get("office") + "\r\n" +
 								congressMember.get("firstName") + "\r\n" +
 								congressMember.get("lastName") + "\r\n" +
 								congressMember.get("party") + "\r\n" +
-								congressMember.get("stateName") + "\r\n" +
+							//	congressMember.get("stateName") + "\r\n" +
+								location + "\r\n" +
 								"Ran for Presedent " + congressMember.get("president") + " time(s).\r\n");
 					}else {
 						tSpace.setText(
