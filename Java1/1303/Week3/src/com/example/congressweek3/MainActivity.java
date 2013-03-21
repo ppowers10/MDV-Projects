@@ -112,16 +112,16 @@ public class MainActivity extends Activity {
 			try{
 			JSONObject json = new JSONObject(result);
 			JSONObject results = json.getJSONObject("results");
-			//JSONObject count = json.getJSONObject("page");
-				//if (count.getString("count").getInt == 0) {
-					//Toast toast = Toast.makeText(_context, "No Known Leader", Toast.LENGTH_SHORT);
-					//toast.show();
-				//}else {
-				//	Toast toast = Toast.makeText(_context, "Leader found", Toast.LENGTH_SHORT);
-				//	toast.show();
+			JSONObject count = json.getJSONObject("count");
+				if (count.get("count") == "0") {
+					Toast toast = Toast.makeText(_context, "No Known Leader", Toast.LENGTH_SHORT);
+					toast.show();
+				}else {
+					Toast toast = Toast.makeText(_context, "Leader found", Toast.LENGTH_SHORT);
+					toast.show();
 					_history.put(results.getString("last_name"), results.toString());
 					Files.storeObjectFile(_context, "history", _history, false);
-				//}
+				}
 			} catch (JSONException e) {
 				Log.e("JSON", "JSON object exception");
 			}
