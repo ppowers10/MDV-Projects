@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressWeek3
+ * 
+ * 	package		com.example.congressweek3
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Mar 21, 2013
+ * 
+ */
 package com.example.congressweek3;
 
 import android.content.Context;
@@ -10,6 +20,7 @@ public class Query extends LinearLayout {
 	EditText _queryField;
 	Button _queryButton;
 	
+	//creating the search edit text and button for the main view
 	public Query (Context context, String hint, String buttonText){
 		super(context);
 		

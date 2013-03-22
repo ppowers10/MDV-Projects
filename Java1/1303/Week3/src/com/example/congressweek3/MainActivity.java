@@ -5,6 +5,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -22,16 +23,19 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	//setting global variables
 	Context _context;
 	LinearLayout _layout;
 	Query _queryForm;
 	CongressionalInfo _leader;
 	Boolean connected = false;
 	HashMap<String, String> _history;
+	TextView tSpace;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,8 @@ public class MainActivity extends Activity {
 		EditText queryField = _queryForm.getQueryText();
 		Button queryButton = _queryForm.getQuery();
 		
+		
+		//on click for the query
 		queryButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -63,12 +69,16 @@ public class MainActivity extends Activity {
 			Log.i("Network:", Internet.getConnectionType(_context));
 		}
 		
-		//add congressional leader info
-		_leader = new CongressionalInfo(_context);
+		//add congressional leader info - not using yet, but might next week
+		//_leader = new CongressionalInfo(_context);
+		
 		
 		//add views to main layout
 		_layout.addView(_queryForm);
-		_layout.addView(_leader);
+		//_layout.addView(_leader);
+		
+		tSpace = new TextView(this);
+		_layout.addView(tSpace);
 		
 		_layout.setOrientation(LinearLayout.VERTICAL);
 		
@@ -82,6 +92,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	//creating the URL for the API
 	private void getName(String leaderName){
 		Log.i("Click", leaderName);
 		String queryURL = "http://congress.api.sunlightfoundation.com/legislators?apikey=aa5cc069fd444cb5925da14a2a8a123b&query=" + leaderName;
@@ -96,6 +107,21 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	//retrieving information from the stored history
+	private HashMap<String, String> getHistory(){
+		Object stored = Files.readObjectFile(_context, "history", false);
+		
+		HashMap<String, String> history;
+		if (stored == null) {
+			Log.i("History", "No History File Found");
+			history = new HashMap<String, String>(); 
+		}else{
+			history = (HashMap<String, String>) stored;
+		}
+		return history;
+	}
+	
+	//fetching JSON data from the url API
 	private class LeaderRequest extends AsyncTask<URL, Void, String>{
 		
 		@Override
@@ -110,23 +136,42 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(String result){
 			Log.i("URL Response", result);
 			try{
-			JSONObject json = new JSONObject(result);
-			JSONObject results = json.getJSONObject("results");
-			JSONObject count = json.getJSONObject("count");
-				if (count.get("count") == "0") {
-					Toast toast = Toast.makeText(_context, "No Known Leader", Toast.LENGTH_SHORT);
-					toast.show();
-				}else {
-					Toast toast = Toast.makeText(_context, "Leader found", Toast.LENGTH_SHORT);
-					toast.show();
-					_history.put(results.getString("last_name"), results.toString());
-					Files.storeObjectFile(_context, "history", _history, false);
-				}
+				JSONObject jObject = new JSONObject(result);
+				JSONArray jArray = jObject.getJSONArray("results");
+				JSONObject jObject2 = jArray.getJSONObject(0);	
+				Log.i("JSONObject", jObject2.toString());
+				
+				//user feedback if they type in a valid leader's name
+				Toast toast = Toast.makeText(_context, "Leader found", Toast.LENGTH_SHORT);
+				toast.show();
+				_history.put(jObject2.getString("last_name"), jObject2.toString());
+				Files.storeObjectFile(_context, "history", _history, false);
+				Files.storeStringFile(_context, "temp", jObject2.toString(), true);
+					
+				//setting the data in the main view for the user
+				tSpace.setText(
+							"First Name: " + jObject2.get("first_name") + "\r\n" +
+							"Last Name: " +jObject2.get("last_name") + "\r\n" +
+							"Chamber: " +jObject2.get("chamber") + "\r\n" +
+							"Party: " +jObject2.get("party") + "\r\n" +
+							"State: " +jObject2.get("state_name") + "\r\n" );
+					
+			//throws a toast when the query does not find any leaders by the searched name
 			} catch (JSONException e) {
-				Log.e("JSON", "JSON object exception");
+				Toast toast = Toast.makeText(_context, "No Known Leader", Toast.LENGTH_SHORT);
+				toast.show();
+				
+				tSpace.setText(
+						"First Name: " + "\r\n" +
+						"Last Name: " + "\r\n" +
+						"Chamber: " + "\r\n" +
+						"Party: " + "\r\n" +
+						"State: " + "\r\n" );
 			}
 		}
 		
 	}
+	
+	
 
 }

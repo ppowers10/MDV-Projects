@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressWeek3
+ * 
+ * 	package		com.ppdesdev.lib
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Mar 21, 2013
+ * 
+ */
 package com.ppdesdev.lib;
 
 import java.io.BufferedInputStream;
