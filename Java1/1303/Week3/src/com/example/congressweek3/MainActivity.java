@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressWeek4
+ * 
+ * 	package		com.example.congressweek4
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Mar 28, 2013
+ * 
+ */
 package com.example.congressweek3;
 
 import java.net.MalformedURLException;
@@ -16,12 +26,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,27 +42,39 @@ public class MainActivity extends Activity {
 
 	//setting global variables
 	Context _context;
-	LinearLayout _layout;
 	Query _queryForm;
-	CongressionalInfo _leader;
 	Boolean connected = false;
 	HashMap<String, String> _history;
-	TextView tSpace;
+	static final int REQIEST_CODE = 0;
+	
+	//after the query, set the textViews to the correct information
+	public void updatedData(JSONObject data){
+		try{
+			((TextView) findViewById(R.id.data_firstName)).setText(data.getString("first_name"));
+			((TextView) findViewById(R.id.data_LastName)).setText(data.getString("last_name"));
+			((TextView) findViewById(R.id.data_chamber)).setText(data.getString("chamber"));
+			((TextView) findViewById(R.id.data_party)).setText(data.getString("party"));
+			((TextView) findViewById(R.id.data_stateName)).setText(data.getString("state_name"));
+		}catch(JSONException e){
+			Log.e("JSON Error", e.toString());
+		}
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.layout);
 
 		_context = this;
-		_layout = new LinearLayout(this);
-		_history = new HashMap<String, String>();
+		_history = getHistory();
+		Log.i("History Read",_history.toString());
 		
-		
-		_queryForm = new Query(_context, "Type Name Here", "Search");
+		//add image
+		ImageView iv= (ImageView) findViewById(R.id.congressImage);
 		
 		//add search handler
-		EditText queryField = _queryForm.getQueryText();
-		Button queryButton = _queryForm.getQuery();
+		Button queryButton = (Button) findViewById(R.id.button1);
 		
 		
 		//on click for the query
@@ -58,8 +82,31 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Log.i("Click Handler", _queryForm.getQueryText().getText().toString());
-				getName(_queryForm.getQueryText().getText().toString());
+				EditText queryField = (EditText) findViewById(R.id.editText1);
+				Log.i("Click Handler", queryField.getText().toString());
+				getName(queryField.getText().toString());
+			}
+		});
+		
+		Button favButton = (Button) findViewById(R.id.button2);
+		favButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			//	Intent i = new Intent(_context, Favorites.class);
+			//	startActivityForResult(i, REQUEST_CODE);
+				
+			}
+		});
+		
+		//Add Fav Button
+		Button addFav = (Button) findViewById(R.id.addFavsButton);
+		addFav.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		
@@ -67,22 +114,10 @@ public class MainActivity extends Activity {
 		connected = Internet.getConnectionStatus(_context);
 		if (connected) {
 			Log.i("Network:", Internet.getConnectionType(_context));
+		}else {
+			Toast toast = Toast.makeText(_context, "Check Internet Connection", Toast.LENGTH_SHORT);
+			toast.show();
 		}
-		
-		//add congressional leader info - not using yet, but might next week
-		//_leader = new CongressionalInfo(_context);
-		
-		
-		//add views to main layout
-		_layout.addView(_queryForm);
-		//_layout.addView(_leader);
-		
-		tSpace = new TextView(this);
-		_layout.addView(tSpace);
-		
-		_layout.setOrientation(LinearLayout.VERTICAL);
-		
-		setContentView(_layout);
 	}
 
 	@Override
@@ -144,29 +179,15 @@ public class MainActivity extends Activity {
 				//user feedback if they type in a valid leader's name
 				Toast toast = Toast.makeText(_context, "Leader found", Toast.LENGTH_SHORT);
 				toast.show();
+				updatedData(jObject2);
 				_history.put(jObject2.getString("last_name"), jObject2.toString());
 				Files.storeObjectFile(_context, "history", _history, false);
 				Files.storeStringFile(_context, "temp", jObject2.toString(), true);
-					
-				//setting the data in the main view for the user
-				tSpace.setText(
-							"First Name: " + jObject2.get("first_name") + "\r\n" +
-							"Last Name: " +jObject2.get("last_name") + "\r\n" +
-							"Chamber: " +jObject2.get("chamber") + "\r\n" +
-							"Party: " +jObject2.get("party") + "\r\n" +
-							"State: " +jObject2.get("state_name") + "\r\n" );
-					
+				
 			//throws a toast when the query does not find any leaders by the searched name
 			} catch (JSONException e) {
 				Toast toast = Toast.makeText(_context, "No Known Leader", Toast.LENGTH_SHORT);
 				toast.show();
-				
-				tSpace.setText(
-						"First Name: " + "\r\n" +
-						"Last Name: " + "\r\n" +
-						"Chamber: " + "\r\n" +
-						"Party: " + "\r\n" +
-						"State: " + "\r\n" );
 			}
 		}
 		

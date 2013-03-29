@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressWeek3
+ * 
+ * 	package		com.ppdesdev.lib
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Mar 28, 2013
+ * 
+ */
 package com.ppdesdev.lib;
 
 import java.io.BufferedInputStream;
@@ -70,17 +80,16 @@ public class Files {
 				fin = context.openFileInput(fileName);
 			}
 			BufferedInputStream bin = new BufferedInputStream(fin);
-			byte[] contentBytes = new byte[1-24];
+			byte[] contentBytes = new byte[1024];
 			int bytesRead = 0;
 			StringBuffer contentBuffer = new StringBuffer();
 			
-			while ((bytesRead = bin.read(contentBytes)) != -1) {
+			while((bytesRead = bin.read(contentBytes)) != -1) {
 				content = new String(contentBytes, 0, bytesRead);
 				contentBuffer.append(content);
 			}
 			content = contentBuffer.toString();
 			fin.close();
-			
 		} catch (FileNotFoundException e) {
 			Log.e("Read Error", "File Not Found " + fileName);
 		}catch (IOException e){
@@ -102,15 +111,15 @@ public class Files {
 				file = new File(fileName);
 				fin = context.openFileInput(fileName);
 			}
-			BufferedInputStream bin = new BufferedInputStream(fin);
-			byte[] contentBytes = new byte[1-24];
-			int bytesRead = 0;
-			StringBuffer contentBuffer = new StringBuffer();
+		//	BufferedInputStream bin = new BufferedInputStream(fin);
+		//	byte[] contentBytes = new byte[1024];
+		//	int bytesRead = 0;
+		//	StringBuffer contentBuffer = new StringBuffer();
 			
-			while ((bytesRead = bin.read(contentBytes)) != -1) {
-				content = new String(contentBytes, 0, bytesRead);
-				contentBuffer.append(content);
-			}
+		//	while ((bytesRead = bin.read(contentBytes)) != -1) {
+		//		content = new String(contentBytes, 0, bytesRead);
+		//		contentBuffer.append(content);
+		//	}
 			ObjectInputStream ois = new ObjectInputStream(fin);
 			
 			try {

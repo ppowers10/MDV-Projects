@@ -1,11 +1,11 @@
 /*
  * 	project		CongressWeek3
  * 
- * 	package		com.example.congressweek3
+ * 	package		com.example.congressweek4
  * 
  * 	@author		patrickpowers
  * 
- * 	date		Mar 21, 2013
+ * 	date		Mar 28, 2013
  * 
  */
 package com.example.congressweek3;

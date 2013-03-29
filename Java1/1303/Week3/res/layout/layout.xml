@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Type Last Name" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fav" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/leaderData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="10dip" >
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name: "
+        	style="@style/LeaderLabel" />
+        <TextView 
+            android:id="@+id/data_firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LeaderInfo"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name: "
+            style="@style/LeaderLabel"/>
+        <TextView 
+            android:id="@+id/data_LastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LeaderInfo"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chamber: "
+            style="@style/LeaderLabel"/>
+        <TextView 
+            android:id="@+id/data_chamber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LeaderInfo"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Party: "
+            style="@style/LeaderLabel"/>
+        <TextView 
+            android:id="@+id/data_party"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LeaderInfo"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State: "
+            style="@style/LeaderLabel"/>
+        <TextView 
+            android:id="@+id/data_stateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LeaderInfo"/>
+        
+    </GridLayout>
+
+    <ImageView
+        android:id="@+id/congressImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/congress" />
+
+    <Button
+        android:id="@+id/addFavsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to Favorites" />
+
+</LinearLayout>
