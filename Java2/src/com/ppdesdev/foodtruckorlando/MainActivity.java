@@ -1,9 +1,13 @@
 package com.ppdesdev.foodtruckorlando;
 
+
+import com.ppdesdev.lib.WebStuff;
+
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.ListActivity;
+import android.util.Log;
 import android.view.Menu;
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,9 +15,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
 
+	Boolean connected = false;
+	Context _context;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +37,8 @@ public class MainActivity extends ListActivity {
         
         // truck clicked within list
         lv.setOnItemClickListener(new OnItemClickListener() {
-          public void onItemClick(AdapterView<?> parent, View view,
+          @Override
+		public void onItemClick(AdapterView<?> parent, View view,
               int position, long id) {
  
               // selected truck
@@ -44,7 +52,18 @@ public class MainActivity extends ListActivity {
           }
         });
         
-
+       /* 
+        //detect network connection
+       connected = WebStuff.getConnectionStatus(_context);
+       	if(connected){
+     	Log.i("Network:", WebStuff.getConnectionType(_context));
+		}
+       	else {
+			Toast toast = Toast.makeText(_context, "Check Internet Connection", Toast.LENGTH_SHORT);
+			toast.show();
+		}
+        */
+		
     }
 
 	@Override

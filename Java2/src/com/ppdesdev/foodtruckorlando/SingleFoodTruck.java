@@ -18,9 +18,9 @@ public class SingleFoodTruck extends Activity{
 	        TextView truckInfo = (TextView) findViewById(R.id.truck_name);
 	 
 	        Intent i = getIntent();
-	        // getting attached intent data
+	        // intent data
 	        String truck = i.getStringExtra("truck");
-	        // displaying selected product name
+	        // displaying truck name
 	        truckInfo.setText(truck);
 	        
 	        Button webButton = (Button) findViewById(R.id.button1);
