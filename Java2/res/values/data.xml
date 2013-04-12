@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="food_truck_names">
+		
+		<item>5 Gastronomy</item>
+		<item>Allan\'s Jerk Shack</item>
+		<item>APP\'s Wings and More</item>
+		<item>Arepas El Cacao</item>
+		<item>Batter Bowl Truck</item>
+		<item>Beared Papa\'s</item>
+		<item>Bem Bom</item>
+		<item>Big Brunos Bite</item>
+		<item>Big Wheel Provision</item>
+		<item>Bistro Babe\'s</item>
+		<item>C and S Brisket Bus</item>
+		<item>CK Jerk Shack Island BBQ</item>
+		<item>Café Rouge Express</item>
+		<item>Cluster Funk</item>
+		<item>Café Cocoa Mo</item>
+		<item>Crepe Company</item>
+		<item>Crooked Spoon</item>
+		<item>Curbie\'s Sidewalk Café</item>
+		<item>Darlands Bakery, Inc.</item>
+		<item>Eclectic Kitchen</item>
+		<item>Fantastic Hummus</item>
+		<item>Fro2Go</item>
+		<item>The Flattery</item>
+		<item>Feast Beast Food Truck</item>
+		<item>Fork in the Road</item>
+		<item>Gator Country BBQ</item>
+		<item>Gokudo Inc. Orlando</item>
+		<item>Korean BBQ Taco Box</item>
+		<item>Kona Dog</item>
+		<item>Kburgers</item>
+		<item>King Master Grill</item>
+		<item>La Empanada</item>
+		<item>Louie\'s Bistro</item>
+		<item>Latin Flavors on Wheels</item>
+		<item>Mama Fixins</item>
+		<item>Melissa\'s Chicken and Waffles</item>
+		<item>Monsta Lobsta</item>
+		<item>Pupusas Orlando</item>
+		<item>Pop Craft Pops-Central Florida</item>
+		<item>Sit and Pet Café</item>
+		<item>Sunset Ice</item>
+		<item>Saigon Sizzle</item>
+		<item>Shred-A-Bowl</item>
+		<item>SwedeDISH</item>
+		<item>Sweet City Gelato</item>
+		<item>The YumYum Cupcake Truck</item>
+		<item>Treehouse Truck</item>
+		<item>Tastebuds Catering</item>
+		<item>Twisted Cuban</item>
+		<item>Winter Park Fish Co.</item>
+    </string-array>
+</resources>
