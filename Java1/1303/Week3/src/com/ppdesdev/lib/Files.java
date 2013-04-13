@@ -111,15 +111,6 @@ public class Files {
 				file = new File(fileName);
 				fin = context.openFileInput(fileName);
 			}
-		//	BufferedInputStream bin = new BufferedInputStream(fin);
-		//	byte[] contentBytes = new byte[1024];
-		//	int bytesRead = 0;
-		//	StringBuffer contentBuffer = new StringBuffer();
-			
-		//	while ((bytesRead = bin.read(contentBytes)) != -1) {
-		//		content = new String(contentBytes, 0, bytesRead);
-		//		contentBuffer.append(content);
-		//	}
 			ObjectInputStream ois = new ObjectInputStream(fin);
 			
 			try {

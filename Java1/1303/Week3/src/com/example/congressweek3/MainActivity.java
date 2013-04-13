@@ -12,7 +12,6 @@ package com.example.congressweek3;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.HashMap;
 
 import org.json.JSONArray;
@@ -22,6 +21,7 @@ import org.json.JSONObject;
 import com.ppdesdev.lib.Files;
 import com.ppdesdev.lib.Internet;
 
+import android.R;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
 		Log.i("History Read",_history.toString());
 		
 		//add image
-		ImageView iv= (ImageView) findViewById(R.id.congressImage);
+		ImageView iv= (ImageView) findViewById(R.id.imageView1);
 		
 		//add search handler
 		Button queryButton = (Button) findViewById(R.id.button1);
@@ -109,7 +109,7 @@ public class MainActivity extends Activity {
 				
 			}
 		});
-		
+	/*	
 		//network connection
 		connected = Internet.getConnectionStatus(_context);
 		if (connected) {
@@ -118,6 +118,8 @@ public class MainActivity extends Activity {
 			Toast toast = Toast.makeText(_context, "Check Internet Connection", Toast.LENGTH_SHORT);
 			toast.show();
 		}
+		
+		*/
 	}
 
 	@Override

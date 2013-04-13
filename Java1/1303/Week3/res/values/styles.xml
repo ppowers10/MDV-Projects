@@ -1,9 +1,9 @@
 <resources>
 
     <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
+Base application theme, dependent on API level. This theme is replaced
+by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+-->
     <style name="AppBaseTheme" parent="android:Theme.Light"/>
 
 
@@ -11,13 +11,13 @@
     <style name="AppTheme" parent="android:Theme.Holo"/>
 
     
-    <style name="LeaderLabel">    
+    <style name="LeaderLabel">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@android:color/holo_blue_dark</item>
         <item name="android:textSize">18dp</item>
     </style>
     
-    <style name="LeaderInfo">    
+    <style name="LeaderInfo">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">18dp</item>
