@@ -1,11 +1,11 @@
 /*
- * 	project		CongressWeek3
+ * 	project		CongressLeaders
  * 
  * 	package		com.ppdesdev.lib
  * 
  * 	@author		patrickpowers
  * 
- * 	date		Mar 28, 2013
+ * 	date		Apr 14, 2013
  * 
  */
 package com.ppdesdev.lib;

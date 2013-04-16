@@ -22,12 +22,6 @@
             android:layout_height="wrap_content"
             android:text="Search" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fav" />
-
     </LinearLayout>
 
     <GridLayout
@@ -93,18 +87,17 @@
             style="@style/LeaderInfo"/>
         
     </GridLayout>
-
+<Button
+        android:id="@+id/moreInfoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="More Information" />
+    
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="140dip"
+        android:scaleType="center"
         android:src="@drawable/congress" />
-
-    <Button
-        android:id="@+id/addFavsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add to Favorites" />
 
 </LinearLayout>
