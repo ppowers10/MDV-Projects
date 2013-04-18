@@ -43,29 +43,6 @@ public class Files {
 		return true;
 	}
 	
-	//storing the object file
-	public static Boolean storeObjectFile(Context context, String fileName, Object content, Boolean external){
-		try {
-			File file;
-			FileOutputStream fos;
-			ObjectOutputStream oos;
-			if (external) {
-				file = new File(context.getExternalFilesDir(null), fileName);
-				fos = new FileOutputStream(file);
-			}else{
-				fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
-			}
-			oos = new ObjectOutputStream(fos);
-			oos.writeObject(content);
-			oos.close();
-			fos.close();
-		} catch (IOException e) {
-			Log.e("Write Error", fileName);
-		}
-		
-		return true;
-	}
-	
 	//reading the string file
 	public static String readStringFile(Context context, String fileName, Boolean external){
 		String content = "";
@@ -97,34 +74,5 @@ public class Files {
 		}
 		return content;
 	}
-	
-	//reading the object file
-	public static Object readObjectFile(Context context, String fileName, Boolean external){
-		Object content = new Object();
-		try {
-			File file;
-			FileInputStream fin;
-			if (external) {
-				file = new File(context.getExternalFilesDir(null), fileName);
-				fin = new FileInputStream(file);
-			}else{
-				file = new File(fileName);
-				fin = context.openFileInput(fileName);
-			}
-			ObjectInputStream ois = new ObjectInputStream(fin);
-			
-			try {
-				content = (Object) ois.readObject();
-			} catch (ClassNotFoundException e) {
-				Log.e("Read Error", "Invalid Java Object File");
-			}
-			ois.close();
-			fin.close();
-		} catch (FileNotFoundException e) {
-			Log.e("Read Error", "File Not Found " + fileName);
-		}catch (IOException e){
-			Log.e("Read Error", "I/O Error");
-		}
-		return content;
-	}
+
 }
