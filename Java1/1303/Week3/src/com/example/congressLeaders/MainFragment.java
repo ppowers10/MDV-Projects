@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressLeaders
+ * 
+ * 	package		com.example.congressLeaders
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Apr 18, 2013
+ * 
+ */
 package com.example.congressLeaders;
 
 import android.app.Activity;
@@ -34,15 +44,10 @@ public class MainFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				
-				
-				
+							
 				EditText queryField = (EditText) getActivity().findViewById(R.id.editText1);
 				Log.i("Click Handler", queryField.getText().toString());
 				String name = queryField.getText().toString();
-				/*
-				getName(queryField.getText().toString());
-				*/
 				
 				listener.onLeaderSearch(name);
 			}
@@ -54,43 +59,7 @@ public class MainFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				
 				listener.onDetailView();
-				/*
-				try{
-					String firstName = jObject2.getString("first_name");
-					String lastName = jObject2.getString("last_name");
-					String fullName = firstName + " " + lastName;
-					String chamber = jObject2.getString("chamber");
-					String party = jObject2.getString("party");
-					String stateName = jObject2.getString("state_name");
-					String birthday = jObject2.getString("birthday");
-					String phone = jObject2.getString("phone");
-					String contactForm = jObject2.getString("contact_form");
-					String gender = jObject2.getString("gender");
-					String officeAddress = jObject2.getString("office");
-					String fax = jObject2.getString("fax");
-					String website = jObject2.getString("website");
-					
-					Intent i = new Intent(getApplicationContext(), SingleLeaderInfo.class);
-		              // sending data
-		              i.putExtra("name", fullName);
-		              i.putExtra("chamber", chamber);
-		              i.putExtra("party", party);
-		              i.putExtra("state", stateName);
-		              i.putExtra("birthday", birthday);
-		              i.putExtra("phone", phone);
-		              i.putExtra("contact Form", contactForm);
-		              i.putExtra("gender", gender);
-		              i.putExtra("office", officeAddress);
-		              i.putExtra("fax", fax);
-		              i.putExtra("website", website);
-		              startActivityForResult(i, 0);
-					
-				}catch(JSONException e){
-					Log.e("JSON Error", e.toString());
-				}
-	            */  
 			}
 		});
 		

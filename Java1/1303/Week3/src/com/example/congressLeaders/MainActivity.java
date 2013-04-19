@@ -5,7 +5,7 @@
  * 
  * 	@author		patrickpowers
  * 
- * 	date		Apr 14, 2013
+ * 	date		Apr 18, 2013
  * 
  */
 package com.example.congressLeaders;
@@ -31,12 +31,7 @@ import android.content.Intent;
 //import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,80 +70,6 @@ public class MainActivity extends Activity implements MainFragment.MainListeners
 	//	_history = getHistory();
 	//	Log.i("History Read",_history.toString());
 		
-		/*
-		 * Delete here
-		 * 
-		 * 
-		//add search handler
-		Button queryButton = (Button) findViewById(R.id.button1);		
-		//on click for the query
-		queryButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				EditText queryField = (EditText) findViewById(R.id.editText1);
-				Log.i("Click Handler", queryField.getText().toString());
-				getName(queryField.getText().toString());
-			}
-		});
-		
-		*
-		*Delete here
-		*/
-		
-		/*
-		 * Delete here
-		 * 
-		//More Info Button
-		Button singleLeader = (Button) findViewById(R.id.moreInfoButton);
-		singleLeader.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				
-				try{
-					String firstName = jObject2.getString("first_name");
-					String lastName = jObject2.getString("last_name");
-					String fullName = firstName + " " + lastName;
-					String chamber = jObject2.getString("chamber");
-					String party = jObject2.getString("party");
-					String stateName = jObject2.getString("state_name");
-					String birthday = jObject2.getString("birthday");
-					String phone = jObject2.getString("phone");
-					String contactForm = jObject2.getString("contact_form");
-					String gender = jObject2.getString("gender");
-					String officeAddress = jObject2.getString("office");
-					String fax = jObject2.getString("fax");
-					String website = jObject2.getString("website");
-					
-					Intent i = new Intent(getApplicationContext(), SingleLeaderInfo.class);
-		              // sending data
-		              i.putExtra("name", fullName);
-		              i.putExtra("chamber", chamber);
-		              i.putExtra("party", party);
-		              i.putExtra("state", stateName);
-		              i.putExtra("birthday", birthday);
-		              i.putExtra("phone", phone);
-		              i.putExtra("contact Form", contactForm);
-		              i.putExtra("gender", gender);
-		              i.putExtra("office", officeAddress);
-		              i.putExtra("fax", fax);
-		              i.putExtra("website", website);
-		              startActivityForResult(i, 0);
-					
-				}catch(JSONException e){
-					Log.e("JSON Error", e.toString());
-				}
-	              
-			}
-		});
-		
-		*
-		*Delete here
-		*
-		*/
-		
 		//network connection
 		connected = Internet.getConnectionStatus(_context);
 		if (connected) {
@@ -156,9 +77,7 @@ public class MainActivity extends Activity implements MainFragment.MainListeners
 		}else {
 			Toast toast = Toast.makeText(_context, "Check Internet Connection", Toast.LENGTH_SHORT);
 			toast.show();
-		}
-		
-		
+		}	
 	}
 
 	@Override
@@ -260,14 +179,14 @@ public class MainActivity extends Activity implements MainFragment.MainListeners
 
 	@Override
 	public void onLeaderSearch(String name) {
-
+		if(name != ""){
 		getName(name);
-		
+		}
 	}
 
 	@Override
 	public void onDetailView() {
-		
+		if(jObject2 != null){
 		try{
 			String firstName = jObject2.getString("first_name");
 			String lastName = jObject2.getString("last_name");
@@ -301,7 +220,7 @@ public class MainActivity extends Activity implements MainFragment.MainListeners
 		}catch(JSONException e){
 			Log.e("JSON Error", e.toString());
 		}
-		
+		}
 	}
 	
 

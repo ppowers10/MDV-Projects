@@ -1,26 +1,36 @@
+/*
+ * 	project		CongressLeaders
+ * 
+ * 	package		com.example.congressLeaders
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Apr 18, 2013
+ * 
+ */
 package com.example.congressLeaders;
 
-
-
+import com.example.congressLeaders.SingleLeaderFragment.SingleListeners;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class SingleLeaderInfo extends Activity {
+public class SingleLeaderInfo extends Activity implements SingleListeners {
 	
-	CheckBox goodLeader;
+	//CheckBox goodLeader;
 	String passedString;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);	
         this.setContentView(R.layout.detail_layout_frag);
+        
         
         TextView leaderName = (TextView) findViewById(R.id.nameID);
         TextView leaderChamber = (TextView) findViewById(R.id.chamberID);
@@ -32,6 +42,7 @@ public class SingleLeaderInfo extends Activity {
         TextView leaderFax = (TextView) findViewById(R.id.faxID);
         TextView leaderWeb = (TextView) findViewById(R.id.websiteID);
         TextView leaderContact = (TextView) findViewById(R.id.contactID);
+   	 	
    	 
         Intent i = getIntent();
         // intent data
@@ -56,29 +67,23 @@ public class SingleLeaderInfo extends Activity {
         leaderFax.setText(fax);
         leaderWeb.setText(website);
         leaderContact.setText(contactForm);
-        
-        goodLeader = (CheckBox) this.findViewById(R.id.checkID);
-        
-        Button goodButton = (Button) this.findViewById(R.id.checkButton);
-        
-        goodButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				if(goodLeader.isChecked()){
-					passedString = "This is a good Leader";
-					Intent returnIntent = new Intent();
-					returnIntent.putExtra("response", passedString);
-					setResult(RESULT_OK, returnIntent);
-					finish();
-				}else {
-					Intent returnIntent = new Intent();
-					setResult(RESULT_CANCELED, returnIntent);
-					finish();
-				}
-			}
-		});
+
 }
-	
+
+	@Override
+	public void onDoneClick(CheckBox goodLeader) {
+		// TODO Auto-generated method stub
+		
+		if(goodLeader.isChecked()){
+			passedString = "This is a good Leader";
+			Intent returnIntent = new Intent();
+			returnIntent.putExtra("response", passedString);
+			setResult(RESULT_OK, returnIntent);
+			finish();
+		}else {
+			Intent returnIntent = new Intent();
+			setResult(RESULT_CANCELED, returnIntent);
+			finish();
+		}
+	}
 }
