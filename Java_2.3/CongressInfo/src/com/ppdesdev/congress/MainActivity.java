@@ -12,6 +12,7 @@ import android.os.Messenger;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
 		Boolean connected = false;
 		EditText editURI;
 		Button query;
+		ListView listview;
 		
 		private ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 	
@@ -37,10 +39,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		
 		//set Context to this
 		_context = this;
 		
+
 		
 		editURI = (EditText) this.findViewById(R.id.editText1);
 		editURI.setText(NameProvider.LeaderData.CONTENT_UIR.toString());
@@ -50,7 +52,31 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-							
+					
+				// Queries the user dictionary and returns results
+				Cursor cursor = getContentResolver().query(
+					NameProvider.LeaderData.CONTENT_UIR,// The content URI of the words table
+				    null,                        		// The columns to return for each row
+				    null,                    			// Selection criteria
+				    null,                    		 	// Selection criteria
+				    null);                        		// The sort order for the returned rows
+				
+				for (int i = 0; i < cursor.getCount(); i++) {
+					HashMap<String, String> dispplayMap = new HashMap<String, String>();
+					
+					dispplayMap.put("first", cursor.getString(1));
+					dispplayMap.put("last", cursor.getString(2));
+					
+					cursor.moveToNext();
+					
+					mylist.add(dispplayMap);
+				}
+				
+				listview.setVisibility(View.VISIBLE);
+				SimpleAdapter adapter = new SimpleAdapter(_context, mylist, R.layout.list_row, new String[] {"first", "last"}, new int[] {R.id.first_name, R.id.last_name});
+		       
+		        listview.setAdapter(adapter);
+				
 			}
 		});
 		
@@ -71,12 +97,8 @@ public class MainActivity extends Activity {
 		startService(myIntent);
 		
 		//List View setup
-		ListView listview = (ListView) findViewById(R.id.listView1);
-		
-		 SimpleAdapter adapter = new SimpleAdapter(this, mylist, R.layout.list_row,
-                 new String[] {"first", "last"},  new int[] {R.id.first_name, R.id.last_name});
-       
-         listview.setAdapter(adapter);
+		listview = (ListView) findViewById(R.id.listView1);
+
 	};
 
 	@Override
