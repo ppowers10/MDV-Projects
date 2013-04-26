@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressInfo
+ * 
+ * 	package		com.ppdesdev.congress
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Apr 25, 2013
+ * 
+ */
 package com.ppdesdev.congress;
 
 import java.net.MalformedURLException;
@@ -21,18 +31,15 @@ import android.util.Log;
 public class ServiceUpdate extends IntentService {
 
 	//setting global variables
-	//Context _context;
 	Boolean connected = false;
 	JSONObject jObject;
 	private int result = Activity.RESULT_CANCELED;
-	
 	public static String JSON_RESULTS = "results";
 	public static String JSON_FIRST = "first_name";
 	public static String JSON_LAST = "last_name";
 	
 	public ServiceUpdate() {
 		super("ServiceUpdate");
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
@@ -51,21 +58,15 @@ public class ServiceUpdate extends IntentService {
 			Files.storeStringFile(getApplicationContext(), "congressNames", response, true);
 			//turn JSON string into an object to pass back to Activity
 			
-
+			//set result to OK to pass back to handler in mainActivity
 			result = Activity.RESULT_OK;
 		
 		} catch (MalformedURLException e) {
 			Log.e("Bad URL", "Malformed URL");
 			finalURL = null;
 		}
-		//testing
-		String JSONString = Files.readStringFile(getApplicationContext(), "congressNames", true);
-		Log.i("Read File", JSONString);
 		
-		String f = Environment.getExternalStorageDirectory().toString();
-		Log.i("Path", f);
-		
-		
+		//getting the OK message to send back to the main activity
 		Bundle extras = intent.getExtras();
 	    if (extras != null) {
 	      Messenger messenger = (Messenger) extras.get("messenger");
@@ -76,7 +77,6 @@ public class ServiceUpdate extends IntentService {
 	      } catch (android.os.RemoteException e1) {
 	        Log.w(getClass().getName(), "Exception sending message", e1);
 	      }
-
 	    }
 	}
 

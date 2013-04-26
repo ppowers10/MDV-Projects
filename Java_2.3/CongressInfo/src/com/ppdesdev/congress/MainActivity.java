@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressInfo
+ * 
+ * 	package		com.ppdesdev.congress
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Apr 25, 2013
+ * 
+ */
 package com.ppdesdev.congress;
 
 import java.util.ArrayList;
@@ -62,6 +72,7 @@ public class MainActivity extends Activity {
 				    null);                        		// The sort order for the returned rows
 				
 				for (int i = 0; i < cursor.getCount(); i++) {
+					//creating hashmap to store first and last name
 					HashMap<String, String> dispplayMap = new HashMap<String, String>();
 					
 					dispplayMap.put("first", cursor.getString(1));
@@ -69,16 +80,20 @@ public class MainActivity extends Activity {
 					
 					cursor.moveToNext();
 					
+					//adding first and last name hashmap to mylist
 					mylist.add(dispplayMap);
 				}
 				
+				//loading the listview with the information.  
 				listview.setVisibility(View.VISIBLE);
 				SimpleAdapter adapter = new SimpleAdapter(_context, mylist, R.layout.list_row, new String[] {"first", "last"}, new int[] {R.id.first_name, R.id.last_name});
-		       
 		        listview.setAdapter(adapter);
 				
 			}
 		});
+		
+		//List View setup
+		listview = (ListView) findViewById(R.id.listView1);
 		
 		//network connection
 		connected = Internet.getConnectionStatus(getApplicationContext());
@@ -90,14 +105,12 @@ public class MainActivity extends Activity {
 				Toast toast = Toast.makeText(getApplicationContext(), "Check Internet Connection", Toast.LENGTH_SHORT);
 				toast.show();
 					}
-			
+		
+		//set up messenger and intent that is passed to the service to start the URL and JSON saving
 		Messenger messenger = new Messenger(messageHandler);
 		Intent myIntent = new Intent(_context, ServiceUpdate.class);
 		myIntent.putExtra("messenger", messenger);
 		startService(myIntent);
-		
-		//List View setup
-		listview = (ListView) findViewById(R.id.listView1);
 
 	};
 

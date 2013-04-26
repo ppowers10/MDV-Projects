@@ -1,3 +1,13 @@
+/*
+ * 	project		CongressInfo
+ * 
+ * 	package		com.ppdesdev.congress
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		Apr 25, 2013
+ * 
+ */
 package com.ppdesdev.congress;
 
 import org.json.JSONArray;
@@ -13,6 +23,7 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 public class NameProvider extends ContentProvider {
 
@@ -41,8 +52,8 @@ public class NameProvider extends ContentProvider {
 	private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 	
 	static {
-		uriMatcher.addURI(AUTHORITY, "items/", ITEMS);
-		uriMatcher.addURI(AUTHORITY, "items/#", ITEMS_ID);
+		uriMatcher.addURI(AUTHORITY, "names/", ITEMS);
+		uriMatcher.addURI(AUTHORITY, "names/#", ITEMS_ID);
 	}
 	
 	@Override
@@ -88,13 +99,18 @@ public class NameProvider extends ContentProvider {
 		MatrixCursor result = new MatrixCursor(LeaderData.PROJECTION);
 		
 		String JSONString = Files.readStringFile(getContext(), "congressNames", true);
+		Log.i("Read File", JSONString);
+		
 		JSONObject job = null;
 		JSONArray leadersArray = null;
-		JSONObject results = null;
+		//JSONObject results = null;
 		
 		try {
 			job = new JSONObject(JSONString);
+			Log.i("job", job.toString());
 			leadersArray = job.getJSONArray(ServiceUpdate.JSON_RESULTS);
+			Log.i("LeaderArray", leadersArray.toString());
+
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -110,8 +126,9 @@ public class NameProvider extends ContentProvider {
 		case ITEMS:
 			for (int i = 0; i < leadersArray.length(); i++) {
 				try {
-					results = leadersArray.getJSONObject(i).getJSONObject(ServiceUpdate.JSON_RESULTS);
-					result.addRow(new Object[] { i + 1, results.get(ServiceUpdate.JSON_FIRST), results.get(ServiceUpdate.JSON_LAST)});
+					//results = leadersArray.getJSONObject(i).getJSONObject(ServiceUpdate.JSON_RESULTS);
+					result.addRow(new Object[] { i + 1, leadersArray.getJSONObject(i).getJSONObject(ServiceUpdate.JSON_RESULTS).get(ServiceUpdate.JSON_FIRST), leadersArray.getJSONObject(i).getJSONObject(ServiceUpdate.JSON_RESULTS).get(ServiceUpdate.JSON_LAST)});
+					Log.i("results", result.toString());
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -122,6 +139,7 @@ public class NameProvider extends ContentProvider {
 		case ITEMS_ID:
 		
 		}
+		Log.i("result", result.toString());
 		return result;
 	}
 
