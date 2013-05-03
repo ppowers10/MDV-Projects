@@ -3,7 +3,7 @@
  * 
  * 	package		com.ppdesdev.congress
  * 
- * 	@author		patrickpowers
+ * 	@author		Patrick Powers
  * 
  * 	date		May 2, 2013
  * 
@@ -39,6 +39,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	//setting global variables
+	
 		Context _context;
 		Boolean connected = false;
 		EditText editURI;
@@ -88,7 +89,7 @@ public class MainActivity extends Activity {
 					
 					cursor.moveToNext();
 					
-					//adding first and last name hashmap to mylist
+					//adding first and last name to the hashmap to mylist
 					mylist.add(displayMap);
 				}
 				
