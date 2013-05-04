@@ -35,7 +35,7 @@
     <com.google.ads.AdView android:id="@+id/adView"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         ads:adUnitId="id"
+                         ads:adUnitId="a15180718f68197"
                          ads:adSize="SMART_BANNER"
                          ads:loadAdOnCreate="true"/>
     
