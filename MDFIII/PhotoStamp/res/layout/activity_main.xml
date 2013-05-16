@@ -15,7 +15,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" android:contentDescription="TODO"/>
+        android:layout_alignParentTop="true" />
 
     <ImageButton
         android:id="@+id/imageButton1"
@@ -35,44 +35,12 @@
         android:layout_toLeftOf="@+id/imageButton1" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/textView3"
-        android:text="@string/xx_xxxx"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FF0000" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignRight="@+id/imageView2"
-        android:text="@string/xx_xxxx"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FF0000" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignLeft="@+id/imageView2"
-        android:text="Date &amp; Time"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FF0000" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView1"
         android:layout_alignLeft="@+id/imageView2"
-        android:text="Set Address "
+        android:text="Set Address"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FF0000" />
 
@@ -85,11 +53,41 @@
         android:src="@android:drawable/ic_menu_save" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/imageView1"
         android:layout_alignTop="@+id/imageView1"
         android:src="@android:drawable/ic_menu_info_details" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignTop="@+id/imageView1"
+        android:text="Date &amp; Time"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF0000" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignLeft="@+id/imageView1"
+        android:text="xx.xxxx"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF0000" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:layout_alignLeft="@+id/imageView1"
+        android:text="xx.xxxx"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF0000" />
 
 </RelativeLayout>
