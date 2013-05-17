@@ -1,10 +1,10 @@
 package com.ppdesdev.photostamp;
 
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.location.LocationProvider;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,13 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 
 public class InfoActivity extends Activity implements LocationListener{
 	
-	LocationManager locationManager;
-	private String provider;
 	EditText et;
 	TextView latitude;
 	TextView longitude;
@@ -31,21 +30,22 @@ public class InfoActivity extends Activity implements LocationListener{
 		et = (EditText) findViewById(R.id.editText1);
 		latitude = (TextView) findViewById(R.id.TextView02);
 		longitude = (TextView) findViewById(R.id.textView3);
-		
-
-	    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-	    Criteria criteria = new Criteria();
-	    provider = locationManager.getBestProvider(criteria, false);
-	    Location location = locationManager.getLastKnownLocation(provider);
-
-	    // Initialize the location fields
-	    if (location != null) {
-	      onLocationChanged(location);
-	    } else {
-	      latitude.setText("Location not available");
-	      longitude.setText("Location not available");
-	    }
+	    
+	    LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+	    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 50L, 1.0f, this);
+	    
+	    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+			if(ni == null){
+				latitude.setText("N/A");
+				longitude.setText("N/A");
+				new AlertDialog.Builder(this)
+				.setTitle("GPS")
+				.setMessage("Check your internt connection. GPS coordinates cannot be determined without internet connection.")
+				.setNeutralButton("Close", null)
+				.show();
+	
+			}
 
 		
 		Button returnInfo = (Button) findViewById(R.id.button1);
