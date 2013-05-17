@@ -1,3 +1,13 @@
+/*
+ * 	project		PhotoStamp
+ * 
+ * 	package		com.ppdesdev.photostamp
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 16, 2013
+ * 
+ */
 package com.ppdesdev.photostamp;
 
 import java.io.File;
@@ -27,6 +37,7 @@ import android.widget.Toast;
 @SuppressLint("SimpleDateFormat")
 public class MainActivity extends Activity {
 
+	//global variables
 	Context _context;
 	private Uri imageUri;
 	ImageView img;
@@ -40,6 +51,7 @@ public class MainActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		
+		//get date and set date label
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String currentDateandTime = sdf.format(new Date());
 		TextView dateTime = (TextView) findViewById(R.id.date);
@@ -51,6 +63,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				//send intent to open camera
 				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
 			    File photo = new File(Environment.getExternalStorageDirectory(),  "Pic.jpg");
 			    intent.putExtra(MediaStore.EXTRA_OUTPUT,
@@ -65,7 +78,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				
+				//intent to change to info activty
 				Intent i = new Intent(getApplicationContext(), InfoActivity.class);
 				startActivityForResult(i, INTENT_REQUEST_CODE);
 				
@@ -86,6 +99,8 @@ public class MainActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		
+		//return intents from camera or info activity
+		//set image with the picture that was taken from camera
 		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
 			if (resultCode == Activity.RESULT_OK) {
 		            Uri selectedImage = imageUri;
@@ -103,7 +118,8 @@ public class MainActivity extends Activity {
 		            }
 		        }
 		    }
-	
+		
+		//set text for textViews
 		if (requestCode == INTENT_REQUEST_CODE) {
 			if (resultCode == Activity.RESULT_OK) {
 			TextView address = (TextView) findViewById(R.id.address);

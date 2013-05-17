@@ -1,3 +1,13 @@
+/*
+ * 	project		PhotoStamp
+ * 
+ * 	package		com.ppdesdev.photostamp
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 16, 2013
+ * 
+ */
 package com.ppdesdev.photostamp;
 
 import android.location.Location;
@@ -18,6 +28,7 @@ import android.content.Intent;
 
 public class InfoActivity extends Activity implements LocationListener{
 	
+	//set global variables
 	EditText et;
 	TextView latitude;
 	TextView longitude;
@@ -27,13 +38,16 @@ public class InfoActivity extends Activity implements LocationListener{
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.info_layout);
 		
+		//set up textViews
 		et = (EditText) findViewById(R.id.editText1);
 		latitude = (TextView) findViewById(R.id.TextView02);
 		longitude = (TextView) findViewById(R.id.textView3);
 	    
+		//set up location manager and check for GPS
 	    LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 	    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 50L, 1.0f, this);
 	    
+	    //check internet connection and show alert if there is not connection
 	    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni = cm.getActiveNetworkInfo();
 			if(ni == null){
@@ -54,6 +68,7 @@ public class InfoActivity extends Activity implements LocationListener{
 			@Override
 			public void onClick(View v) {
 				
+				//get strings from textView and editText then pass strings back to main activity
 				String address = (String) et.getText().toString();
 				String lng = (String) longitude.getText().toString();
 				String lat = (String) latitude.getText().toString();
@@ -71,7 +86,7 @@ public class InfoActivity extends Activity implements LocationListener{
 
 	@Override
 	public void onLocationChanged(Location l) {
-		// TODO Auto-generated method stub
+		// get lat and long
 		this.longitude.setText(String.valueOf(l.getLongitude()));
 		this.latitude.setText(String.valueOf(l.getLatitude()));
 	}
