@@ -1,5 +1,6 @@
 package com.ppdesdev.moodswing;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 import android.net.Uri;
@@ -7,7 +8,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.app.Activity;
+import android.appwidget.AppWidgetManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +30,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		
 	}
 
 	@Override
@@ -38,7 +41,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		
+		//Bitmap bitmap = BitmapFactory.decodeResource(getResources(), v.getId());     
+		//ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		//bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); 
+		//byte[] b = baos.toByteArray();
 
+		Intent intent = new Intent(this, DetailViewActivity.class);
+		//intent.putExtra("picture", b);
+		startActivity(intent);
 	}
 	
 	@Override

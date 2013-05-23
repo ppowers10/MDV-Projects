@@ -8,5 +8,10 @@
     <string name="button">BUTTON</string>
     <string name="mail">Mail</string>
     <string name="call">Call Psycyatrist</string>
+    <string name="title_activity_widget_config">WidgetConfigActivity</string>
+    <string name="title_activity_mood_widget_provider">MoodWidgetProvider</string>
+    <string name="title_activity_detail_view">DetailViewActivity</string>
+    <string name="feeling_edit_subject">Subject Line</string>
+    <string name="feeling_edit_body">Explain how you feel.</string>
 
 </resources>
