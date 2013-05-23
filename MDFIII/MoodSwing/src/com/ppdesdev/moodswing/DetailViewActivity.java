@@ -1,11 +1,18 @@
+/*
+ * 	project		MoodSwing
+ * 
+ * 	package		com.ppdesdev.moodswing
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 23, 2013
+ * 
+ */
 package com.ppdesdev.moodswing;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,15 +28,14 @@ public class DetailViewActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail_view);
 		
+		//**attempting to turn drawable resource to byte to transfer to detail activity
 		//Bundle extras = getIntent().getExtras();
 		//byte[] b = extras.getByteArray("picture");
-
 		//Bitmap bmp = BitmapFactory.decodeByteArray(b, 0, b.length);
 		ImageView image = (ImageView) findViewById(R.id.imageView1);
-
 		//image.setImageBitmap(bmp);
 		
-		
+		//button on click handler to post the mood information
 		Button postButton = (Button) findViewById(R.id.button1);
 		postButton.setOnClickListener(new OnClickListener() {
 			
@@ -53,5 +59,36 @@ public class DetailViewActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	@Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    //determining which action button was clicked and forming proper intents
+	    case R.id.mail:
+	    	Intent intent = new Intent(Intent.ACTION_SEND);
+			intent.setType("text/html");
+			intent.putExtra(Intent.EXTRA_SUBJECT, "Mood Swing");
+			intent.putExtra(Intent.EXTRA_TEXT, "Email someone to let them know your mood.");
+			startActivity(Intent.createChooser(intent, "Send Email"));
+	      
+	      break;
+	      //call intent
+	    case R.id.call_psycyatrist:
+	    	Intent callIntent = new Intent(Intent.ACTION_DIAL);
+			startActivity(callIntent);
+	      break;
+	      //navigation
+	    case android.R.id.home:
+            Intent i = new Intent(this, MainActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+          break;
+
+	    default:
+	      break;
+	    }
+
+	    return true;
+	  } 
 	
 }

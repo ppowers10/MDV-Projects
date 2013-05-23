@@ -1,24 +1,21 @@
+/*
+ * 	project		MoodSwing
+ * 
+ * 	package		com.ppdesdev.moodswing
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 23, 2013
+ * 
+ */
 package com.ppdesdev.moodswing;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.app.Activity;
-import android.appwidget.AppWidgetManager;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 	
@@ -41,7 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		
+		//**attempting to pass drawable resource to the detail page to update imageview
 		//Bitmap bitmap = BitmapFactory.decodeResource(getResources(), v.getId());     
 		//ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		//bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos); 
@@ -55,6 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	@Override
 	  public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
+	    //determining which action button was clicked and forming proper intents
 	    case R.id.mail:
 	    	Intent intent = new Intent(Intent.ACTION_SEND);
 			intent.setType("text/html");

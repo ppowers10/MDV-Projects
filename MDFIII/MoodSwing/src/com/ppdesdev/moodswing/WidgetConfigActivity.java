@@ -1,3 +1,13 @@
+/*
+ * 	project		MoodSwing
+ * 
+ * 	package		com.ppdesdev.moodswing
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 23, 2013
+ * 
+ */
 package com.ppdesdev.moodswing;
 
 import android.os.Bundle;
@@ -7,10 +17,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.RemoteViews;
-import android.widget.RemoteViews.RemoteView;
 import android.widget.Toast;
 
 public class WidgetConfigActivity extends Activity implements View.OnClickListener {
@@ -19,9 +26,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
-		
+		//using the same layout as the home screen to pick the mood
 	}
 
 	@Override
@@ -44,6 +49,10 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 			{
 				RemoteViews rv = new RemoteViews(this.getPackageName(), R.layout.widget_layout);
 				
+				//checking the button that was licked
+				//creating toast to let user know the setting that was set
+				//place pendingIntent on button
+				//update the widget
 				if(v.getId() == R.id.angry){
 			        //handle the click here
 					Toast.makeText(getApplicationContext(), "Widget set to Angry", Toast.LENGTH_SHORT).show();
