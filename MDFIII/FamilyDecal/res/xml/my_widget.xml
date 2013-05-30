@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="50dp"
+    android:minHeight="50dp"
+    android:updatePeriodMillis="0"
+    android:previewImage="@drawable/man" 
+    android:initialLayout="@layout/widget_layout"
+    android:resizeMode="none"
+    android:widgetCategory="home_screen"
+    android:configure="com.ppdesdev.familydecal.WidgetConfigActivity"
+    android:initialKeyguardLayout="@layout/widget_layout"
+    >
+
+</appwidget-provider>
