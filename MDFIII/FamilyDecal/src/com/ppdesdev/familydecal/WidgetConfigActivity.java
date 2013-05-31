@@ -1,3 +1,13 @@
+/*
+ * 	project		FamilyDecal
+ * 
+ * 	package		com.ppdesdev.familydecal
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 30, 2013
+ * 
+ */
 package com.ppdesdev.familydecal;
 import com.google.ads.*;
 import com.google.ads.AdRequest.ErrorCode;
@@ -24,6 +34,7 @@ import android.widget.RemoteViews;
 
 public class WidgetConfigActivity extends Activity implements View.OnClickListener, AdListener {
 
+	//create array of pictures that will fill gridview
 	private Integer[] mThumbIds = {
             R.drawable.man_tie,
             R.drawable.man_tie2,
@@ -61,6 +72,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.widget_config);
 		
+		//setting up adds ***not using in project
 		// Create the interstitial
 	    interstitial = new InterstitialAd(this, "e1c2d0f8ce9d40da");
 
@@ -76,7 +88,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 	    // Set Ad Listener to use the callbacks below
 	    interstitial.setAdListener(this);
 
-	
+	    //set up gridview
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 	    gridview.setAdapter(new ImageAdapter(this));
 	    gridview.setOnItemClickListener(itemClickListener);
@@ -84,6 +96,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 	    PACKAGE_NAME = getApplicationContext().getPackageName();
 	}
 	
+	//for adds
 	@Override
 	  public void onReceiveAd(Ad ad) {
 	    Log.d("OK", "Received ad");
@@ -92,6 +105,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 	    }
 	  }
 	
+	//when clicked on picture, trigger the widget
 	private OnItemClickListener itemClickListener = new OnItemClickListener() {
 	    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	    	
@@ -112,6 +126,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 						rv.setImageViewResource(R.id.button, mThumbIds[position]);
 						rv.setTextViewText(R.id.nametext, name);
 
+						//check if the phone number was entered to set pendinginent
 						if(!phone.matches("")){
 						String uri = "tel:" + phone.trim() ;
 						Intent butonIntent = new Intent(Intent.ACTION_DIAL);
@@ -120,6 +135,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 						rv.setOnClickPendingIntent(R.id.button, pi);
 						}
 						
+						//return the widget
 						AppWidgetManager.getInstance(getApplicationContext()).updateAppWidget(widgetID, rv);
 						Intent resultValue = new Intent();
 						resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetID);
@@ -137,7 +153,7 @@ public class WidgetConfigActivity extends Activity implements View.OnClickListen
 		return true;
 	}
 
-
+	//gridview
 	public class ImageAdapter extends BaseAdapter {
 		 
 	       private Context mContext;

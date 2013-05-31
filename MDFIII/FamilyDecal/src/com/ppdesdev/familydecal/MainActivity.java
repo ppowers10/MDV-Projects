@@ -1,3 +1,13 @@
+/*
+ * 	project		FamilyDecal
+ * 
+ * 	package		com.ppdesdev.familydecal
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 30, 2013
+ * 
+ */
 package com.ppdesdev.familydecal;
 
 import android.os.Bundle;
@@ -16,10 +26,13 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main2);
 		
+		//set up the webview
 		myWebView = (WebView) findViewById(R.id.webView);
 		myWebView.loadUrl("http://ppdesdev.com/familydecal.html");
 		WebSettings webSettings = myWebView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
+		
+		//connect to functions in javascript 
 		myWebView.addJavascriptInterface(new WebAppInterface(this), "Android");
 		
 	}

@@ -1,11 +1,19 @@
+/*
+ * 	project		FamilyDecal
+ * 
+ * 	package		com.ppdesdev.familydecal
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 30, 2013
+ * 
+ */
 package com.ppdesdev.familydecal;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.sax.StartElementListener;
 import android.webkit.JavascriptInterface;
-import android.widget.Toast;
 
 public class WebAppInterface {
 	Context mContext;
@@ -15,7 +23,7 @@ public class WebAppInterface {
         mContext = c;
     }
 
-    /** Show a toast from the web page */
+    /** Connect to the email button on the webview */
     @JavascriptInterface
     public void showEmail() {
     	Intent intent = new Intent(Intent.ACTION_SEND);
@@ -26,15 +34,16 @@ public class WebAppInterface {
 		mContext.startActivity(Intent.createChooser(intent, "Send Email"));
     }
     
-    /** Show a toast from the web page */
+    /** Connect to the call button on the webview */
     @JavascriptInterface
     public void placeCall() {
-    	 String	num = "407-340-7829";
+    	 
+    	String	num = "407-340-7829";
 
-    	 String uri = "tel:" + num.trim() ;
-    	 Intent intent = new Intent(Intent.ACTION_DIAL);
-    	 intent.setData(Uri.parse(uri));
-    	 mContext.startActivity(intent);
+    	String uri = "tel:" + num.trim() ;
+    	Intent intent = new Intent(Intent.ACTION_DIAL);
+    	intent.setData(Uri.parse(uri));
+    	mContext.startActivity(intent);
     }
     
     

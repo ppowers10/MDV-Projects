@@ -1,3 +1,13 @@
+/*
+ * 	project		FamilyDecal
+ * 
+ * 	package		com.ppdesdev.familydecal
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 30, 2013
+ * 
+ */
 package com.ppdesdev.familydecal;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;

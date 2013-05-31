@@ -1,4 +1,13 @@
-/** Automatically generated file. DO NOT MODIFY */
+/*
+ * 	project		FamilyDecal
+ * 
+ * 	package		com.ppdesdev.familydecal
+ * 
+ * 	@author		patrickpowers
+ * 
+ * 	date		May 30, 2013
+ * 
+ */
 package com.ppdesdev.familydecal;
 
 public final class BuildConfig {
